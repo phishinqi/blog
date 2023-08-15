@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>一方天地</title>
+  
+  <subtitle>兴趣使然</subtitle>
+  <link href="https://phishinqi.github.io/blog/atom.xml" rel="self"/>
+  
+  <link href="https://phishinqi.github.io/blog/"/>
+  <updated>2023-08-15T09:28:10.476Z</updated>
+  <id>https://phishinqi.github.io/blog/</id>
+  
+  <author>
+    <name>Ryokou_Kiryu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>地理中，一些时长的计算</title>
+    <link href="https://phishinqi.github.io/blog/posts/b6e472d6/"/>
+    <id>https://phishinqi.github.io/blog/posts/b6e472d6/</id>
+    <published>2023-05-27T22:50:31.000Z</published>
+    <updated>2023-08-15T09:28:10.476Z</updated>
+    
+    <content type="html"><![CDATA[<div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在本节内容开始前，应当先明确几个十分重要的点。</p><ol><li>在地理中时间的早晚是东早西晚（由看到日出的时间而定，由于地球自西向东自转，东方较西方更先看到日出，所以东方时间较早）</li><li>区时与地方时的区别</li><li>平年以及闰年</li></ol><span id="more"></span></div><div class="story post-story"><h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><p>世界各地区经度不同，地方时也就有所不同。但在一个国家中不可能两个城市使用两个不同的时间来计时，以中国来举例，中国幅员宽广，东侧乌苏里江黑龙江交汇处（东经135°）到西侧帕米尔高原（东经73°）差不多跨4个时区那么如何解决这个问题？<br>很简单，时区就很好的解决的这个问题。</p><p>以零时区为中心，每隔经度15°划分为一个时区并向东、西两个方向分别延申至180°便构成了24个时区。每个时区都有一条属于该时区的子午线。本初子午线为零时区的中央经线，即0°经线。</p><h3 id="时区的计算"><a href="#时区的计算" class="headerlink" title="时区的计算"></a>时区的计算</h3><p>时区的计算较为简单，其公式为 <strong>当地经度÷15&#x3D;A……B</strong> 当余数B&#x3D;0时，A即为该地所在时区；当余数B＞7.5时，A+1即为该地所在时区；当B＜7.5时，A即为该地所在时区。<br>Eg. 已知A(50°N,146°W)，求A地所在时区：<br>∵146÷15&#x3D;9……11&gt;7.5      ∴A点所在时区为西十区</p><h3 id="地方时的计算"><a href="#地方时的计算" class="headerlink" title="地方时的计算"></a>地方时的计算</h3><p>由已知时区推算地方时的时间也十分简单以一个简单的例子来即可：<br>Eg. 已知北京时间为8:00，求A(40°N,106°E)的时间<br>∵120°-106°&#x3D;14°     ∴14*4&#x3D;56min<br>8:00-56min&#x3D;7:04</p><p>Tips：</p><ol><li>由于地球自转，每15°为一个小时，每1°为4分钟</li><li>为方便理解，可采用数轴法进行分析。</li></ol><h3 id="已知区时推算区时"><a href="#已知区时推算区时" class="headerlink" title="已知区时推算区时"></a>已知区时推算区时</h3><p>过于简单，不做讨论</p></div><div class="story post-story"><h2 id="昼长判断"><a href="#昼长判断" class="headerlink" title="昼长判断"></a>昼长判断</h2><p>未完待续…</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在本节内容开始前，应当先明确几个十分重要的点。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在地理中时间的早晚是东早西晚（由看到日出的时间而定，由于地球自西向东自转，东方较西方更先看到日出，所以东方时间较早）&lt;/li&gt;
+&lt;li&gt;区时与地方时的区别&lt;/li&gt;
+&lt;li&gt;平年以及闰年&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="地理" scheme="https://phishinqi.github.io/blog/tags/%E5%9C%B0%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Minecraft Fabric 地毯服</title>
+    <link href="https://phishinqi.github.io/blog/posts/5e75090c/"/>
+    <id>https://phishinqi.github.io/blog/posts/5e75090c/</id>
+    <published>2023-03-06T03:41:31.000Z</published>
+    <updated>2023-08-15T09:28:10.476Z</updated>
+    
+    <content type="html"><![CDATA[<p>Minecraft 开服很多人都会，那么 Minecraft Fabric 地毯端如何开服呢？</p><span id="more"></span><div class="story post-story"><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>这里简单介绍一下 Minecraft 开服所必需的准备工作。</p><ol><li>Minecraft 原版服务端</li><li>Fabric 服务端</li><li>Carpet Mod</li></ol></div><div class="story post-story"><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>作为第一步，自然是将所需的文件准备好了</p><p>本文将以 <strong>1.19.3</strong> 为例</p><ol><li>原版服务端：原版服务端可以在 (Wiki)[<a href="https://minecraft.fandom.com/wiki/Java_Edition_1.19.3]">https://minecraft.fandom.com/wiki/Java_Edition_1.19.3]</a> 中找到</li><li>Fabric 服务端：Fabric 服务端可以通过 (这个链接)[<a href="https://fabricmc.net/use/server/]">https://fabricmc.net/use/server/]</a> 找到</li><li>Carpet Mod：Carpet 可以在 (CurseForge)[<a href="https://beta.curseforge.com/minecraft/mc-mods/carpet]">https://beta.curseforge.com/minecraft/mc-mods/carpet]</a> 中找到</li></ol><p>下载完成后应如图所示：</p><p>!()[<a href="https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Screenshots/Blog/explorer-2023-03-06-PM-11-414.jpg]">https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Screenshots/Blog/explorer-2023-03-06-PM-11-414.jpg]</a></p><h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>第二步则为编写启动脚本了，首先新建一个空文件夹，命名为 Server，将第一步所下载的文件拖放到该文件夹中，完成后再新建一个文本文档，将其更名为 start.bat。<br>以记事本打开 start.bat，输入以下内容：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar [Fabric-Server].jar nogui</span><br></pre></td></tr></table></figure><p>保存并关闭</p><div class="note warning red"><p>注意：[Fabric-Server] 为 Fabric 服务端名称</p></div><p>完成后应如下图所示：</p><p>!()[<a href="https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Screenshots/Blog/explorer-2023-03-07-AM-12-415.jpg]">https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Screenshots/Blog/explorer-2023-03-07-AM-12-415.jpg]</a></p><h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>在第二步创建好的文件夹中新建一个文件夹，将其命名为 <strong>mods</strong>，将下载好的 Carpet 模组文件拖入其中。后续与原版服务端一致。</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Minecraft 开服很多人都会，那么 Minecraft Fabric 地毯端如何开服呢？&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="教程" scheme="https://phishinqi.github.io/blog/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="Minecraft" scheme="https://phishinqi.github.io/blog/tags/Minecraft/"/>
+    
+    <category term="教程" scheme="https://phishinqi.github.io/blog/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>This Game 要素整理</title>
+    <link href="https://phishinqi.github.io/blog/posts/e84b53a3/"/>
+    <id>https://phishinqi.github.io/blog/posts/e84b53a3/</id>
+    <published>2023-01-17T05:10:11.000Z</published>
+    <updated>2023-08-15T09:28:10.476Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="啊嘞嘞？你不是天地的主人吧！我一眼就看出来了！" data-whm="AJUge，天地...被玩坏了...">  <script id="hbeData" type="hbeData" data-hmacdigest="1df4b88d285412597d215e7b870784921f07ff1b6d0ac5d0befb93e505901262">04dd84b9f33cc0b8306dedac3758028756d1e32202d3481bc472359d8eb9f769a9bd7655076517a07e7222d0e32e56cddb1a746ee9597e77d2637eaaf4d87615e021afdc7c77dcae20a2779c3b3704dee1d8339d0f0e4e815e40c2f240c2aa98e5de4d120c04b3d4f491ba41977b56a13577ba65f75be0ef1b86803463b9fc6049cb674e4c88d88fcdfc205fd7ee297232b6e243f9e4aff53eb0d51f606e12c5c7b46ce8dc825a78f0590833c8dd641c64fa6730dc1ea4cd1ba57d41ef8587652b00917ed7a7e6e76497234504c0a46ac8743e511ae8d715c058a0fa5f976ae87f2b8f89a1180bd94de737ad81a7a56fd912f8cea731edcd8bcca1ed79928a8b6a84854c6f7203ba47a3deaaf27513a269fe00be9ae5eddc0d83ef6a6b2fc9fcf4b1f100192b03ca5c6e4b3c50c7767db6e411eb862cac06d0b50b038a0295d5670641f0f97eb29dbfe67d8db424b18fcacd702299b3d8bafb4a93ff9e105e26681e1765478b2270b7a223031a364b2430f2db2871f447243700655b564f9fa96e6fba371c65e78bd6a997a818b101c8901086be8ef07e6af6f2b38215e35e5a1718749bc833ca826f2086f229680ee874ef5952f1ab1a61c9d9f9cce2e9ee38f46af22554839f72c38dff2c3028527bb7b70af2724e748e7be8784c444066be6cd92521e81b2d14a5eef5c066773934cfce29aea61cff8efdb282c23a5eb805bfd0cc1092126468d48319f2c45a7916d7484d2e85d3a68daf2275c6d6aa1014b7050fd33dfc43a3a8da4c5e674bc403daaf7291f164391c92d10b6fde63b05a96a5962ce9eb8323a22b0e4e4b38c4add00cfe0d8cfc97cff92242c6d4c3ddf8a04ec3bf810735580ba0eaa484b237a0c55e64f806fd366e98b05f3a97cf9b7c580c3942c00bb6983fd3f2b3efbc6569ab82533cb82d625259354e1130b64400d64406ea55d3deac9880452feae1153bfec5cba9d859fb8d6e58c7ecdfe6931ee45e4e4639ce0ae686d25682b9df30e0</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-wave">      <input class="hbe hbe-input-field hbe-input-field-wave" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-wave" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-wave">天地的秘密才不会告诉你呢！</span>      </label>      <svg class="hbe hbe-graphic hbe-graphic-wave" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>      </svg>    </div>  </div></div><script data-pjax src="/blog/lib/hbe.js"></script><link href="/blog/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">这是天地的秘密，没有天地的钥匙是打不开的！</summary>
+    
+    
+    
+    <category term="企划" scheme="https://phishinqi.github.io/blog/categories/%E4%BC%81%E5%88%92/"/>
+    
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="音游" scheme="https://phishinqi.github.io/blog/tags/%E9%9F%B3%E6%B8%B8/"/>
+    
+    <category term="开发" scheme="https://phishinqi.github.io/blog/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Unity" scheme="https://phishinqi.github.io/blog/tags/Unity/"/>
+    
+    <category term="企划" scheme="https://phishinqi.github.io/blog/tags/%E4%BC%81%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>This Game 规划案（一版）</title>
+    <link href="https://phishinqi.github.io/blog/posts/682c8166/"/>
+    <id>https://phishinqi.github.io/blog/posts/682c8166/</id>
+    <published>2023-01-14T05:53:11.000Z</published>
+    <updated>2023-01-14T12:28:18.862Z</updated>
+    
+    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="啊嘞嘞？你不是天地的主人吧！我一眼就看出来了！" data-whm="AJUge，天地...被玩坏了...">  <script id="hbeData" type="hbeData" data-hmacdigest="4ace593a4b1e0e5e781794dd902186e7bfa1e08d59b4b7865bbade4c95a6c96d">04dd84b9f33cc0b8306dedac375802875d6431d2c39a2b8cf644471de32705dde48b884379b7fcca7fa4a15aae325c7ec9e9ff727924a36a10b53a33f7f655cf5ff385d8fe119de8193ad92f323be736c63dc382e9b30d054c2fa809a8d8ae8872c3cb2f6756fcb3aa19dc93cd942896899503bdefc6cc50bc0e78a3cf3227cc2e1090d5962213fed47ab884e58f88dfe1774d24780832fc3a0ddd8ba259a4a954f054a160e4f8fc60e0ff25212b8a74da94565b57eece1ff20ea4ac0c45b311b86b2800d7860935b310b6a411760ebb0c5250af481526846d1813c07a68f9a120bee42833a04786dd9646123d40a7bc9dd671218291cc464b028b9868971f29dc0759a139a13c9695d1db23b5f3a2b8bc709ee8443b2e4324a50fc8e91327636f6aa993c3df736063fd36d0b90b65eb666e925003fb8f0ac5840a69f6a5cb8c0d9b98c7694064c4982c858dcc7a1140d7180fb0f16c52b6733553e31f15bd55f3cbd2e8311cceaf3db213a2a40a9bbc01f1fe8d763bed027090a356ece69b48fe6f716303f352943e8bd896a500b0cd077e5d6cf5888935521b400b88fd08dd8a3419a4697c5b9b3d1a3bc1a1efd33be06537db725880f3ea28b1c7c19f57a6231dcfaf1f8cc36c62682c9f4e54172f544fa2ce512bedcba89731c2ca73872bd55e9305cfd1b370d3aaab347febcf4ad19bd7b7b086bc4854192f256ad3a3dba3f2669567e18b2efe40fe498409f8f9f99625cc9115b72d56213632393b943fc219f8ab2947f9cc71180b1d53e87e7d48bdac572c7aa9f0e925592c62d37ccdc530401c1f49010e5257559d2d59abe1c9417f11154bd326dd43a1f37bf2f8ce62bb742e3a85c1d045f6583aceb69c2f622da7fc3a6a5befd536224177b15350210194ab6b9942a24cc114ccfdff570c5b51d41216ae4e1472fb9eb1ce0c299a59d050aacd13ab4a3b086fe3d4b9b81e0d968b6e12696ee9739629024280af6401f413d4a693128a89b600fab4ae1645442d373d8974899bb42d8eeb0537763c2b302a91d14441bc876d09c88717df1a303c0b5b5fbedc8582abad30ce5c6af05f594b0da8004893194fd99fbb057209487fbfa0ee13a76dc1ecfb791164b87f869e91830635738f20cfad4eee79c02ca1428b12a81efb89692b7240b615f3d9ff4b1aa0f073fa271334da59c6aec7f0e3796db2a27ea6e35b126a621a8f182420c6c710a8fa8059eeabcbdbf402a9b5e4e65c25fdc0cc8256509f73ccfe1b05ed4c46295ebd6418c91197964a2625d09ae7f9298784ba35fb179cd87b5a84ff65200a2215d71740f26b480d1fbfd91ec173e2136888d514e8be13ea5e1b074a6143638959d945ba1e1a0143b181a0ee465ac08fdc7513acebb9d5280407db84d3977723235f78e36e9b839f9c977a851ba26c192c69ec5287f144d7ec8314e03d5695d94304140ba23fbd85d8450d6c219590b925285bb809515ce97e113e61a6a0064f2a3a8c81169e436689e35c15768ad308736c5c68823db055b8e6bc31df3c6157a88bac60bd773b04f6183c4e908e0e8b20f51ea4b216fe6042a49b3e6ea5dfaaf5b0ad6889b977c23c436ed4a063e815fdea2060a4c95cde1a225c42317a56607d16a9de5bf910bba975bfbfcb49dc26dfa8f420025afbffbec74ac72d367357cb96d005ae916cbaf65675aec89fb599eff57f32496226cad2c6d9fe678ac5af1532f7b74f9d31b029aff3d09d228401275d2bf4476a215ee3a4683068cd3dac135d35edab6b7bfbd8565185cbdf67665a290d7885b69de3f6528676b00f1fb8beda6933ca03d36a8583c7b3fd76e73495ac0d3b7a2bcee9548dddc4033e3e8780df6be2500becd3ff8ccf3cd70d72c9bed44d6bef23297d1eac221120d94ec2e8b79cf74331a210bdc793668fd0d3345aa1c6200f50fe1cc87c16d6ab3d87e69b666726f20fd3d43498e74a7a9902dede8f02b471d4a3d1d15fde3604b4d9abd6ab35a6c3276e710e867bff6f3647f820b0163836a65b8581efc40227592c2cda0d3bdec307fd8ed14b70754d3eaf2b681a27e182a27833d2f3f4e8b6f45f12aab8ac0abbc81c7e2f16fd812b4073d031e493abc9576d260a0df520e3c3fff80a2a8314e412edde32e779cad48d0c69c27a038eca6876d326d77ffef14568eaf7755132dca98448a0893db41a2b805e7d5da6135d27b00bcb88057f8d19d487a7cdbbe8aa8ce6d1080f219070f021dbe2223b5759ccd1f0a9a2b006cdda0f7617687cb6d30c52ac01c8a90232e0cf559d224919908b0ab0937206bb122bbfa36c36e4d2402842c8b5ee4b628fd7596546cbefd524b0e4a88397fde11e41f9b841114280e7b575519ceb78119e73ab4ac93d762bf02803fd94a32d479909bf88ec6a22936fefe4db6c2bde78804cc6cec3f611f5692f89799ce454ab3e6b679655341fafc0e5f56ec4ce96e2e1077edf2165a1e877a03001b79b56ef58bbe21939ccf9a7fc8ee658fdeea7d5df3820429f5266d9c2ea4d2011c1a463aae5a392137d1930ea93dcae8ef457a803a70a9e07907cea0360a88e059c31de592be5790ccbf01187575121af9016df545a6ef63cc86f2a93bb0cea07338a904919e79cd0fa6c0c2deb8bf290850779409a28091e28f970c61a08c0d8f99b5d1c6286fc97e6383660de1bbbd50fb7652e689ffb4b2f40aa3783a7b8c4f47d108e54ef2fd632988e63169fb6f7080a49aa5c21b54842d0058ad07893806aff2b0f7f94cea6f90e347f211a13f87c5a700d11f73ceb151926151afdfe28709402778f1915a579d170f61eb89c738e6cc6a12fa637ad365cce73dfe93cd774316c4a18776516bcf3e50e636bab5d1f094e7a17052876ac962e95e804d193064b866ad41cbfa0718c84c8a8a4c40c865abb6df1ac056ead8ba3a191eb9aeb09abe063fea948320105d19f3997ad40e79e376039542ef5664ee837576a024a0f635da1f51a0d674af88b1fd6b59ee64b23c80aa6103647d8e8cf9ec1c111714595072ca421c72450614abaf8e89f9f82e549c92adebcddc7e13c33b2737ece89f0db7636431ec56f18cc7773761c7d3a3e12ccd2db8595eaf00c96ba40c2845886a30c472a3b3b5c485083fcae446c2a536be6b54e68e686cb98f4792d714eb9e38912b149bb91872dc3e4f256b98e4abd9d4fd735e219f8446221fb413e22d1a20d86adacc2e2f70a300356c8bd8977639c249b5b2fa34714348d69d2947d75476d77686770c3023a82b1a1c2461e7b46a568311de7ea8069bd010b10916e9be87bd8bf674c5f76bdb94597288d04e2f6ca29603dd2ac353e1e9ebca93e2f9f84b3ce9f274944e1c1410d4d76a68df1873276c0c906eefc15ddcdf7093f5403a3403ddf4dfe2a0acce6d705d920946becd5c5a6854f2827953c0404c2eef043d78810b8cf02323ab156a4ca24d42b633f9e135f761f1a7754a56c08856d75e6c72b5736bc00e0118ababc410015c414c387f0fedfe0f0f95cc0a4f5876c92ed61510051828dd1c422d6a3602745ce2f7c58b5c0e7edbcc1c3c39acf782ae7913d631fddfcb94489835c6344f24eec6d7fd20b216bfcb65050bd4f95a2c9252b33aef8e3f8090e14679a17ea6c01d621e77a11e9e03adfae0ad92e8130fcaf17a4b44beb1bece4447d769ebb6df413e8a19915574ba892daca9bb7d69005ca8f45918fd78a5dcc74fe2e5b400d3313b0248bb6b24c654aa8debaa5b7b719bfffe5840b01206d097e9ea484a48aab788a2fbe8819e69cac87edb2c6f51c7ff35dfed7ac241566fe3de08a0c5b4eef376a7e70afd018391a598a8bf4fbf964f6e629aa39379f9062d03d316ee6f0fd392af1e8e217d4be0d4d7d7fdf98b39f70e9679a29966ed30e66722bd52ddfb74da15ab80b527b45b56254f1fdc666a4c86003c380ad1cdfef9ae7d3f74471fa173b3f7e3c24dfa2161979353b67bf0c7bb2c11d9fba4b2961e43dce4f4871f8b4630e190ca206ffa7a5d6563ff4cefa2475c1e7</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-wave">      <input class="hbe hbe-input-field hbe-input-field-wave" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-wave" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-wave">天地的秘密才不会告诉你呢！</span>      </label>      <svg class="hbe hbe-graphic hbe-graphic-wave" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>      </svg>    </div>  </div></div><script data-pjax src="/blog/lib/hbe.js"></script><link href="/blog/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">这是天地的秘密，没有天地的钥匙是打不开的！</summary>
+    
+    
+    
+    <category term="企划" scheme="https://phishinqi.github.io/blog/categories/%E4%BC%81%E5%88%92/"/>
+    
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="音游" scheme="https://phishinqi.github.io/blog/tags/%E9%9F%B3%E6%B8%B8/"/>
+    
+    <category term="开发" scheme="https://phishinqi.github.io/blog/tags/%E5%BC%80%E5%8F%91/"/>
+    
+    <category term="Unity" scheme="https://phishinqi.github.io/blog/tags/Unity/"/>
+    
+    <category term="企划" scheme="https://phishinqi.github.io/blog/tags/%E4%BC%81%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈和弦</title>
+    <link href="https://phishinqi.github.io/blog/posts/8c4023c2/"/>
+    <id>https://phishinqi.github.io/blog/posts/8c4023c2/</id>
+    <published>2023-01-11T22:55:36.000Z</published>
+    <updated>2023-01-13T00:39:06.562Z</updated>
+    
+    <content type="html"><![CDATA[<p>和弦是指具有一定音程关系的一组声音，通常由三个或以上的音构成。</p><span id="more"></span><div class="note warning yellow"><p>本文中若没有特殊说明，则默认以 C 大调为例。</p></div><div class="story post-story"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>和弦指按照一定音程关系，一般由三个或三个以上的音组合。和弦的构成音可以进行分开演奏也可以同时演奏。在分开演奏时，我们常将其称为“分解和弦”。</p><p>在<a href="/blog/Posts/Blog/Music/Interval_and_Scale/">音程关系</a>一文中，我们提到过，大小三度属于不协和音程、而纯五度属于协和音程，因此，和弦的各音之间的相互组合使得音响效果十分饱满。</p></div><div class="story post-story"><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>和弦的分类有很多，按照构成音的数量分有三和弦、七和弦等。按照音程关系来分可分为大和弦、小和弦等。</p><h3 id="三和弦"><a href="#三和弦" class="headerlink" title="三和弦"></a>三和弦</h3><p>三和弦指的是构成和弦的包含三个音，分别为根音、三度音、五度音。按照音程关系来分，三和弦又分为大三和弦、小三和弦、增三和弦以及减三和弦。</p><p>下表以 <strong>C</strong> 为根音举例：</p><table><thead><tr><th align="center"></th><th align="center">三度音</th><th align="center">五度音</th><th align="center">和弦名</th></tr></thead><tbody><tr><td align="center"><strong>大三和弦</strong></td><td align="center">大三度</td><td align="center">纯五度</td><td align="center">C、Cmaj</td></tr><tr><td align="center"><strong>小三和弦</strong></td><td align="center">小三度</td><td align="center">纯五度</td><td align="center">Cm、Cmin</td></tr><tr><td align="center"><strong>增三和弦</strong></td><td align="center">大三度</td><td align="center">增五度</td><td align="center">Caug</td></tr><tr><td align="center"><strong>减三和弦</strong></td><td align="center">小三度</td><td align="center">减五度</td><td align="center">Cdim</td></tr></tbody></table><ul><li><p>若根音处在最高声部，和弦往往能表现出极强的稳定性。</p></li><li><p>若三音处在最高声部，通常会削弱和弦的稳定性，但音响效果饱满，色彩鲜明。</p></li><li><p>若五音处在最高声部，介于前二者之间，具有二者各一半的特性。</p></li></ul><h3 id="七和弦"><a href="#七和弦" class="headerlink" title="七和弦"></a>七和弦</h3><p>七和弦指构成音按照三度关系叠置的，由根音、三度音、五度音、七度音构成。分为属七和弦（大小七和弦）、大七和弦（大大七和弦）、小七和弦（小小七和弦）、减小七和弦（半减七和弦）、减七和弦（减减七和弦）、增七和弦（增小七和弦）、增大七和弦、小大七和弦等</p><table><thead><tr><th align="center"></th><th align="center">三度音</th><th align="center">五度音</th><th align="center">七度音</th><th align="center">和弦名</th><th align="center">等于</th></tr></thead><tbody><tr><td align="center"><strong>大小七和弦</strong></td><td align="center">大三度</td><td align="center">纯五度</td><td align="center">小七度</td><td align="center">C7、CMm7</td><td align="center">大三和弦+小七度</td></tr><tr><td align="center"><strong>大大七和弦</strong></td><td align="center">大三度</td><td align="center">纯五度</td><td align="center">大七度</td><td align="center">CM7、Cmaj7</td><td align="center">大三和弦+大七度</td></tr><tr><td align="center"><strong>小小七和弦</strong></td><td align="center">小三度</td><td align="center">纯五度</td><td align="center">小七度</td><td align="center">Cm7、Cmm7</td><td align="center">小三和弦+小七度</td></tr><tr><td align="center"><strong>小大七和弦</strong></td><td align="center">小三度</td><td align="center">纯五度</td><td align="center">大七度</td><td align="center">CmM7</td><td align="center">小三和弦+大七度</td></tr><tr><td align="center"><strong>减小七和弦</strong></td><td align="center">小三度</td><td align="center">减五度</td><td align="center">小七度</td><td align="center">Cm7-5</td><td align="center">减三和弦+小七度</td></tr><tr><td align="center"><strong>减减七和弦</strong></td><td align="center">小三度</td><td align="center">减五度</td><td align="center">减七度</td><td align="center">Cdim7</td><td align="center">减三和弦+减低都</td></tr><tr><td align="center"><strong>增小七和弦</strong></td><td align="center">大三度</td><td align="center">增五度</td><td align="center">小七度</td><td align="center">Caug7</td><td align="center">增三和弦+小七度</td></tr><tr><td align="center"><strong>增大七和弦</strong></td><td align="center">大三度</td><td align="center">增五度</td><td align="center">大七度</td><td align="center">CaugM7</td><td align="center">增三和弦+大七度</td></tr></tbody></table><p>由于大小七度为不协和音程，所以所有七和弦都是不协和和弦。</p><p>在爵士和声当中，七和弦为基础和弦。</p><h3 id="挂留和弦"><a href="#挂留和弦" class="headerlink" title="挂留和弦"></a>挂留和弦</h3><p>将和弦的三度音变为同音阶的四度音，使其与根音的距离为纯四度便可得到挂留和弦。挂留和弦会给人一种想要尽快解决的感觉，在古典音乐中，挂留和弦需要再解决到原本的和弦中，但在爵士乐中，就可以选择不解决。</p><h3 id="转位和弦"><a href="#转位和弦" class="headerlink" title="转位和弦"></a>转位和弦</h3><p>单纯使用三和弦与七和弦等未免也太单调了吧！所以快来试一试转位和弦吧。</p><p>转位和弦往往是将和弦的某一个音进行转位后所得到的。如四六和弦是主和弦的第二转位。</p><h3 id="高叠置和弦"><a href="#高叠置和弦" class="headerlink" title="高叠置和弦"></a>高叠置和弦</h3><p>高叠置和弦指在七和弦的基础上添加了九度音、十一度音等。</p></div><div class="story post-story"><h2 id="音的省略"><a href="#音的省略" class="headerlink" title="音的省略"></a>音的省略</h2><p>爵士乐在演奏过程中往往会对根音、五音进行忽略，将最富有色彩的音进行保留以得到一个全新的音响效果。</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;和弦是指具有一定音程关系的一组声音，通常由三个或以上的音构成。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/%E9%9F%B3%E4%B9%90/"/>
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+    <category term="乐理" scheme="https://phishinqi.github.io/blog/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于中行万事达借记卡</title>
+    <link href="https://phishinqi.github.io/blog/posts/324d7f08/"/>
+    <id>https://phishinqi.github.io/blog/posts/324d7f08/</id>
+    <published>2023-01-11T22:50:31.000Z</published>
+    <updated>2023-08-15T09:28:10.476Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note warning"><p>万事达卡网申活动已结束，谢谢参与</p></div><p>要说网申办卡最容易的，应该还是中国银行了吧。至于为什么对于中行万事达借记卡这么痴迷呢，主要还是因为申办比较方便，毕竟它是在网申的范围之内的。<br>中行支持网申的借记卡如下表</p><table><thead><tr><th>名称</th><th>组织</th><th>等级</th><th>年费</th><th>链接</th></tr></thead><tbody><tr><td>莫奈卡</td><td>万事达</td><td>世界卡</td><td>无年费</td><td><a href="https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=kuajinggomastercard">链接</a></td></tr><tr><td>非人哉</td><td>万事达</td><td>金卡</td><td>无年费</td><td><a href="https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=kuajinggofeirenzaicard">链接</a></td></tr></tbody></table><span id="more"></span><div class="story post-story"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>长城跨境通国际借记卡是中国银行发行的与两家银行卡组织<a href="%E5%88%86%E5%88%AB%E6%98%AF%5B%E4%B8%87%E4%BA%8B%E8%BE%BE%5D(https://www.mastercard.com/global/en.html)%E5%92%8C%5BVISA%5D(https://www.visa.co.jp/)">^1</a>合作的国内首张搭载EMV芯片标准的多币种<strong>借记卡</strong>，它支持多币支付、在线支付等。可以用于绑定Google Play、PapPal等国外平台，支持美元、日元、俄罗斯卢布、欧元、英镑等19种外币。</p><p>当然，这张卡并不是完美的，比如它<strong>没有人民币账户</strong>。</p></div><div class="story post-story"><h2 id="世界卡和非人哉卡的区别"><a href="#世界卡和非人哉卡的区别" class="headerlink" title="世界卡和非人哉卡的区别"></a><strong>世界卡和非人哉卡的区别</strong></h2><p>两张卡虽然都是长城跨境通国际借记卡，但他们其实还是有不同的。</p><h3 id="世界卡"><a href="#世界卡" class="headerlink" title="世界卡"></a>世界卡</h3><p>世界卡的卡面出自法国画家莫奈的油画作品——《印象·日出》，故世界卡又称莫奈卡。《印象·日出》所描绘的画面是其故乡的港口景色。值得一提的是，印象主义画派的源头正是《印象·日出》。</p><h3 id="非人哉卡"><a href="#非人哉卡" class="headerlink" title="非人哉卡"></a>非人哉卡</h3><p>非人哉卡的卡面有两种，一种为非人哉白泽卡面，另一种为非人哉小玉卡面。《非人哉》是中国漫画家一汪空气的代表作品，是作者对中国古代的传统神话故事展开的奇妙想象。</p></div><div class="story post-story"><h2 id="申办要求"><a href="#申办要求" class="headerlink" title="申办要求"></a>申办要求</h2><blockquote><p>凡自愿遵守《中国银行股份有限公司长城借记卡章程》并符合个人结算账户开立条件的个人，均可凭人民银行规定的本人实名制有效身份证件申领。</p></blockquote><p>上述节选自<a href="https://www.boc.cn/bcservice/bc2/201704/t20170426_9329829.html">长城跨境通国际借记卡 (boc.cn)</a>。因为原话说了等于没说，所以我要重新总结一下。</p><ol><li>年满16周岁的可自行办理，未满16周岁的要求与其监护人一起到线下网点办理</li><li>所持中行实体借记卡并不超过中行允许持有的实体卡范围</li></ol></div><div class="story post-story"><h2 id="线上办卡"><a href="#线上办卡" class="headerlink" title="线上办卡"></a>线上办卡</h2><p>线上办卡的流程十分简单，根据上文提供的链接一步一步根据实际情况填写即可。这里我会提供几点注意事项：</p><ol><li>拍照时，不要有任何修饰且一定要现拍，图片不可存在水印</li><li>联系地址要精确到门牌号</li><li>第一次填写可能需要工作信息，建议如实填写</li><li>网申过程中，卡片寄发到货后线上网页可能并不会同步。</li><li>部分地区可能无法进行线上办卡，可能会提示审批不通过</li><li><strong>开户行是上海分行</strong></li></ol></div><div class="story post-story"><h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><p>收到卡片后，你需要准备如下几种东西：</p><ol><li>身份证</li><li>卡片纸质说明</li><li>你的手机</li></ol><p>收到卡片后，你需要拿着这些东西前往当地网点进行激活使用。在当地网点中，工作人员可能并不知道这张卡，你只需要将这张卡的纸质说明拿给他即可。毕竟，<strong>人不认识机器肯定认识</strong>。</p></div><div class="story post-story"><h2 id="购汇"><a href="#购汇" class="headerlink" title="购汇"></a>购汇</h2><p>购汇操作需要在<strong>中国银行 APP</strong> 中进行，购汇前需确保已拥有一张中行一类账户银行卡。具体操作中行工作人员会为你讲明白的。</p></div><div class="story post-story"><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>到卡激活后，若不进行购汇，卡可能会显示冻结，在中行手机 APP 中则会提示账户无存单信息。</li><li>留有充足的余额，非美元交易会冻结账户中102%的余额，所以交易余额应不少于消费金额 × 102%。</li><li>绑卡操作时，请确保卡内有可用余额</li><li>不要向任何人提供这张卡的安全码、有效期以及卡号。</li><li>自2022年2月1日起，中行个人借记卡年费取消。[^2]</li></ul></div><div class="story post-story"><h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>[^2]: <a href="https://www.boc.cn/bcservice/bi2/202201/t20220125_20653786.html">关于取消个人借记卡年费和小额账户管理费的公告(2022年2月1日起) (boc.cn)</a></p></div>]]></content>
+    
+    
+    <summary type="html">&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;万事达卡网申活动已结束，谢谢参与&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;要说网申办卡最容易的，应该还是中国银行了吧。至于为什么对于中行万事达借记卡这么痴迷呢，主要还是因为申办比较方便，毕竟它是在网申的范围之内的。&lt;br&gt;中行支持网申的借记卡如下表&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;组织&lt;/th&gt;
+&lt;th&gt;等级&lt;/th&gt;
+&lt;th&gt;年费&lt;/th&gt;
+&lt;th&gt;链接&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;莫奈卡&lt;/td&gt;
+&lt;td&gt;万事达&lt;/td&gt;
+&lt;td&gt;世界卡&lt;/td&gt;
+&lt;td&gt;无年费&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=kuajinggomastercard&quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;非人哉&lt;/td&gt;
+&lt;td&gt;万事达&lt;/td&gt;
+&lt;td&gt;金卡&lt;/td&gt;
+&lt;td&gt;无年费&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://cloud.bankofchina.com/sh/api/net/common/url/adr?id=kuajinggofeirenzaicard&quot;&gt;链接&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="中国银行" scheme="https://phishinqi.github.io/blog/tags/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C/"/>
+    
+    <category term="借记卡" scheme="https://phishinqi.github.io/blog/tags/%E5%80%9F%E8%AE%B0%E5%8D%A1/"/>
+    
+    <category term="万事达" scheme="https://phishinqi.github.io/blog/tags/%E4%B8%87%E4%BA%8B%E8%BE%BE/"/>
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一文带你了解音程关系与音阶</title>
+    <link href="https://phishinqi.github.io/blog/posts/bb22dba2/"/>
+    <id>https://phishinqi.github.io/blog/posts/bb22dba2/</id>
+    <published>2023-01-10T22:43:01.000Z</published>
+    <updated>2023-01-13T00:39:06.569Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>音程</strong>（Interval）可以简单理解为“<strong>两个音之间的路程</strong>”。就像从我家到我外祖母家的路程为30公里一样，表达两个音之间的距离我们也有一个单位，但与从 A 地到 B 地的距离不同，表达音程之间的距离我们应该使用的<strong>单位</strong>叫做“<strong>度</strong>”。<br><strong>音阶</strong>（Scale）是按照一定规律形成的一系列音符，表示调式中的音从主音开始到主音结束。音阶一定是调式，而调式不一定是音阶，其表现为调式是旋律，而音阶也属于旋律。</p><span id="more"></span><div class="note warning yellow"><p>本文中若没有特殊说明，则默认以 C 大调为例。</p></div><div class="story post-story"><h2 id="音程的基本概念"><a href="#音程的基本概念" class="headerlink" title="音程的基本概念"></a>音程的基本概念</h2><p>音程是两个音之间的距离，其单位用“度”表示。一个简单的例子，由 C 到 C 是一度，由 C 到 D 是二度，由 C 到 E 是三度……但要注意的是，这是从根音开始的，但若不以根音开始呢？举个例子，D 到 D 的距离也是一度。由此可得，“度”是一种单位，表示音与音之间的听感上的距离，大小是人为规定的。<br>因此，纯靠听觉并不是解释音程的最好办法，因为没有上下文的情况下单独的两个音，是无法分辨出等音程的。</p><ul><li>总结一下，音与音之间的距离叫做“音程”，音与音之间的距离的衡量单位叫做“度”。</li></ul><div class="note warning red"><p>音程指的是两个音之间的高低关系，并不管构成音程中的音是否为基本音级或是变化音级。也就是说无论是由基本音级或是变化音级所构成的音程，只要它的音程度数与单纯的基本音级所构成的音程度数相同即是自然音程。</p></div></div><div class="story post-story"><h2 id="音程的结构"><a href="#音程的结构" class="headerlink" title="音程的结构"></a>音程的结构</h2><p>上文中提到，纯靠听感是无法分辨出等音程的，那我们应该如何计算音程呢？<br>这时便不得不提出更为基本的概念：音级。</p><h3 id="音级"><a href="#音级" class="headerlink" title="音级"></a>音级</h3><p>音级表示两个音之间的基本音。</p><ul><li>如 C - #C: 八度 （C、D、E、F、G、A、B、C）<div class="note watching red"><p>注意，这个十分重要，下文会经常用到且不在说明！</p></div></li></ul><table><thead><tr><th align="center">根音\冠音</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>A</th><th>B</th></tr></thead><tbody><tr><td align="center"><strong>C</strong></td><td>一度</td><td>二度</td><td>三度</td><td>四度</td><td>五度</td><td>六度</td><td>七度</td></tr><tr><td align="center"><strong>D</strong></td><td>七度</td><td>一度</td><td>二度</td><td>三度</td><td>四度</td><td>五度</td><td>六度</td></tr><tr><td align="center"><strong>E</strong></td><td>六度</td><td>七度</td><td>一度</td><td>二度</td><td>三度</td><td>四度</td><td>五度</td></tr><tr><td align="center"><strong>F</strong></td><td>五度</td><td>六度</td><td>七度</td><td>一度</td><td>二度</td><td>三度</td><td>四度</td></tr><tr><td align="center"><strong>G</strong></td><td>四度</td><td>五度</td><td>六度</td><td>七度</td><td>一度</td><td>二度</td><td>三度</td></tr><tr><td align="center"><strong>A</strong></td><td>三度</td><td>四度</td><td>五度</td><td>六度</td><td>七度</td><td>一度</td><td>二度</td></tr><tr><td align="center"><strong>B</strong></td><td>二度</td><td>三度</td><td>四度</td><td>五度</td><td>六度</td><td>七度</td><td>一度</td></tr></tbody></table><p>上表表示由<strong>根音</strong> C 到<strong>冠音</strong> C 的音程为一度，由<strong>根音</strong> C 到<strong>冠音</strong> A 为六度。</p><h3 id="音数"><a href="#音数" class="headerlink" title="音数"></a>音数</h3><p>音程所包含的全音、半音数目叫做音程的音数。例如 E-F 为半音，F-G为全音。它在键盘上的表示可以为两个白键：<div align=center><img src="https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Assetspiano.webp" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/phishinqi/phishinqi.github.io@main/assets/img/Assetspiano.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div></p><p>上图中，两个相邻白键中不夹杂黑键的为半音关系，两个相邻白键中夹杂黑键的则为全音。</p><h3 id="全音与半音"><a href="#全音与半音" class="headerlink" title="全音与半音"></a>全音与半音</h3><p>有时会出现这种情况：度数相同但音数不同。</p><ul><li>为什么会出现这种情况？</li></ul><p>音程为一个音到另一个音的距离，而这个<strong>距离</strong>被我们称为“度”，度和音的升降没有关系。</p><div class="note red"><p>我们需要理解的是度数与音在键盘上的位置没有关系，只是和音的唱名有关系。</p></div><p>例如，C 到 E 为三度、C 到 #E 还是三度。对此，我们有一个简单的记忆方法：<kbd>读几个音，那么这两个音的音程就是多少度</kbd></p><p><strong>简单的例子：</strong></p><ul><li>C 到 E 中，我们经过了 C、D、E 这三个音，那么 C 到 E 的音程为三度；C 到 ♭E 中，看起来我们经过了 C、D、♭E 这三个音，但是 ♭E 本身还是 E 这个音，只是它降了一个半音而已，那么 C 到 ♭E 的音程还是三度。</li><li>C 到 F 中，我们经过了 C、D、E、F 这四个音，所以从 C 到 F 的音程为四度；C 到 #F 中，看起来我们经过了 C、D、E、#F 这四个音，但是 #F 还是被称作 F ，所以它还是四度关系。</li></ul><p>所以，我们不管这类音究竟是什么、无论他怎么变，只要他是 E 这个音，那么 C 到 E 就是三度关系。就像是那句老话：“你化成灰我都认得你。”</p><ul><li>这种音程我们应该怎么区分呢？</li></ul><p>很简单，我们只需要在度数前加上大、小、增、减、纯等文字即可。如多利亚调式[^1]中，主音与上方音的音程关系为<strong>大二度、小三度、纯四度、纯五度、大六度、小七度。</strong>在<strong>大调音阶</strong>中，每一个音与第一个音的距离都叫做“大音程”或“纯音程”</p><p>假设，我们现在有 <kbd>C、D、E、F、G、A、B、#C</kbd> 这八个音，为了以更为方便的记忆，我们现在将其称为 1、2、3、4、5、6、7、1这八个音，我们可以将其看作 1、2、3、4、5、6、7、8这八个数字，在这八个数字中，我们将1、4、5、8称为纯，将2、3、6、7称为大。</p><p>那么现在，则1-1是纯一度，1-2为大二度。我们此时将完全音程和大音程称为“正常的音程”。但万物不可能都是正常的，当然还有些异常的，我们需要将它们也算入其中。现在，我们有了全新的记忆方法。</p><ul><li>2367称为大</li><li>比大窄的称为小</li><li>比小窄的称为减</li><li>比大宽的称为增</li></ul><p>那么纯呢？别急，纯马上就来了：</p><ul><li>1458称为纯</li><li>比纯窄的称为减</li><li>比纯宽的称为增</li></ul><p>还是上方的例子：</p><ul><li>1到3中，我们经过了1、2、3这三个音，但是2367称为大，那么他的音程为大三度，1到♭3中，我们经过了1、2、♭3这三个音，我们此时知道1到3为大三度，但是比大三度还要少一个半音是什么呢？比大窄的称为小，所以1到♭3是小三度。</li><li>1到4中，我们知道它是四度音程，但是1458称为纯，所以从1到4的音程为纯四度；1到#4中，#4只是比4多了一个半音，比纯宽的称为增，所以它是增四度。</li></ul><p>另外，我们可以发现：一度和八度音程称为纯一度或纯八度、二度音程称为大小二度至此，我们便得出下表</p><table><thead><tr><th>度数</th><th>音程名称</th></tr></thead><tbody><tr><td>一度</td><td>纯一度</td></tr><tr><td>二度</td><td>大二度<br />小二度</td></tr><tr><td>三度</td><td>大三度<br />小三度</td></tr><tr><td>四度</td><td>纯四度<br />增四度</td></tr><tr><td>五度</td><td>纯五度<br />减五度</td></tr><tr><td>六度</td><td>大六度<br />小六度</td></tr><tr><td>七度</td><td>大七度<br />小七度</td></tr><tr><td>八度</td><td>纯八度</td></tr></tbody></table></div><div class="story post-story"><h2 id="音程的变化"><a href="#音程的变化" class="headerlink" title="音程的变化"></a>音程的变化</h2><p>音程的变化分为两种，一种是升高、另一种是降低</p><ul><li>例如，大音程向上增加一个半音变成增音程，大音程向下减少一个半音变为小音程</li></ul><p>由此，我们可以得到下表：</p><table><thead><tr><th>减音程</th><th>纯音程</th><th>增音程</th></tr></thead><tbody><tr><td>减音程</td><td>小音程大音程</td><td>增音程</td></tr></tbody></table><p>上表中，向左递进为缩减一个半音，向右递进为增加一个半音。</p></div><div class="story post-story"><h2 id="音程的分类"><a href="#音程的分类" class="headerlink" title="音程的分类"></a>音程的分类</h2><p>音程的分类十分复杂，这里介绍几种</p><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>音程按性质分在上文中已经提到了，并且提供了记忆方法，这里我将会提供一张表格：</p><table><thead><tr><th align="center">半音数\音程</th><th align="center">一度</th><th>二度</th><th>三度</th><th>四度</th><th>五度</th><th>六度</th><th>七度</th><th>八度</th></tr></thead><tbody><tr><td align="center"><strong>0</strong></td><td align="center">纯</td><td>减</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td align="center"><strong>1</strong></td><td align="center">增</td><td>小</td><td>倍减</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td align="center"><strong>2</strong></td><td align="center">倍增</td><td>大</td><td>减</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td align="center"><strong>3</strong></td><td align="center"></td><td>增</td><td>小</td><td>倍减</td><td></td><td></td><td></td><td></td></tr><tr><td align="center"><strong>4</strong></td><td align="center"></td><td>倍增</td><td>大</td><td>减</td><td></td><td></td><td></td><td></td></tr><tr><td align="center"><strong>5</strong></td><td align="center"></td><td></td><td>增</td><td>纯</td><td>倍减</td><td></td><td></td><td></td></tr><tr><td align="center"><strong>6</strong></td><td align="center"></td><td></td><td>倍增</td><td>增</td><td>减</td><td>倍减</td><td></td><td></td></tr><tr><td align="center"><strong>7</strong></td><td align="center"></td><td></td><td></td><td>倍增</td><td>纯</td><td>减</td><td></td><td></td></tr><tr><td align="center"><strong>8</strong></td><td align="center"></td><td></td><td></td><td></td><td>增</td><td>小</td><td>倍减</td><td></td></tr><tr><td align="center"><strong>9</strong></td><td align="center"></td><td></td><td></td><td></td><td>倍增</td><td>大</td><td>减</td><td></td></tr><tr><td align="center"><strong>10</strong></td><td align="center"></td><td></td><td></td><td></td><td></td><td>增</td><td>小</td><td>倍减</td></tr><tr><td align="center"><strong>11</strong></td><td align="center"></td><td></td><td></td><td></td><td></td><td>倍增</td><td>大</td><td>减</td></tr><tr><td align="center"><strong>12</strong></td><td align="center"></td><td></td><td></td><td></td><td></td><td></td><td>增</td><td>纯</td></tr><tr><td align="center"><strong>13</strong></td><td align="center"></td><td></td><td></td><td></td><td></td><td></td><td>倍增</td><td>增</td></tr><tr><td align="center"><strong>14</strong></td><td align="center"></td><td></td><td></td><td></td><td></td><td></td><td></td><td>倍增</td></tr></tbody></table><p>值得一提的是，即使存在倍增和倍减这两个名词，但它在作曲中却十分少见。</p><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>音程按作用分可以分为两种</p><ol><li>和声音程</li><li>旋律音程</li></ol><p>那这两种音程间的不同呢？</p><h4 id="和声音程"><a href="#和声音程" class="headerlink" title="和声音程"></a>和声音程</h4><p>和声音程指的是这两个音同时发音，在乐谱中的表现为两个音符上下对齐或紧挨一起。下面的叫做“<strong>根音</strong>”，上面的叫做“<strong>冠音</strong>”</p><h4 id="旋律音程"><a href="#旋律音程" class="headerlink" title="旋律音程"></a>旋律音程</h4><p>旋律音程在乐谱中的表现为一前一后，则两个音并不是同时发音的，它们的发音是有先后顺序的。按照方向可以分为<strong>上行</strong>、<strong>下行</strong>和<strong>平行</strong>三种。</p><h3 id="听感"><a href="#听感" class="headerlink" title="听感"></a>听感</h3><p>在一首完整的歌中，不能全部都是和谐的声音，还要有不和谐的声音，和谐与不和谐交织在一起才是完整的音乐。不同的音程结合在一起有着不同的听感，所以，从听感上，音程又分为了“<strong>协和音程</strong>”和“<strong>不协和音程</strong>”。</p><h4 id="协和音程"><a href="#协和音程" class="headerlink" title="协和音程"></a>协和音程</h4><p>协和音程在听感上十分和谐，其中“<strong>纯一度</strong>”与“<strong>纯八度</strong>”是完全协和音程，其次是“<strong>纯四度</strong>”和“<strong>纯五度</strong>”。</p><h4 id="不协和音程"><a href="#不协和音程" class="headerlink" title="不协和音程"></a>不协和音程</h4><p>不协和音程在听感上容易令人感到不适，从而产生了想要让人去尽快的解决掉的感觉。“<strong>大小三度</strong>”和“<strong>大小六度</strong>”为不完全协和音程。此外，“<strong>大小二度</strong>”、“<strong>大小七度</strong>”以及<strong>所有的增&#x2F;减音程</strong>都属于不协和音程</p><h3 id="音程的转位"><a href="#音程的转位" class="headerlink" title="音程的转位"></a>音程的转位</h3><p><strong>转位</strong>指的是音在音程中的互换，如向上提高八度等，使得原根音变为冠音或原冠音变为根音，这样构成的音程被称作转位音程</p><h4 id="按性质"><a href="#按性质" class="headerlink" title="按性质"></a>按性质</h4><table><thead><tr><th align="center">原音程性质</th><th>转位后</th></tr></thead><tbody><tr><td align="center">增</td><td>减</td></tr><tr><td align="center">大</td><td>小</td></tr><tr><td align="center">纯</td><td>纯</td></tr><tr><td align="center">小</td><td>大</td></tr><tr><td align="center">减</td><td>增</td></tr></tbody></table><h4 id="音程度数："><a href="#音程度数：" class="headerlink" title="音程度数："></a>音程度数：</h4><p>9-原音程度数&#x3D;转位后音程度数</p><p>如：原音程度数为3度，则转位后音程度数&#x3D;9-3&#x3D;6度</p><h3 id="单复音程"><a href="#单复音程" class="headerlink" title="单复音程"></a>单复音程</h3><h4 id="单音程"><a href="#单音程" class="headerlink" title="单音程"></a>单音程</h4><p>构成音程的两个音在纯八度及其以内的，叫做单音程。</p><h4 id="复音程"><a href="#复音程" class="headerlink" title="复音程"></a>复音程</h4><p>构成音程的两个音超过纯八度的叫做复音程。</p><h3 id="等音程"><a href="#等音程" class="headerlink" title="等音程"></a>等音程</h3><p>等音程即两个音程孤立的听起来具有相同的音响效果，但是他们的意义和写法不同，且构成等音程的两个音程中的根音互为等音[^2]。</p><p>等音程又分为两种：</p><ol><li>一个音程的名称相同，即他们的结构不发生变化</li><li>两个音程的名称不同，即他们的结构发生变化</li></ol></div><div class="story post-story"><h2 id="音阶的基本概念"><a href="#音阶的基本概念" class="headerlink" title="音阶的基本概念"></a>音阶的基本概念</h2><p>音阶的每一个音都可以当作主音建立调式，可以形成7种不同的7声自然调式，且音阶通常以八度排列在音阶中并不会出现同度音程。音阶具有很强的随意性，故音阶的种类近乎无限多，不同的民族的音阶也各不相同，如中国五声音阶、日本五声音阶等，在创作这类音乐作品时，音阶可以帮助我们许多。</p></div><div class="story post-story"><h2 id="音阶的基本分类"><a href="#音阶的基本分类" class="headerlink" title="音阶的基本分类"></a>音阶的基本分类</h2><h3 id="半音音阶"><a href="#半音音阶" class="headerlink" title="半音音阶"></a>半音音阶</h3><p>各音间以半音的距离所排列的音阶。</p><h3 id="八声音阶"><a href="#八声音阶" class="headerlink" title="八声音阶"></a>八声音阶</h3><p>多用于现代音乐，以“全音”、“半音”的规律构建而成，可以形成减七和弦为其最大特色。</p><h3 id="七声音阶"><a href="#七声音阶" class="headerlink" title="七声音阶"></a>七声音阶</h3><p>八度音程内，由七个相邻的音所组成的音阶。</p><p>每八度之间有五处全音，分成两个一串或三个一串，两串之间以半音隔开的称为<strong>自然七声音阶</strong>。</p><h3 id="五声音阶"><a href="#五声音阶" class="headerlink" title="五声音阶"></a>五声音阶</h3><p>广泛流行于亚洲非洲等地，其最大特点是由全音构成并没有半音。</p><h3 id="爵士音阶"><a href="#爵士音阶" class="headerlink" title="爵士音阶"></a>爵士音阶</h3><p>爵士音阶为在爵士乐中使用的音阶<del>，可以是任何音阶</del>。</p></div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>音乐中有着和谐和不和谐，世界是一样的，人也是一样的。没有什么东西是非黑即白的，<strong>单纯的和谐不是音乐，单纯的不和谐也不是音乐只有和谐与不和谐的音符交织在一起才构成了美妙的歌曲。</strong></p></div><div class="story post-story"><h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>[^1]: 多利亚调式（Dorian Mode）：中古调式的一种，常带有梦幻色彩<br>[^2]: 等音：指音高相同而意义和记法不同的音，是随十二平均律而来的名词，两个等音的半音相等，在某些情况下，等音是“不等”的</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;音程&lt;/strong&gt;（Interval）可以简单理解为“&lt;strong&gt;两个音之间的路程&lt;/strong&gt;”。就像从我家到我外祖母家的路程为30公里一样，表达两个音之间的距离我们也有一个单位，但与从 A 地到 B 地的距离不同，表达音程之间的距离我们应该使用的&lt;strong&gt;单位&lt;/strong&gt;叫做“&lt;strong&gt;度&lt;/strong&gt;”。&lt;br&gt;&lt;strong&gt;音阶&lt;/strong&gt;（Scale）是按照一定规律形成的一系列音符，表示调式中的音从主音开始到主音结束。音阶一定是调式，而调式不一定是音阶，其表现为调式是旋律，而音阶也属于旋律。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/%E9%9F%B3%E4%B9%90/"/>
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+    <category term="乐理" scheme="https://phishinqi.github.io/blog/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dorian 调式</title>
+    <link href="https://phishinqi.github.io/blog/posts/6d9c71dc/"/>
+    <id>https://phishinqi.github.io/blog/posts/6d9c71dc/</id>
+    <published>2023-01-10T10:30:01.000Z</published>
+    <updated>2023-01-13T00:39:06.567Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>多利亚 (Dorian)</strong> 调式，是中古调式的一种。若以 <strong>C</strong> 为主音，则其构成音有 C、D、♭E(#D)、F、G、A、♭B(#A)。多利亚调式的突出特点有一级到四级的和弦变化。<br>根据场景的不同，我们还可以尝试各种的转调以及离调。</p><span id="more"></span><div class="story post-story"><h2 id="音程关系与特征音"><a href="#音程关系与特征音" class="headerlink" title="音程关系与特征音"></a>音程关系与特征音</h2><h3 id="音程关系"><a href="#音程关系" class="headerlink" title="音程关系"></a>音程关系</h3><p>多利亚调式的音程关系为<strong>全-半-全-全-全-半-全</strong>。<br>主音与上方音的音程关系依次为：<strong>大二度、小三度、纯四度、纯五度、大六度、小七度</strong>，因主音到三级音的音程关系为小三度，故它亦是一个小调式。</p><h3 id="特征音"><a href="#特征音" class="headerlink" title="特征音"></a>特征音</h3><p>自然小调的音程关系为<strong>全-半-全-全-半-全-全</strong>，而多利亚调式的音程关系为<strong>全-半-全-全-全-半-全</strong>，由此可得，我们将自然小调的六级音升高一个半音后便可以得到多利亚调式。<br>多利亚调式的特征音为六级音，该音与主音构成了大六度，称为“多利亚六度”</p><ul><li>A 自然小调构成音：A、B、C、D、E、F、G</li><li>A 多利亚调式构成音：A、B、C、D、E、#F、G</li></ul></div><div class="story post-story"><h2 id="多利亚调式与现代音乐的结合"><a href="#多利亚调式与现代音乐的结合" class="headerlink" title="多利亚调式与现代音乐的结合"></a>多利亚调式与现代音乐的结合</h2><p>听名字“多利亚”和“中古调式”，乍一听还觉得多利亚调式离我们很远，其实并不是这样的。举一个简单的例子，目前网络上大火的游戏——《原神》中就有很多多利亚调式的背景音乐。多利亚调式可以带给人们很多种不同的感觉，如同神秘感、梦幻感、神圣感等等，其实它还可以带给我们更多的听感。<br>如多利亚#4变种</p><h3 id="多利亚-4变种"><a href="#多利亚-4变种" class="headerlink" title="多利亚#4变种"></a>多利亚#4变种</h3><p>多利亚调式为自然大调二级音上所建立的调式，多利亚#4变种是和声小调第四级音上建立的调式。<br>在A小调的情况下，四级音也升高了一个半音，于是由多利亚调式的“<strong>大二度、小三度、纯四度、纯五度、大六度、小七度</strong>”变为“<strong>大二度、小三度、增四度、纯五度、大六度、小七度</strong>”。<br>增四度的出现大大强化了原有多利亚调式的“<strong>不和谐感</strong>”<br>此外，在布鲁斯调式中也出现了#4音，由于爵士乐本身的特色使得<strong>自然调式</strong>可以轻松的融入其中，因此多利亚调式也常用于爵士乐当中。</p></div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>无论调式带给我们什么样的听感，但这并不是绝对的，正因为其如同颜色这种极度的“自由”，我们才可以得到“五颜六色”的音乐。不同的场景中有不同的演奏技巧，不能因为刻板印象而导致我们丢失了这些。</p></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;多利亚 (Dorian)&lt;/strong&gt; 调式，是中古调式的一种。若以 &lt;strong&gt;C&lt;/strong&gt; 为主音，则其构成音有 C、D、♭E(#D)、F、G、A、♭B(#A)。多利亚调式的突出特点有一级到四级的和弦变化。&lt;br&gt;根据场景的不同，我们还可以尝试各种的转调以及离调。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/%E9%9F%B3%E4%B9%90/"/>
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="音乐" scheme="https://phishinqi.github.io/blog/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+    <category term="乐理" scheme="https://phishinqi.github.io/blog/tags/%E4%B9%90%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Github Actions 部署 hexo 博客</title>
+    <link href="https://phishinqi.github.io/blog/posts/e38ae07c/"/>
+    <id>https://phishinqi.github.io/blog/posts/e38ae07c/</id>
+    <published>2023-01-09T08:21:02.000Z</published>
+    <updated>2023-01-13T00:39:06.560Z</updated>
+    
+    <content type="html"><![CDATA[<p>Github 这么好的平台，不好好嫖一下怎么行。</p><span id="more"></span><div class="story post-story"><h2 id="为什么需要-Github-Actions"><a href="#为什么需要-Github-Actions" class="headerlink" title="为什么需要 Github Actions"></a>为什么需要 Github Actions</h2><ol><li>省去不必要的麻烦</li><li>hexo 生成的是静态网页，操作繁琐</li><li>节省部分时间</li><li>我们只需要将本地 Push 到 Github 中，其余步骤将由 Github Actions 完成。</li><li><del>没有了</del></li></ol><hr></div><div class="story post-story"><h2 id="如何做"><a href="#如何做" class="headerlink" title="如何做"></a>如何做</h2><p>当知道为什么需要使用 Github Actions之后，我们便可以开始工作了。</p><div class="note warning red"><p>进行操作前，建议先将本地源码进行备份</p></div><h3 id="获取-Token"><a href="#获取-Token" class="headerlink" title="获取 Token"></a>获取 Token</h3><ol><li>打开 Github，依次点击Settings-Developer Settings-Personal access tokens-Tokens(classic)-Generate new token</li><li>创建 Token，名称随意，勾选所有权限，将生成的 Token 拷贝到文本档中备用。</li></ol><ul><li>至此，Token 的获取就算完成了<div class="note"><p>虽然名称随意，但防止 Token 过多导致混乱，建议以 blog 或类似的名字进行命名</p></div></li></ul><h3 id="创建仓库并上传源码"><a href="#创建仓库并上传源码" class="headerlink" title="创建仓库并上传源码"></a>创建仓库并上传源码</h3><ol><li>首先创建一个仓库名称随意。我是使用 <kbd>hexo-blog-backup</kbd> 命名的</li><li>在本地博客的终端中依次输入以下命令</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">heco cl</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:[USERNAME]/[REPO].git</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;first commit&#x27;</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h3 id="配置-Github-Actions"><a href="#配置-Github-Actions" class="headerlink" title="配置 Github Actions"></a>配置 Github Actions</h3><ol><li>依次点击仓库中的 Settings - Secrets - Actions - New repository secret</li><li>输入变量名 <kbd>ACCESS_TOKEN</kbd> ，在 Key 输入框中输入在<a href="#%E8%8E%B7%E5%8F%96-token">步骤一</a>中获取的 Token。</li><li>点击 Actions，创建一个 Workflows，命名随意。输入以下内容，并按照自己需求进行更改：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Blog</span> <span class="string">Deploy</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 触发条件：手动触发或在 push 到 hexo-blog-backup 分支后触发</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> </span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">env:</span></span><br><span class="line">  <span class="attr">TZ:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">blog-cicd:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">Hexo</span> <span class="string">blog</span> <span class="string">build</span> <span class="string">&amp;</span> <span class="string">deploy</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span> <span class="comment"># 使用最新的 Ubuntu 系统作为编译部署的环境</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span> <span class="string">codes</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">node</span></span><br><span class="line">      <span class="comment"># 设置 node.js 环境</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="string">current</span> <span class="comment"># 使用最新的 node.js 环境</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">node</span> <span class="string">modules</span></span><br><span class="line">      <span class="comment"># 设置包缓存目录，避免每次下载</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/cache@v3</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">~/.npm</span></span><br><span class="line">        <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.os</span> <span class="string">&#125;&#125;-node-$&#123;&#123;</span> <span class="string">hashFiles(&#x27;**/package-lock.json&#x27;)</span> <span class="string">&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">hexo</span> <span class="string">dependencies</span></span><br><span class="line">      <span class="comment"># 下载 hexo-cli 脚手架及相关安装包</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        npm install -g hexo-cli</span></span><br><span class="line"><span class="string">        npm install</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span> <span class="string">files</span></span><br><span class="line">      <span class="comment"># 编译</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        hexo clean</span></span><br><span class="line"><span class="string">        hexo generate</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">hexo</span> <span class="string">blog</span></span><br><span class="line">      <span class="attr">env:</span> </span><br><span class="line">        <span class="attr">GITHUB_REPO:</span> <span class="string">github.com/[USERNAME]/[BLOG_REPO]</span></span><br><span class="line">      <span class="comment"># 将编译后的博客文件推送到指定仓库</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        cd ./public &amp;&amp; git init &amp;&amp; git add .</span></span><br><span class="line"><span class="string">        git config user.name &quot;[USERNAME]&quot; </span></span><br><span class="line"><span class="string">        git config user.email &quot;[USER_EMAIL]&quot;</span></span><br><span class="line"><span class="string">        git add .</span></span><br><span class="line"><span class="string">        git commit -m &quot;GitHub Actions Auto Builder at $(date +&#x27;%Y-%m-%d %H:%M:%S&#x27;)&quot;</span></span><br><span class="line"><span class="string">        git push --force --quiet &quot;https://$&#123;&#123; secrets.ACCESS_TOKEN &#125;&#125;@$GITHUB_REPO&quot; master:master</span></span><br><span class="line"><span class="string"></span>    <span class="comment"># 上述中，请将[USERNAME]、[BLOG_REPO]、[USER_EMAIL]分别修改为自己的用户名、博客储存仓库、邮箱</span></span><br></pre></td></tr></table></figure></li></ol><hr><h3 id="手动触发测试"><a href="#手动触发测试" class="headerlink" title="手动触发测试"></a>手动触发测试</h3><p>完成以上步骤后，建议进行手动触发进行测试，并检查相关错误并纠正。</p></div><div class="story post-story"><h2 id="如何上传新的文章"><a href="#如何上传新的文章" class="headerlink" title="如何上传新的文章"></a>如何上传新的文章</h2><p>在本地写好文章后，输入</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;new&#x27;</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></div><div class="story post-story"><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><div class="note"><p>你可以选择将博客源码放置于博客仓库下的不同分支，不一定必须要新建一个仓库</p></div></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Github 这么好的平台，不好好嫖一下怎么行。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="Hexo" scheme="https://phishinqi.github.io/blog/tags/Hexo/"/>
+    
+    <category term="Github" scheme="https://phishinqi.github.io/blog/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于博客搭建的一些问题</title>
+    <link href="https://phishinqi.github.io/blog/posts/811167b5/"/>
+    <id>https://phishinqi.github.io/blog/posts/811167b5/</id>
+    <published>2023-01-08T22:38:05.000Z</published>
+    <updated>2023-01-13T00:39:06.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>题外话不说，这篇主要说一下hexo框架的一些问题以及Git部署的奇怪BUG。以及在之后的搭建中，我所应该注意的事情。<br><del>其实也有可能是我的问题。</del></p><span id="more"></span><div class="story post-story"><h2 id="博客存放路径"><a href="#博客存放路径" class="headerlink" title="博客存放路径"></a>博客存放路径</h2><div class="note warning"><p>在博客的存放路径中不可存在中文字符以及中括号等在 ASCII 中没有的符号或文字，不然会遇到一些十分恶心的问题。这可能是 Hexo 渲染器的问题。</p></div><p>在最近的博客重建中，未曾额外注意过编码的问题，我错误的将博客放置在了我 E 盘的 [Blog] 文件夹中。从而导致我的本地预览出现问题，<emp>使其无法正常加载 CSS</emp>。</p><hr></div><div class="story post-story"><h2 id="部署问题"><a href="#部署问题" class="headerlink" title="部署问题"></a>部署问题</h2><p><strong>在部署过程中也有不少的问题，其中我遇到的包括:</strong></p><ol><li><strong>ssh: connect to host github.com port 22: Connection refused</strong></li><li><strong>ssh: connect to host github.com port 22: Connection time out</strong></li><li><strong>kex_exchange_identification: Connection closed by remote host</strong><br><strong>关于以上问题我使用了如下方法：</strong></li><li>设置 RSA 密钥</li><li>检查并设置代理</li><li>更换端口号</li><li>重新登陆</li><li>将 SSH 更换为 HTTPS 链接</li><li>取消代理</li></ol><hr><h3 id="设置-RSA-密钥"><a href="#设置-RSA-密钥" class="headerlink" title="设置 RSA 密钥"></a>设置 RSA 密钥</h3><p>关于第一个方法是针对于一台新电脑或已经重置系统的用户，第一步需要本地生成 ssh key<br><strong>第一步：</strong>在终端中输入<kbd>ssh-keygen -t rsa -C example@example.com</kbd></p><div class="note warning"><p>其中，<strong><a href="mailto:&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#64;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></strong> 需更改为自己的邮箱</p></div><p><strong>第二步：</strong>使用自己喜欢的文本编辑器打开 <strong>%USERPROFILE%&#x2F;.ssh</strong> 文件夹下的 <strong>id_rsa.pub</strong> 文件，并复制其中全部内容。</p><div class="note warning"><p><strong>.ssh</strong>文件夹可能是隐藏的，可能需要 <strong>Ctrl + H</strong> 显示隐藏文件夹</p></div><p><strong>第三步：</strong>打开 <strong>Github</strong>，找到在 <strong>Setting</strong> 中的 <strong>SSH and GPG keys</strong>，点击 <strong>New SSH key</strong>。将第二步过程中内容全部拷贝到 <strong>Key</strong> 输入框中。名称随意，但建议使用自己本机系统作为名称。</p><p><strong>最后，</strong>完成上述所有操作之后可以和回到终端中，输入 <kbd>ssh -T git@github.com</kbd> 测试SSH链接。</p><hr><h3 id="检查并设置代理"><a href="#检查并设置代理" class="headerlink" title="检查并设置代理"></a>检查并设置代理</h3><p><del>其实，不只是 RSA 的问题对吧。</del></p><ol><li><strong>Windows CMD 代理</strong><ul><li>HTTP代理  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> http_proxy=http://127.0.0.1:7890</span><br><span class="line"><span class="built_in">set</span> https_proxy=http://127.0.0.1:7890</span><br></pre></td></tr></table></figure></li><li>Socks5 代理  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> http_proxy=socks5://127.0.0.1:7890</span><br><span class="line"><span class="built_in">set</span> https_proxy=socks5://127.0.0.1:7890</span><br></pre></td></tr></table></figure></li><li>取消代理  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> http_proxy=</span><br><span class="line"><span class="built_in">set</span> https_proxy=</span><br></pre></td></tr></table></figure> 认为自己已经设置完的，可以使用 <strong>echo %http_proxy%</strong> 进行检查。</li></ul></li><li><strong>Git Bash 代理</strong><ul><li>HTTP 代理   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy http://127.0.0.1:7890</span><br></pre></td></tr></table></figure></li><li>Socks5 代理  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy socks5://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy socks5://127.0.0.1:7890</span><br></pre></td></tr></table></figure></li><li>取消代理  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unser http.proxy</span><br><span class="line">git config --global --unser https.proxy</span><br></pre></td></tr></table></figure></li></ul></li></ol><p>输入 <kbd>ssh -T git@github.com</kbd> 测试SSH链接。</p><hr><h3 id="更换端口号"><a href="#更换端口号" class="headerlink" title="更换端口号"></a>更换端口号</h3><p>一般来讲，设置代理后 Git 就已经正常了<del>，但我不是一般。</del><br>若发现设置代理后，Git 还是无法正常使用，则可以尝试更改端口。<br>首先打开 <strong>%USERPROFILE%&#x2F;.ssh</strong> 文件夹，使用自己喜欢的文本编辑器打开该文件夹中的 <strong>config</strong> 文件，输入以下内容</p><div class="note"><p>若没有 config 文件请自行创建，注意没有后缀名</p></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User example@example.com</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">Port 443</span><br><span class="line">ProxyCommand nc -X connect -x &lt;PROXY-HOST&gt;:&lt;PORT&gt; %h %p</span><br><span class="line">ServerAliveInterval 20</span><br></pre></td></tr></table></figure><p>输入 <kbd>ssh -T git@github.com</kbd> 测试SSH链接。</p><div class="note warning"><p>上述中，<a href="mailto:&#69;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x40;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#69;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x40;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a> 以及 &lt;PROXY-HOST&gt;:&lt;PORT&gt; 请依照自己的情况进行填写。</p></div><hr><h3 id="重新登陆"><a href="#重新登陆" class="headerlink" title="重新登陆"></a>重新登陆</h3><p>进展到这一步，<del>95%的人</del>应该都可以成功了，如果还不行……<br>重新登陆试一试？<br><strong>第一步：</strong> 在 终端中输入以下内容</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">&quot;example@example.com&quot;</span></span><br><span class="line">git config --global user.name <span class="string">&quot;example&quot;</span></span><br></pre></td></tr></table></figure><div class="note warning"><p>example……不重复了喵！操作完成后需要设置 RSA 密钥</p></div><hr><h3 id="将-SSH-更换为-HTTPS-链接"><a href="#将-SSH-更换为-HTTPS-链接" class="headerlink" title="将 SSH 更换为 HTTPS 链接"></a>将 SSH 更换为 HTTPS 链接</h3><p>建议在使用每一种方法前，优先使用该方法。</p><hr><h3 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h3><p>其实我使用过上述全部办法，但结果都是出奇的一致。所以，我考虑了一下取消<strong>所有代理</strong>，结果很好，成功了！<br>所以，如果有代理的小伙伴也可以试一试这种办法哦~</p><hr></div><div class="story post-story"><h2 id="奇怪的-Bug"><a href="#奇怪的-Bug" class="headerlink" title="奇怪的 Bug"></a>奇怪的 Bug</h2><p>第一次使用22端口提示：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br></pre></td></tr></table></figure><p>于是我更换了443端口：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">kex_exchange_identification: Connection closed by remote host</span><br></pre></td></tr></table></figure><p>然后我又换回了22端口: </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi XXX！ You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;题外话不说，这篇主要说一下hexo框架的一些问题以及Git部署的奇怪BUG。以及在之后的搭建中，我所应该注意的事情。&lt;br&gt;&lt;del&gt;其实也有可能是我的问题。&lt;/del&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="杂谈" scheme="https://phishinqi.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="Hexo" scheme="https://phishinqi.github.io/blog/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一章</title>
+    <link href="https://phishinqi.github.io/blog/posts/b2041fc0/"/>
+    <id>https://phishinqi.github.io/blog/posts/b2041fc0/</id>
+    <published>2023-01-08T03:19:01.000Z</published>
+    <updated>2023-01-13T00:39:06.570Z</updated>
+    
+    <content type="html"><![CDATA[<p>注：本书含有魔幻元素，书中内容 <strong>不一定</strong> 会在现实中实现！</p> <span id="more"></span> ]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;注：本书含有魔幻元素，书中内容 &lt;strong&gt;不一定&lt;/strong&gt; 会在现实中实现！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="轻小说" scheme="https://phishinqi.github.io/blog/categories/%E8%BD%BB%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+    <category term="原创" scheme="https://phishinqi.github.io/blog/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="轻小说" scheme="https://phishinqi.github.io/blog/tags/%E8%BD%BB%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
+  
+</feed>
