@@ -47,11 +47,7 @@
       }
     }
   ],
-  "socialLinks": [
-    "https://blog.soyonagasaki.com/rss.xml",
-    "https://x.com/Ryokoukiryu",
-    "https://x.com/astraruri"
-  ],
+  "socialLinks": [],
   "home": {
     "featuredLimit": 3,
     "recentLimit": 6
