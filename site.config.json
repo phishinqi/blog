@@ -1,5 +1,5 @@
 {
-  "title": "V7",
+  "title": "Ruri & Elarais",
   "siteURL": "https://blog.soyonagasaki.com",
   "locale": "zh-CN",
   "timeZone": "Asia/Shanghai",
@@ -8,20 +8,50 @@
     "en": "Notes on building things and paying attention to everyday life."
   },
   "intro": {
-    "title": { "zh-CN": "写代码，也写生活。", "en": "On code. And everything around it." },
+    "title": {
+      "zh-CN": "写代码，也写生活。",
+      "en": "On code. And everything around it."
+    },
     "description": {
       "zh-CN": "这里收集技术实践、阅读笔记，以及日常里值得停留的片刻。写下来，让想法慢慢生长。",
       "en": "A collection of technical explorations, reading notes, and small moments worth keeping. A place to think in writing."
     }
   },
   "nav": [
-    { "href": "/posts/", "label": { "zh-CN": "文章", "en": "Writing" } },
-    { "href": "/categories/", "label": { "zh-CN": "分类", "en": "Categories" } },
-    { "href": "/moments/", "label": { "zh-CN": "动态", "en": "Moments" } },
-    { "href": "/about/", "label": { "zh-CN": "关于", "en": "About" } }
+    {
+      "href": "/posts/",
+      "label": {
+        "zh-CN": "文章",
+        "en": "Writing"
+      }
+    },
+    {
+      "href": "/categories/",
+      "label": {
+        "zh-CN": "分类",
+        "en": "Categories"
+      }
+    },
+    {
+      "href": "/moments/",
+      "label": {
+        "zh-CN": "动态",
+        "en": "Moments"
+      }
+    },
+    {
+      "href": "/about/",
+      "label": {
+        "zh-CN": "关于",
+        "en": "About"
+      }
+    }
   ],
   "socialLinks": [],
-  "home": { "featuredLimit": 3, "recentLimit": 6 },
+  "home": {
+    "featuredLimit": 3,
+    "recentLimit": 6
+  },
   "postsPerPage": 10,
   "defaultOgImage": "/og-default.png",
   "defaultAuthor": "sakanana",
@@ -34,20 +64,60 @@
     "stats": true
   },
   "startedAt": "2026-09-28",
-  "links": { "externalNewTab": true },
+  "links": {
+    "externalNewTab": true
+  },
   "media": {
     "provider": "github",
     "exifPrefill": true,
     "license": "all-rights-reserved",
     "licenseText": ""
   },
-  "cms": { "enabled": true },
+  "cms": {
+    "enabled": true
+  },
   "moreNav": [
-    { "href": "/tags/", "label": { "zh-CN": "标签", "en": "Tags" } },
-    { "href": "/archives/", "label": { "zh-CN": "归档", "en": "Archive" } },
-    { "href": "/friends/", "label": { "zh-CN": "友链", "en": "Friends" } },
-    { "href": "/albums/", "label": { "zh-CN": "相册", "en": "Albums" } },
-    { "href": "/timeline/", "label": { "zh-CN": "时间线", "en": "Timeline" } },
-    { "href": "/roadmap/", "label": { "zh-CN": "路线图", "en": "Roadmap" } }
+    {
+      "href": "/tags/",
+      "label": {
+        "zh-CN": "标签",
+        "en": "Tags"
+      }
+    },
+    {
+      "href": "/archives/",
+      "label": {
+        "zh-CN": "归档",
+        "en": "Archive"
+      }
+    },
+    {
+      "href": "/friends/",
+      "label": {
+        "zh-CN": "友链",
+        "en": "Friends"
+      }
+    },
+    {
+      "href": "/albums/",
+      "label": {
+        "zh-CN": "相册",
+        "en": "Albums"
+      }
+    },
+    {
+      "href": "/timeline/",
+      "label": {
+        "zh-CN": "时间线",
+        "en": "Timeline"
+      }
+    },
+    {
+      "href": "/roadmap/",
+      "label": {
+        "zh-CN": "路线图",
+        "en": "Roadmap"
+      }
+    }
   ]
 }
