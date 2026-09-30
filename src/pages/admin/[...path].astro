@@ -1,0 +1,40 @@
+---
+import localConfig from '../../../cms.config.json';
+import hostedConfig from '../../../cms.config.github.json';
+import { siteConfig } from '../../site.config';
+// The writing editor. `cms.enabled: false` removes the route and the footer link with it.
+export function getStaticPaths() {
+  return siteConfig.cms.enabled ? [{ params: { path: undefined } }] : [];
+}
+// `astro dev` edits the working tree through the File System Access API, which needs no server and
+// no credentials. A production build has no working tree to reach, so it ships the GitHub backend
+// instead: that is the only way to write to the repository from a deployed page. The two differ
+// only in `backend`, and scripts/cms-config-github.mjs generates the second from the first.
+const config = import.meta.env.DEV ? localConfig : hostedConfig;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>V7 · 写作后台</title>
+    <link rel="stylesheet" href="/admin/cms.css" />
+    <script
+      is:inline
+      type="application/json"
+      id="v7-config"
+      set:html={JSON.stringify(config).replace(/</g, '\u003c')}
+    />
+  </head>
+  <body>
+    <noscript>写作后台需要 JavaScript。</noscript>
+    <div id="cms-root"></div>
+    <script is:inline type="module">
+      import { mount } from '/admin/v7-cms.js';
+      const config = JSON.parse(document.getElementById('v7-config').textContent);
+      mount({ container: '#cms-root', config });
+    </script>
+  </body>
+</html>

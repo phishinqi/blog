@@ -1,0 +1,113 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Gallery from '../../components/Gallery.astro';
+import { moduleEntries, friendEntries, type ModuleName } from '../../lib/modules';
+import { siteConfig } from '../../site.config';
+import { ui } from '../../i18n/ui';
+import { formatDate } from '../../lib/posts';
+export async function getStaticPaths() {
+  const paths = [];
+  for (const section of ['friends', 'moments', 'timeline', 'roadmap'] as const) {
+    if (!siteConfig.features[section]) continue;
+    const entries = section === 'friends' ? [] : await moduleEntries(section);
+    const perPage = section === 'roadmap' ? Math.max(1, entries.length) : siteConfig.postsPerPage;
+    const total = Math.max(1, Math.ceil(entries.length / perPage));
+    for (let current = 1; current <= total; current++)
+      paths.push({
+        params: { section, page: current === 1 ? undefined : `page/${current}` },
+        props: {
+          section,
+          entries: entries.slice((current - 1) * perPage, current * perPage),
+          current,
+          total,
+        },
+      });
+  }
+  return paths;
+}
+const { section, entries, current, total } = Astro.props;
+const title = ui[section as Exclude<ModuleName, 'albums'> | 'friends'];
+const rendered = await Promise.all(
+  entries.map(async (entry) => ({ ...entry, ...(await render(entry)) })),
+);
+const url = (page: number) => `/${section}/${page === 1 ? '' : `page/${page}/`}`;
+---
+
+<BaseLayout title={title}>
+  <div class="reading-shell">
+    <header class="page-heading">
+      <h1>{title}</h1>
+    </header>
+    {section === 'friends' ? (
+      <div class="friends-list">
+        {Array.from(new Set(friendEntries.map((f) => f.group))).map((group) => (
+          <section>
+            <h2>{group}</h2>
+            <ul class="module-list">
+              {friendEntries
+                .filter((f) => f.group === group)
+                .map((friend) => (
+                  <li>
+                    <a href={friend.url} class="friend-link">
+                      {friend.avatar && (
+                        <img src={friend.avatar} alt="" width="48" height="48" loading="lazy" />
+                      )}
+                      <strong>{friend.name}</strong>
+                    </a>
+                    <p>{friend.description}</p>
+                  </li>
+                ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    ) : section === 'roadmap' ? (
+      <div class="roadmap">
+        {(['planned', 'active', 'done'] as const).map((status) => (
+          <section>
+            <h2>{ui[status]}</h2>
+            {rendered
+              .filter((e) => e.data.status === status)
+              .map(({ data, Content }) => (
+                <article class="module-entry" data-content>
+                  <h3>{data.title}</h3>
+                  <div class="prose">
+                    <Content />
+                  </div>
+                </article>
+              ))}
+            {!rendered.some((e) => e.data.status === status) && (
+              <p class="empty-state">{ui.noItems}</p>
+            )}
+          </section>
+        ))}
+      </div>
+    ) : (
+      <div class:list={['module-list', { 'timeline-list': section === 'timeline' }]}>
+        {rendered.map(({ data, Content }) => (
+          <article class="module-entry" id={data.slug} data-content>
+            <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+            <h2>{data.title}</h2>
+            <div class="prose">
+              <Content />
+            </div>
+            {data.images.length > 0 && <Gallery images={data.images} />}
+          </article>
+        ))}
+      </div>
+    )}
+    {section !== 'friends' && entries.length === 0 && section !== 'roadmap' && (
+      <p class="empty-state">{ui.noItems}</p>
+    )}
+    {total > 1 && (
+      <nav class="pagination" aria-label={ui.page}>
+        {current > 1 ? <a href={url(current - 1)}>{ui.previousPage}</a> : <span />}
+        <span>
+          {current} / {total}
+        </span>
+        {current < total ? <a href={url(current + 1)}>{ui.nextPage}</a> : <span />}
+      </nav>
+    )}
+  </div>
+</BaseLayout>

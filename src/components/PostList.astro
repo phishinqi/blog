@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { IconArrowUpRight } from '@tabler/icons-react';
+import { siteConfig, localized } from '../site.config';
+import { formatDate, postUrl, categoryUrl } from '../lib/posts';
+import { ui } from '../i18n/ui';
+import Authors from './Authors.astro';
+import MediaImage from './MediaImage.astro';
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+  featured?: boolean;
+  compact?: boolean;
+  headingLevel?: 2 | 3;
+}
+const { posts, featured = false, compact = false, headingLevel = 2 } = Astro.props;
+const Heading = headingLevel === 3 ? 'h3' : 'h2';
+---
+
+{posts.length === 0 ? (
+  <p class="empty-state">{ui.noPosts}</p>
+) : (
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li class:list={['post-item', { featured, compact }]}>
+        {post.data.cover && (
+          <a class="post-thumbnail" href={postUrl(post)} tabindex="-1" aria-hidden="true">
+            <MediaImage {...post.data.cover} sizes="(max-width: 600px) 85px, 112px" />
+          </a>
+        )}
+        <div class="post-meta">
+          <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+          <span class="separator" aria-hidden="true">
+            /
+          </span>
+          <a class="category-link" href={categoryUrl(post.data.category)}>
+            {localized(siteConfig.categories[post.data.category]!.title)}
+          </a>
+          <Authors ids={post.data.authors} />
+        </div>
+        <Heading lang={post.data.lang} data-no-translate>
+          <a href={postUrl(post)}>
+            {post.data.title}
+            <IconArrowUpRight
+              className="ml-1.5 inline-block align-middle text-muted"
+              size={15}
+              stroke={1.3}
+              aria-hidden="true"
+            />
+          </a>
+        </Heading>
+        {!compact && (
+          <p lang={post.data.lang} data-no-translate>
+            {post.data.description}
+          </p>
+        )}
+      </li>
+    ))}
+  </ul>
+)}

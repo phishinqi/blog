@@ -1,0 +1,64 @@
+---
+import { siteConfig } from '../site.config';
+import { ui } from '../i18n/ui';
+import { getPublishedPosts } from '../lib/content';
+const posts = siteConfig.features.stats ? await getPublishedPosts() : [];
+const tags = new Set(posts.flatMap((p) => p.data.tags));
+const categories = new Set(posts.map((p) => p.data.category));
+const wordCount = posts.reduce((sum, p) => {
+  const text = (p.body || '').replace(/```[\s\S]*?```/g, '').replace(/<[^>]+>/g, '');
+  return sum + (text.match(/[\p{Script=Han}]|[\p{L}\p{N}]+/gu) || []).length;
+}, 0);
+const year = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  timeZone: siteConfig.timeZone,
+}).format(new Date());
+---
+
+<footer class="site-footer shell">
+  {siteConfig.features.stats && (
+    <dl class="site-stats" aria-label={ui.stats}>
+      {[
+        [ui.articles, posts.length.toLocaleString('en')],
+        [ui.tags, tags.size.toLocaleString('en')],
+        [ui.categories, categories.size.toLocaleString('en')],
+        [ui.words, wordCount.toLocaleString('en')],
+      ].map(([label, value]) => (
+        <div>
+          <dt>{label}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))}
+      <div>
+        <dt>{ui.days}</dt>
+        <dd data-started-at={siteConfig.startedAt}>
+          {Math.max(
+            0,
+            Math.floor((Date.now() - new Date(siteConfig.startedAt).getTime()) / 86400000),
+          )}
+        </dd>
+      </div>
+    </dl>
+  )}
+  <div class="footer-top">
+    <p class="footer-motto">{ui.footerNote}</p>
+    <nav class="footer-links" aria-label={ui.menu}>
+      <a href="/tags/">{ui.tags}</a>
+      <a href="/rss.xml">RSS</a>
+      <a href="/about/">{ui.about}</a>
+      {siteConfig.cms.enabled && (
+        <a class="footer-write" href="/admin/" rel="nofollow">
+          {ui.write}
+        </a>
+      )}
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>
+      © {year} {siteConfig.author.name}
+    </span>
+    <span>
+      {ui.footerBuilt} <span aria-hidden="true">·</span> {siteConfig.title}
+    </span>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+---
+import { pagesOf } from '../../../lib/pagination';
+import type { GetStaticPaths } from 'astro';
+import ListingLayout from '../../../layouts/ListingLayout.astro';
+import { getPublishedPosts } from '../../../lib/content';
+import { ui } from '../../../i18n/ui';
+export const getStaticPaths = (async () => {
+  const posts = await getPublishedPosts();
+  return Array.from(new Set(posts.flatMap((post) => post.data.tags))).flatMap((tag) =>
+    pagesOf(posts.filter((post) => post.data.tags.includes(tag))).map(
+      ({ page, current, total, items }) => ({
+        params: { tag, page },
+        props: { tag, posts: items, current, total, base: `/tags/${encodeURIComponent(tag)}/` },
+      }),
+    ),
+  );
+}) satisfies GetStaticPaths;
+const { tag, posts, current, total, base } = Astro.props;
+---
+
+<ListingLayout
+  title={`#${tag}`}
+  posts={posts}
+  current={current}
+  total={total}
+  base={base}
+  back={{ href: '/tags/', label: ui.tags }}
+/>

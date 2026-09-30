@@ -1,0 +1,17 @@
+# SAMEORIGIN rather than DENY: the editor at /admin/ embeds this site's own pages as the live
+# preview, and DENY made every one of them refuse to load in that frame. A third-party page
+# still cannot frame the site, which is the protection that matters.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Frame-Options: SAMEORIGIN
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+/pagefind/*
+  Cache-Control: public, max-age=0, must-revalidate
+# The editor bundle keeps its name across releases, so a long max-age serves the previous build
+# after a deploy — and an editor with a stale config is a sign-in that 404s with no visible cause.
+# It is one file, so revalidation is cheap.
+/admin/*
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import { IconArrowRight, IconRss } from '@tabler/icons-react';
+import { getPublishedPosts } from '../lib/content';
+import { homePosts } from '../lib/posts';
+import { siteConfig, localized } from '../site.config';
+import { ui } from '../i18n/ui';
+import { moduleEntries } from '../lib/modules';
+import { IconBrandGithub, IconMail, IconLink } from '@tabler/icons-react';
+import { formatDate } from '../lib/posts';
+const moments = (await moduleEntries('moments')).slice(0, 3);
+// A first sentence or so of each moment; the full text lives on /moments/.
+const excerpt = (body = '') => {
+  const text = body
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[#>*_`~]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return text.length > 72 ? `${text.slice(0, 70).trimEnd()}…` : text;
+};
+const { featured, recent } = homePosts(
+  await getPublishedPosts(),
+  siteConfig.home.featuredLimit,
+  siteConfig.home.recentLimit,
+);
+---
+
+<BaseLayout>
+  <div class="reading-shell">
+    <section class="hero" aria-labelledby="intro-title">
+      <h1 id="intro-title">{localized(siteConfig.intro.title)}</h1>
+      <p class="hero-description">{localized(siteConfig.intro.description)}</p>
+      <div class="social-links">
+        {siteConfig.socialLinks.map((link) => {
+          const Icon = link.href.includes('github.com')
+            ? IconBrandGithub
+            : link.href.startsWith('mailto:')
+              ? IconMail
+              : IconLink;
+          return (
+            <a
+              class="icon-button"
+              href={link.href}
+              rel="me"
+              aria-label={link.label}
+              title={link.label}
+            >
+              <Icon size={19} stroke={1.5} aria-hidden="true" />
+            </a>
+          );
+        })}
+        <a href="/rss.xml">
+          <IconRss size={13} stroke={1.5} aria-hidden="true" />
+          RSS
+        </a>
+      </div>
+    </section>
+    {siteConfig.features.moments && (
+      <section class="writing-section">
+        <div class="section-heading">
+          <h2>{ui.moments}</h2>
+          <a class="text-link" href="/moments/">
+            {ui.more}
+          </a>
+        </div>
+        {moments.length ? (
+          <ul class="moment-previews">
+            {moments.map((entry) => (
+              <li>
+                <a href={`/moments/#${entry.data.slug}`}>
+                  <time datetime={entry.data.date.toISOString()}>
+                    {formatDate(entry.data.date)}
+                  </time>
+                  <strong data-content>{entry.data.title}</strong>
+                  <span data-content>{excerpt(entry.body)}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="empty-state">{ui.noItems}</p>
+        )}
+      </section>
+    )}
+    {featured.length > 0 && (
+      <section class="writing-section" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <h2 id="featured-title">{ui.featured}</h2>
+          <span class="section-note" aria-hidden="true" data-i18n="featuredNote">
+            {ui.featuredNote}
+          </span>
+        </div>
+        <PostList posts={featured} featured headingLevel={3} />
+      </section>
+    )}
+    <section class="writing-section" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <h2 id="recent-title">{ui.recent}</h2>
+        <span class="section-note" aria-hidden="true" data-i18n="recentNote">
+          {ui.recentNote}
+        </span>
+      </div>
+      <PostList posts={recent} compact headingLevel={3} />
+      <a class="text-link all-writing-link" href="/posts/">
+        {ui.seeAll}
+        <IconArrowRight size={17} stroke={1.5} aria-hidden="true" />
+      </a>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AlbumTabs from '../../components/AlbumTabs.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { getAllPhotos } from '../../lib/photos';
+import { siteConfig } from '../../site.config';
+import { ui } from '../../i18n/ui';
+export function getStaticPaths() {
+  return siteConfig.features.albums ? [{ params: { index: undefined } }] : [];
+}
+const photos = await getAllPhotos();
+---
+
+<BaseLayout title={ui.photos} description={ui.photosDescription}>
+  <div class="shell">
+    <header class="page-heading gallery-heading">
+      <h1>{ui.photos}</h1>
+      <p>{ui.photosDescription}</p>
+      <AlbumTabs current="photos" />
+    </header>
+    {photos.length ? (
+      <PhotoGrid photos={photos} showAlbum label={ui.photos} />
+    ) : (
+      <p class="empty-state">{ui.noItems}</p>
+    )}
+  </div>
+</BaseLayout>

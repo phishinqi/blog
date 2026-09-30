@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MediaImage from '../../components/MediaImage.astro';
+import AlbumTabs from '../../components/AlbumTabs.astro';
+import { getAlbums } from '../../lib/photos';
+import { formatDate } from '../../lib/posts';
+import { siteConfig } from '../../site.config';
+import { ui } from '../../i18n/ui';
+export function getStaticPaths() {
+  return siteConfig.features.albums ? [{ params: { index: undefined } }] : [];
+}
+const albums = await getAlbums();
+---
+
+<BaseLayout title={ui.albums} description={ui.albumsDescription}>
+  <div class="shell">
+    <header class="page-heading gallery-heading">
+      <h1>{ui.albums}</h1>
+      <p>{ui.albumsDescription}</p>
+      <AlbumTabs current="albums" />
+    </header>
+    {albums.length ? (
+      <ul class="album-grid">
+        {albums.map(({ data, photos, cover }) => (
+          <li class="album-card">
+            <a href={`/albums/${data.slug}/`}>
+              <span class="album-cover" style={`--tone:${cover?.color ?? 'var(--surface)'}`}>
+                {cover && (
+                  <MediaImage
+                    src={cover.src}
+                    srcset={cover.srcset}
+                    alt=""
+                    width={cover.width}
+                    height={cover.height}
+                    sizes="(max-width: 639px) calc(100vw - 2.5rem), 460px"
+                  />
+                )}
+              </span>
+              <span class="album-card-body">
+                <span class="album-card-meta">
+                  <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    {photos.length} <span data-i18n="photoUnit">{ui.photoUnit}</span>
+                  </span>
+                </span>
+                <strong data-content>{data.title}</strong>
+                {data.description && <span data-content>{data.description}</span>}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty-state">{ui.noItems}</p>
+    )}
+  </div>
+</BaseLayout>

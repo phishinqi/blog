@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../../lib/content';
+import { categoryUrl } from '../../lib/posts';
+import { siteConfig, localized, isInCategory, categoryAncestors } from '../../site.config';
+import { ui } from '../../i18n/ui';
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title={ui.categories}>
+  <div class="reading-shell">
+    <header class="page-heading">
+      <h1>{ui.categories}</h1>
+      <p>{ui.categoriesDescription}</p>
+    </header>
+    <ul class="taxonomy-list">
+      {Object.entries(siteConfig.categories).map(([id, category]) => (
+        <li>
+          <a class="taxonomy-link" href={categoryUrl(id)}>
+            <div>
+              <h2
+                data-localized={JSON.stringify(
+                  Object.fromEntries(
+                    ['zh-CN', 'en'].map((locale) => [
+                      locale,
+                      categoryAncestors(id)
+                        .map((key) => siteConfig.categories[key]!.title[locale as 'zh-CN' | 'en'])
+                        .join(' / '),
+                    ]),
+                  ),
+                )}
+              >
+                {categoryAncestors(id)
+                  .map((key) => localized(siteConfig.categories[key]!.title))
+                  .join(' / ')}
+              </h2>
+              <p>{localized(category.description)}</p>
+            </div>
+            <span class="count">
+              {posts.filter((post) => isInCategory(post.data.category, id)).length} {ui.articles} →
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a class="text-link mt-8" href="/tags/">
+      {ui.browseTags} →
+    </a>
+  </div>
+</BaseLayout>

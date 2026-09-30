@@ -1,0 +1,130 @@
+---
+import {
+  IconSearch,
+  IconSun,
+  IconMoon,
+  IconMenu2,
+  IconX,
+  IconWorld,
+  IconCheck,
+} from '@tabler/icons-react';
+import { siteConfig, localized, enabledHref } from '../site.config';
+import { ui, languages } from '../i18n/ui';
+const path = Astro.url.pathname;
+const nav = siteConfig.nav.filter((item) => enabledHref(item.href));
+const moreNav = siteConfig.moreNav.filter((item) => enabledHref(item.href));
+// The photo wall is part of the albums section.
+const current = (href: string) =>
+  path.startsWith(href) || (href === '/albums/' && path.startsWith('/photos/'));
+const active = languages.find((l) => l.code === siteConfig.locale)!;
+---
+
+<header class="site-header" id="top" data-site-header>
+  <div class="site-header-inner shell">
+    <a class="wordmark" href="/" aria-label={`${siteConfig.title} — ${ui.home}`}>
+      {siteConfig.title}
+    </a>
+    <div class="header-right">
+      <nav class="desktop-nav" aria-label={ui.menu}>
+        {nav.map((item) => (
+          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
+            {localized(item.label)}
+          </a>
+        ))}
+        {moreNav.length > 0 && (
+          <details class="more-nav">
+            <summary aria-current={moreNav.some((item) => current(item.href)) ? 'true' : undefined}>
+              {ui.more}
+            </summary>
+            <div class="more-menu">
+              {moreNav.map((item) => (
+                <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
+                  {localized(item.label)}
+                </a>
+              ))}
+            </div>
+          </details>
+        )}
+      </nav>
+      <div class="header-actions">
+        <div class="language-menu" data-language-menu hidden>
+          <button
+            class="language-button"
+            id="language-toggle"
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="language-options"
+            aria-label={ui.language}
+            title={ui.language}
+          >
+            <IconWorld size={17} stroke={1.5} aria-hidden="true" />
+            <span class="language-code" data-language-code data-no-translate>
+              {active.short}
+            </span>
+          </button>
+          <ul
+            class="language-options"
+            id="language-options"
+            role="menu"
+            aria-label={ui.language}
+            hidden
+          >
+            {languages.map((language) => (
+              <li role="none">
+                <button
+                  type="button"
+                  role="menuitemradio"
+                  aria-checked={language.code === siteConfig.locale ? 'true' : 'false'}
+                  data-locale={language.code}
+                  lang={language.code}
+                  data-no-translate
+                >
+                  <span>{language.name}</span>
+                  <IconCheck className="language-check" size={15} stroke={1.8} aria-hidden="true" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a
+          class="icon-button"
+          href="/search/"
+          data-search-trigger
+          aria-label={ui.search}
+          title={ui.search}
+        >
+          <IconSearch size={19} stroke={1.5} aria-hidden="true" />
+        </a>
+        <button
+          class="icon-button"
+          id="theme-toggle"
+          type="button"
+          aria-label={ui.themeToggle}
+          title={ui.themeToggle}
+          hidden
+        >
+          <IconMoon className="theme-moon" size={18} stroke={1.5} aria-hidden="true" />
+          <IconSun className="theme-sun" size={19} stroke={1.5} aria-hidden="true" />
+        </button>
+        <details class="mobile-nav" id="mobile-nav">
+          <summary class="icon-button" aria-label={ui.menu} title={ui.menu}>
+            <IconMenu2 className="menu-open-icon" size={21} stroke={1.5} aria-hidden="true" />
+            <IconX className="menu-close-icon" size={21} stroke={1.5} aria-hidden="true" />
+          </summary>
+          <nav class="mobile-menu" aria-label={ui.menu}>
+            {[...nav, ...moreNav].map((item, index) => (
+              <a
+                href={item.href}
+                aria-current={current(item.href) ? 'page' : undefined}
+                style={`--index:${index}`}
+              >
+                {localized(item.label)}
+              </a>
+            ))}
+          </nav>
+        </details>
+      </div>
+    </div>
+  </div>
+</header>

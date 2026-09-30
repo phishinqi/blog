@@ -1,0 +1,19 @@
+# Optional: only for deploying with `wrangler pages deploy`. Projects connected to Git can set the
+# same values in the Cloudflare dashboard instead (Settings → Variables and Secrets / Bindings).
+# Copy to wrangler.toml to use it; once present, Cloudflare treats this file as the source of truth.
+name = "v7-blog"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+[vars]
+GITHUB_REPO = "owner/repo"
+GITHUB_CLIENT_ID = "replace-with-oauth-client-id"
+# R2 mode only: the public base URL of the bucket (custom domain or r2.dev).
+PUBLIC_MEDIA_URL = "https://img.example.com"
+
+# R2 mode only.
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "v7-media"
+
+# Store GITHUB_CLIENT_SECRET with `wrangler pages secret put GITHUB_CLIENT_SECRET`; never commit it.

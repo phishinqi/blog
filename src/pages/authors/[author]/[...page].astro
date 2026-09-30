@@ -1,0 +1,43 @@
+---
+import { pagesOf } from '../../../lib/pagination';
+import { authorRegistry, localized } from '../../../site.config';
+import { getPublishedPosts } from '../../../lib/content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostList from '../../../components/PostList.astro';
+import Pagination from '../../../components/Pagination.astro';
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return Object.entries(authorRegistry).flatMap(([id, author]) =>
+    pagesOf(posts.filter((p) => p.data.authors.includes(id))).map(
+      ({ page, current, total, items }) => ({
+        params: { author: id, page },
+        props: { author, posts: items, current, total, base: `/authors/${id}/` },
+      }),
+    ),
+  );
+}
+const { author, posts, current, total, base } = Astro.props;
+---
+
+<BaseLayout
+  title={author.name}
+  description={localized(author.bio)}
+  profile={{ name: author.name, description: localized(author.bio) }}
+>
+  <div class="reading-shell">
+    <header class="page-heading">
+      {author.avatar && <img class="avatar" src={author.avatar} width="80" height="80" alt="" />}
+      <h1>{author.name}</h1>
+      <p>{localized(author.bio)}</p>
+      <div class="social-links">
+        {author.links.map((link) => (
+          <a href={link.href} rel="me">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </header>
+    <PostList posts={posts} />
+    <Pagination current={current} total={total} base={base} />
+  </div>
+</BaseLayout>

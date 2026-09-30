@@ -1,0 +1,27 @@
+# Deploy configuration for Cloudflare Pages.
+#
+# This file is for `wrangler pages deploy`. A project connected to Git sets the same values in the
+# dashboard instead (Settings → Variables and Secrets / Bindings). Once this file exists, Cloudflare
+# treats it as the source of truth and overrides same-named dashboard settings.
+name = "v7-blog"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Required only by the editor's GitHub backend (`/api/auth`, `/api/callback`). The published site
+# is fully static and never reaches these.
+GITHUB_REPO = "phishinqi/astro-theme-v7"
+# Replace with your own OAuth App's client id (GitHub → Settings → Developer settings → OAuth Apps).
+# `pnpm setup` resets this for a copy; leaving a real-looking value here would be worse than a
+# placeholder, because a copy would silently sign its authors in through somebody else's app.
+GITHUB_CLIENT_ID = "replace-with-oauth-client-id"
+
+# R2 mode only: the public base URL of the bucket (custom domain or r2.dev).
+# PUBLIC_MEDIA_URL = "https://img.soyonagasaki.com"
+
+# R2 mode only. Uncomment together with site.config.json media.provider = "r2".
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "v7-media"
+
+# Store GITHUB_CLIENT_SECRET with `wrangler pages secret put GITHUB_CLIENT_SECRET`; never commit it.

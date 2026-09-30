@@ -1,0 +1,12 @@
+dist/
+node_modules/
+.astro/
+pnpm-lock.yaml
+playwright-report/
+test-results/
+coverage/
+public/admin/vendor/
+public/admin/
+.reports/
+.wrangler/
+.scratch/

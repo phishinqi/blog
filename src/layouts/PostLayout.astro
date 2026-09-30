@@ -1,0 +1,136 @@
+---
+// Marks the element that renders each frontmatter field, so the editor's in-context mode can turn
+// a click on the page into a focus on the matching control. Must match `preview.editAttribute` in
+// cms.config.json.
+//
+// Emitted in production too, because the deployed editor previews the deployed site: the frame is
+// same-origin, so the editor injects the bridge into it and needs these marks to find. A bare
+// `data-` attribute is inert on its own — it is not rendered, not styled, and not indexed by
+// Pagefind, which only reads the elements it is told to.
+const mark = (field: string) => ({ 'data-v7-field': field });
+import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import { siteConfig, localized } from '../site.config';
+import { ui } from '../i18n/ui';
+import { formatDate, readingMinutes, postUrl, tagUrl, categoryUrl } from '../lib/posts';
+import Authors from '../components/Authors.astro';
+import MediaImage from '../components/MediaImage.astro';
+import { IconLink } from '@tabler/icons-react';
+interface Props {
+  post: CollectionEntry<'posts'>;
+  headings: MarkdownHeading[];
+  previous?: CollectionEntry<'posts'>;
+  next?: CollectionEntry<'posts'>;
+}
+const { post, headings, previous, next } = Astro.props;
+const { data } = post;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  image={data.ogImage ?? data.cover?.src}
+  article={data}
+>
+  <article class="reading-shell" lang={data.lang} data-pagefind-body>
+    <header class="article-heading">
+      <a
+        class="text-link"
+        href={categoryUrl(data.category)}
+        data-pagefind-meta="category"
+        data-pagefind-ignore
+      >
+        {localized(siteConfig.categories[data.category]!.title)}
+      </a>
+      <h1 data-pagefind-meta="title" data-no-translate {...mark('title')}>
+        {data.title}
+      </h1>
+      <p
+        class="article-description"
+        data-pagefind-meta="description"
+        data-no-translate
+        {...mark('description')}
+      >
+        {data.description}
+      </p>
+      <div class="post-meta" data-pagefind-ignore>
+        <Authors ids={data.authors} />
+        <span aria-hidden="true">·</span>
+        <span>
+          {ui.published}{' '}
+          <time datetime={data.pubDate.toISOString()}>{formatDate(data.pubDate)}</time>
+        </span>
+        <span aria-hidden="true">·</span>
+        <span>
+          {readingMinutes(post.body)} {ui.minutes}
+        </span>
+        {data.updatedDate && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>
+              {ui.updated}{' '}
+              <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
+            </span>
+          </>
+        )}
+      </div>
+    </header>
+    {data.cover && (
+      <figure class="article-cover">
+        <MediaImage {...data.cover} eager />
+        {data.cover.caption && <figcaption>{data.cover.caption}</figcaption>}
+      </figure>
+    )}
+    <div class="article-shell">
+      <div data-pagefind-ignore>
+        <TableOfContents headings={headings} />
+      </div>
+      <div class="prose" id="article-body">
+        <slot />
+      </div>
+    </div>
+    <footer class="article-end" data-pagefind-ignore>
+      <button
+        type="button"
+        class="text-link permalink"
+        data-copy-link={new URL(postUrl(post), siteConfig.siteURL).href}
+      >
+        <IconLink size={17} />
+        <span>{ui.copyLink}</span>
+      </button>
+      <div class="article-tags">
+        {data.tags.map((tag) => (
+          <a href={tagUrl(tag)}>#{tag}</a>
+        ))}
+      </div>
+      {(previous || next) && (
+        <nav class="article-navigation" aria-label={ui.allPosts}>
+          {previous ? (
+            <a href={postUrl(previous)}>
+              <small>← {ui.previous}</small>
+              <span>{previous.data.title}</span>
+            </a>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <a href={postUrl(next)}>
+              <small>{ui.next} →</small>
+              <span>{next.data.title}</span>
+            </a>
+          ) : (
+            <span />
+          )}
+        </nav>
+      )}
+      <a class="text-link" href="/posts/">
+        ← {ui.backToPosts}
+      </a>
+    </footer>
+  </article>
+  <script>
+    import '../scripts/article';
+  </script>
+</BaseLayout>

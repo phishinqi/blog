@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { ui } from '../i18n/ui';
+---
+
+<BaseLayout title="404" noindex>
+  <div class="reading-shell not-found">
+    <div class="not-found-number" aria-hidden="true">
+      404
+    </div>
+    <header class="page-heading">
+      <h1>{ui.notFound}</h1>
+      <p>{ui.notFoundDescription}</p>
+    </header>
+    <div class="flex flex-wrap gap-7">
+      <a class="text-link" href="/">
+        ← {ui.returnHome}
+      </a>
+      <a class="text-link" href="/search/">
+        {ui.search} →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

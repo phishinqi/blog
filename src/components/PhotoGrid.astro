@@ -1,0 +1,132 @@
+---
+import { ui } from '../i18n/ui';
+import { formatDate } from '../lib/posts';
+import { responsiveSource } from '../lib/image-sources';
+import { tagsIn, type Photo } from '../lib/photos';
+import { siteConfig } from '../site.config';
+interface Props {
+  photos: Photo[];
+  /** Name each photo's album in the viewer (the cross-album wall). */
+  showAlbum?: boolean;
+  filter?: boolean;
+  label: string;
+}
+const { photos, showAlbum = false, filter = true, label } = Astro.props;
+const tags = filter ? tagsIn(photos) : [];
+const locale = siteConfig.locale;
+const items = await Promise.all(
+  photos.map(async (photo) => {
+    const thumb = await responsiveSource(photo.src, photo.srcset, [320, 480, 640, 960]);
+    const full = await responsiveSource(photo.src, photo.srcset, [960, 1600, 2400]);
+    const exposure = photo.photo
+      ? [
+          photo.photo.focalLength,
+          photo.photo.aperture,
+          photo.photo.shutter,
+          photo.photo.iso !== undefined && `ISO ${photo.photo.iso}`,
+        ]
+          .filter(Boolean)
+          .join(' · ')
+      : '';
+    return {
+      photo,
+      thumb,
+      data: {
+        id: photo.id,
+        src: full.src,
+        srcset: full.srcset,
+        width: photo.width,
+        height: photo.height,
+        alt: photo.alt,
+        color: photo.color,
+        title: photo.title,
+        caption: photo.caption,
+        date: photo.date?.toISOString().slice(0, 10),
+        location: photo.location,
+        kind: photo.kind,
+        tags: photo.tags,
+        author: photo.author,
+        album: showAlbum ? { slug: photo.album.slug, title: photo.album.title } : undefined,
+        license: photo.license,
+        specs:
+          photo.kind === 'photo'
+            ? {
+                camera: photo.photo?.camera,
+                lens: photo.photo?.lens,
+                exposure: exposure || undefined,
+                film: photo.photo?.film,
+                editing: photo.photo?.software,
+              }
+            : {
+                device: photo.artwork?.device,
+                software: photo.artwork?.software,
+                medium: photo.artwork?.medium,
+              },
+      },
+    };
+  }),
+);
+---
+
+<div class="photo-browser" data-photo-browser>
+  {tags.length > 1 && (
+    <div class="photo-filter" role="group" aria-label={ui.filterByTag} data-photo-filter>
+      <button type="button" aria-pressed="true" data-tag="">
+        {ui.allTags}
+        <span class="photo-filter-count">{photos.length}</span>
+      </button>
+      {tags.map((tag) => (
+        <button type="button" aria-pressed="false" data-tag={tag.id}>
+          <span data-localized={JSON.stringify(tag.label)}>{tag.label[locale]}</span>
+          <span class="photo-filter-count">{tag.count}</span>
+        </button>
+      ))}
+    </div>
+  )}
+  <ul class="masonry" aria-label={label} data-masonry>
+    {items.map(({ photo, thumb, data }) => (
+      <li
+        class="photo-tile"
+        id={`photo-${photo.id}`}
+        data-tags={photo.tags.map((t) => t.id).join(' ')}
+        style={`--ratio:${photo.width}/${photo.height};--tone:${photo.color ?? 'var(--surface)'}`}
+      >
+        <a href={data.src} data-viewer-item={photo.id}>
+          <span class="photo-frame">
+            <img
+              src={thumb.src}
+              srcset={thumb.srcset}
+              sizes="(min-width: 60rem) 19rem, (min-width: 720px) 31vw, 48vw"
+              alt={photo.alt}
+              width={photo.width}
+              height={photo.height}
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          {(photo.title || photo.location || photo.date) && (
+            <span class="photo-overlay" aria-hidden="true">
+              {photo.title && <strong data-content>{photo.title}</strong>}
+              <span data-content>
+                {photo.location}
+                {photo.location && photo.date && ' · '}
+                {photo.date && (
+                  <time datetime={photo.date.toISOString()}>{formatDate(photo.date)}</time>
+                )}
+              </span>
+            </span>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <script
+    is:inline
+    type="application/json"
+    data-viewer-items
+    set:html={JSON.stringify(items.map((item) => item.data)).replace(/</g, '\\u003c')}
+  />
+</div>
+<script>
+  import '../scripts/photos';
+</script>

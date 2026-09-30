@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchPanel from '../components/search/SearchPanel';
+import { ui } from '../i18n/ui';
+---
+
+<BaseLayout title={ui.search} noindex>
+  <div class="reading-shell">
+    <header class="page-heading">
+      <h1>{ui.search}</h1>
+      <p>{ui.searchDescription}</p>
+    </header>
+    <SearchPanel client:load labels={ui} standalone />
+    <noscript>
+      <p class="no-script">{ui.noScript}</p>
+      <a class="text-link" href="/posts/">
+        {ui.allPosts} →
+      </a>
+    </noscript>
+  </div>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import ListingLayout from '../../layouts/ListingLayout.astro';
+import { getPublishedPosts } from '../../lib/content';
+import { siteConfig } from '../../site.config';
+import { ui } from '../../i18n/ui';
+const posts = await getPublishedPosts();
+---
+
+<ListingLayout
+  title={ui.allPosts}
+  description={ui.postsDescription}
+  posts={posts.slice(0, siteConfig.postsPerPage)}
+  current={1}
+  total={Math.ceil(posts.length / siteConfig.postsPerPage)}
+/>

@@ -1,0 +1,45 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import Authors from '../../components/Authors.astro';
+import { getAlbums } from '../../lib/photos';
+import { formatDate } from '../../lib/posts';
+import { ui } from '../../i18n/ui';
+export async function getStaticPaths() {
+  return (await getAlbums()).map((album) => ({
+    params: { slug: album.data.slug },
+    props: { album },
+  }));
+}
+const { album } = Astro.props;
+const { data, photos, cover } = album;
+const { Content } = await render(album.entry);
+---
+
+<BaseLayout title={data.title} description={data.description} image={cover?.src}>
+  <div class="shell">
+    <header class="page-heading gallery-heading">
+      <a class="breadcrumb" href="/albums/">
+        ← {ui.albums}
+      </a>
+      <h1 data-content>{data.title}</h1>
+      <p class="album-meta">
+        <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+        <span aria-hidden="true">·</span>
+        <span>
+          {photos.length} <span data-i18n="photoUnit">{ui.photoUnit}</span>
+        </span>
+        <span aria-hidden="true">·</span>
+        <Authors ids={album.authors.map((a) => a.id)} />
+      </p>
+      {data.description && <p data-content>{data.description}</p>}
+    </header>
+    {album.entry.body?.trim() && (
+      <div class="prose album-note" data-content>
+        <Content />
+      </div>
+    )}
+    <PhotoGrid photos={photos} label={data.title} />
+  </div>
+</BaseLayout>

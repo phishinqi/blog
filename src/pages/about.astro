@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import { ui } from '../i18n/ui';
+import { siteConfig } from '../site.config';
+const pages = import.meta.glob<{ default: AstroComponentFactory }>(
+  '../../content/pages/about.*.mdx',
+  {
+    eager: true,
+  },
+);
+const available = {
+  'zh-CN': pages['../../content/pages/about.zh.mdx']?.default,
+  en: pages['../../content/pages/about.en.mdx']?.default,
+};
+const fallbackLocale = available[siteConfig.locale]
+  ? siteConfig.locale
+  : available['zh-CN']
+    ? 'zh-CN'
+    : 'en';
+const AboutZh = available['zh-CN'] ?? available[fallbackLocale];
+const AboutEn = available.en ?? available[fallbackLocale];
+---
+
+<BaseLayout title={ui.about}>
+  <div class="reading-shell">
+    <header class="page-heading">
+      <h1>{ui.about}</h1>
+    </header>
+    <div class="prose">
+      <div
+        data-locale-content="zh-CN"
+        hidden={siteConfig.locale !== 'zh-CN'}
+        lang={available['zh-CN'] ? 'zh-CN' : fallbackLocale}
+      >
+        {AboutZh ? <AboutZh /> : <p>{ui.noItems}</p>}
+      </div>
+      <div
+        data-locale-content="en"
+        hidden={siteConfig.locale !== 'en'}
+        lang={available.en ? 'en' : fallbackLocale}
+      >
+        {AboutEn ? <AboutEn /> : <p>{ui.noItems}</p>}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

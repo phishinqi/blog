@@ -1,0 +1,40 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+coverage/
+.DS_Store
+*.log
+public/admin/vendor/
+.reports/
+worker/.dev.vars
+worker/.wrangler/
+
+# Secrets
+.dev.vars
+*.pem
+*.key
+.wrangler/
+
+# Originals and large media: keep them out of the repository
+*.mov
+*.MOV
+*.mp4
+*.heic
+*.HEIC
+*.psd
+*.raw
+*.cr2
+*.cr3
+*.nef
+*.arw
+*.dng
+*.raf
+.scratch/
+
+# The editor is a build artifact, copied from its own repository by scripts/copy-cms.mjs.
+public/admin/

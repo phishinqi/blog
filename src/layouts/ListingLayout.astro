@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import PostList from '../components/PostList.astro';
+import Pagination from '../components/Pagination.astro';
+interface Props {
+  title: string;
+  description?: string;
+  posts: CollectionEntry<'posts'>[];
+  current?: number;
+  total?: number;
+  base?: string;
+  back?: { href: string; label: string };
+}
+const { title, description, posts, current, total, back, base } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="reading-shell">
+    <header class="page-heading">
+      {back && (
+        <a class="breadcrumb" href={back.href}>
+          ← {back.label}
+        </a>
+      )}
+      <h1>{title}</h1>
+      {description && <p>{description}</p>}
+    </header>
+    <PostList posts={posts} />
+    {current && total && <Pagination current={current} total={total} base={base} />}
+  </div>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import { pagesOf } from '../../../lib/pagination';
+import type { GetStaticPaths } from 'astro';
+import ListingLayout from '../../../layouts/ListingLayout.astro';
+import { getPublishedPosts } from '../../../lib/content';
+import { siteConfig, localized, isInCategory } from '../../../site.config';
+import { ui } from '../../../i18n/ui';
+export const getStaticPaths = (async () => {
+  const posts = await getPublishedPosts();
+  return Object.entries(siteConfig.categories).flatMap(([id, category]) =>
+    pagesOf(posts.filter((post) => isInCategory(post.data.category, id))).map(
+      ({ page, current, total, items }) => ({
+        params: { category: id, page },
+        props: { category, posts: items, current, total, base: `/categories/${id}/` },
+      }),
+    ),
+  );
+}) satisfies GetStaticPaths;
+const { category, posts, current, total, base } = Astro.props;
+---
+
+<ListingLayout
+  title={localized(category.title)}
+  description={localized(category.description)}
+  posts={posts}
+  current={current}
+  total={total}
+  base={base}
+  back={{ href: '/categories/', label: ui.categories }}
+/>

@@ -1,0 +1,37 @@
+---
+import type { MarkdownHeading } from 'astro';
+import { ui } from '../i18n/ui';
+interface Props {
+  headings: MarkdownHeading[];
+}
+const headings = Astro.props.headings.filter((h) => h.depth >= 2 && h.depth <= 3);
+---
+
+{headings.length > 0 && (
+  <>
+    <details class="mobile-toc">
+      <summary>{ui.toc}</summary>
+      <nav aria-label={ui.toc}>
+        <ul class="toc-list">
+          {headings.map((h) => (
+            <li class:list={{ subheading: h.depth === 3 }}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+    <aside class="desktop-toc">
+      <nav class="desktop-toc-inner" aria-label={ui.toc}>
+        <h2>{ui.toc}</h2>
+        <ul class="toc-list">
+          {headings.map((h) => (
+            <li class:list={{ subheading: h.depth === 3 }}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+  </>
+)}

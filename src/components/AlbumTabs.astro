@@ -1,0 +1,16 @@
+---
+import { ui } from '../i18n/ui';
+interface Props {
+  current: 'albums' | 'photos';
+}
+const { current } = Astro.props;
+---
+
+<nav class="view-switch" aria-label={ui.albumsNav}>
+  <a href="/albums/" aria-current={current === 'albums' ? 'page' : undefined}>
+    {ui.albums}
+  </a>
+  <a href="/photos/" aria-current={current === 'photos' ? 'page' : undefined}>
+    {ui.photos}
+  </a>
+</nav>

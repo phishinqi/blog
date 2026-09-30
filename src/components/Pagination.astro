@@ -1,0 +1,32 @@
+---
+import { ui } from '../i18n/ui';
+interface Props {
+  current: number;
+  total: number;
+  base?: string;
+}
+const { current, total, base = '/posts/' } = Astro.props;
+const pageUrl = (n: number) => (n === 1 ? base : `${base}page/${n}/`);
+---
+
+{total > 1 && (
+  <nav class="pagination" aria-label={ui.page}>
+    {current > 1 ? (
+      <a class="text-link" href={pageUrl(current - 1)} rel="prev">
+        ← {ui.previousPage}
+      </a>
+    ) : (
+      <span class="disabled">← {ui.previousPage}</span>
+    )}
+    <span class="position" aria-label={`${ui.page} ${current} / ${total}`}>
+      {current} / {total}
+    </span>
+    {current < total ? (
+      <a class="text-link" href={pageUrl(current + 1)} rel="next">
+        {ui.nextPage} →
+      </a>
+    ) : (
+      <span class="disabled">{ui.nextPage} →</span>
+    )}
+  </nav>
+)}

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../lib/content';
+import { archiveGroups, postUrl } from '../lib/posts';
+import { siteConfig } from '../site.config';
+import { ui } from '../i18n/ui';
+const groups = archiveGroups(await getPublishedPosts());
+const day = (date: Date) =>
+  new Intl.DateTimeFormat(siteConfig.locale, {
+    timeZone: siteConfig.timeZone,
+    day: '2-digit',
+  }).format(date);
+---
+
+<BaseLayout title={ui.archives}>
+  <div class="reading-shell">
+    <header class="page-heading">
+      <h1>{ui.archives}</h1>
+      <p>{ui.archivesDescription}</p>
+    </header>
+    {groups.map((group) => (
+      <section class="archive-year">
+        <h2>{group.year}</h2>
+        {group.months.map((month) => (
+          <div class="archive-month">
+            <h3 data-archive-month={month.key}>{month.label}</h3>
+            <ul>
+              {month.posts.map((post) => (
+                <li>
+                  <a href={postUrl(post)}>
+                    <time datetime={post.data.pubDate.toISOString()}>{day(post.data.pubDate)}</time>
+                    <span lang={post.data.lang}>{post.data.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    ))}
+    {!groups.length && <p class="empty-state">{ui.noPosts}</p>}
+  </div>
+</BaseLayout>

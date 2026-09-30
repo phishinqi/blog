@@ -1,0 +1,53 @@
+---
+import MediaImage from './MediaImage.astro';
+import { photoId } from '../lib/photo-id';
+import { responsiveSource } from '../lib/image-sources';
+interface Props {
+  images: Array<{
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+    srcset?: string;
+  }>;
+}
+const { images } = Astro.props;
+// A simple grid for articles and moments; it opens in the same viewer as the albums.
+const items = await Promise.all(
+  images.map(async (image, index) => {
+    const full = await responsiveSource(image.src, image.srcset, [960, 1600, 2400]);
+    return {
+      id: `${photoId(image.src)}-${index + 1}`,
+      src: full.src,
+      srcset: full.srcset,
+      width: image.width,
+      height: image.height,
+      alt: image.alt,
+      caption: image.caption,
+    };
+  }),
+);
+---
+
+<div class="gallery" data-gallery>
+  {images.map((image, index) => (
+    <figure>
+      <a href={items[index]!.src} data-viewer-item={items[index]!.id}>
+        <MediaImage {...image} sizes="(max-width: 600px) calc(100vw - 2.5rem), 360px" />
+      </a>
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  ))}
+  <script
+    is:inline
+    type="application/json"
+    data-viewer-items
+    set:html={JSON.stringify(items).replace(/</g, '\\u003c')}
+  />
+</div>
+<script>
+  import { register, openFromHash } from '../scripts/viewer';
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach(register);
+  openFromHash();
+</script>

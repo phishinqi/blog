@@ -1,0 +1,16 @@
+---
+import { authorRegistry } from '../site.config';
+interface Props {
+  ids: string[];
+}
+const { ids } = Astro.props;
+---
+
+<span class="post-authors" data-no-translate>
+  {ids.map((id, index) => (
+    <>
+      <span aria-hidden="true">{index ? ' / ' : ''}</span>
+      <a href={`/authors/${id}/`}>{authorRegistry[id]!.name}</a>
+    </>
+  ))}
+</span>
