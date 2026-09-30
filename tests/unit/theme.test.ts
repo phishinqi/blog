@@ -150,6 +150,9 @@ describe('the template guard', () => {
     // write access to somebody else's repository.
     expect(script).toContain('wrangler.toml');
     expect(script).toContain('GITHUB_CLIENT_ID');
+    // A site may have one author or several. Setup must rename the default author without deleting
+    // valid coauthor references from sample or user content.
+    expect(script).not.toContain("id !== 'guest'");
   });
 
   it('ships a placeholder rather than a real OAuth client id', async () => {

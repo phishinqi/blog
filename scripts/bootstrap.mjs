@@ -173,8 +173,8 @@ if (wrangler) {
  * without this leaves every post referencing an id that no longer exists — the build fails with
  * "Unknown author" and the message points at the data file rather than at the content.
  *
- * `guest` is a second sample author. A single-author site does not want a byline for somebody who
- * does not exist, so its references are dropped rather than repointed.
+ * Other authors are kept as-is. They may be used by sample posts, photo metadata, or a site's own
+ * content, and the registry is copied along with the default author.
  */
 if (renamedAuthor) {
   const { from, to } = renamedAuthor;
@@ -187,7 +187,7 @@ if (renamedAuthor) {
         .replace(/[[\]'"]/g, ' ')
         .split(',')
         .map((id) => id.trim())
-        .filter((id) => id && id !== 'guest')
+        .filter(Boolean)
         .map((id) => (id === from ? to : id));
       return ids.length
         ? `${prefix}[${ids.map((id) => `'${id}'`).join(', ')}]`
