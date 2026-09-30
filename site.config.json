@@ -4,17 +4,17 @@
   "locale": "zh-CN",
   "timeZone": "Asia/Shanghai",
   "description": {
-    "zh-CN": "写代码，也写生活。一个安静的地方，留给值得记下的事。",
-    "en": "Notes on building things and paying attention to everyday life."
+    "zh-CN": "两个人，四只眼睛，捕捉同一个世界",
+    "en": "Two people, four eyes, capturing the exact same world."
   },
   "intro": {
     "title": {
-      "zh-CN": "写代码，也写生活。",
-      "en": "On code. And everything around it."
+      "zh-CN": "这是一个可以慢慢写的地方。",
+      "en": "A place to take things slow and write."
     },
     "description": {
-      "zh-CN": "这里收集技术实践、阅读笔记，以及日常里值得停留的片刻。写下来，让想法慢慢生长。",
-      "en": "A collection of technical explorations, reading notes, and small moments worth keeping. A place to think in writing."
+      "zh-CN": "这里记录发呆的瞬间、留存摄影与文字、存放关于旅行、铁道与日常的琐碎记忆。",
+      "en": "Here, we log moments of daydreaming, save photos and words, and store memories about travel, railways, and everyday life."
     }
   },
   "nav": [
@@ -47,23 +47,27 @@
       }
     }
   ],
-  "socialLinks": [],
+  "socialLinks": [
+    "https://blog.soyonagasaki.com/rss.xml",
+    "https://x.com/Ryokoukiryu",
+    "https://x.com/astraruri"
+  ],
   "home": {
     "featuredLimit": 3,
     "recentLimit": 6
   },
   "postsPerPage": 10,
-  "defaultOgImage": "/og-default.png",
+  "defaultOgImage": "",
   "defaultAuthor": "sakanana",
   "features": {
-    "friends": true,
+    "friends": false,
     "moments": true,
     "timeline": true,
-    "roadmap": true,
+    "roadmap": false,
     "albums": true,
     "stats": true
   },
-  "startedAt": "2026-09-28",
+  "startedAt": "2026-10-01",
   "links": {
     "externalNewTab": true
   },
@@ -71,7 +75,7 @@
     "provider": "github",
     "exifPrefill": true,
     "license": "all-rights-reserved",
-    "licenseText": ""
+    "licenseText": "© Ruri & Elarais. 保留所有权利，未经许可请勿擅自转载文字或使用摄影作品。"
   },
   "cms": {
     "enabled": true
