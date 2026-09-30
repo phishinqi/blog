@@ -2,7 +2,7 @@
 
 以阅读为中心的 Astro 博客主题。暖纸白与陶土色、衬线正文、深色模式，以及独立于程序源码的内容目录。
 
-[English](docs/README.en.md) · [写作后台与图片存储](docs/cms.md) · [部署说明](docs/deployment.md) · [验证记录](docs/validation.md)
+[English](docs/README.en.md) · [写作后台与图片存储](docs/cms.md) · [部署说明](docs/deployment.md) · [主题更新](docs/theme-updates.md) · [验证记录](docs/validation.md)
 
 ## 开始
 

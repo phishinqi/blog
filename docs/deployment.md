@@ -1,5 +1,7 @@
 # Cloudflare Pages 静态部署
 
+模板副本后续如何同步主题修复和功能更新，见[同步主题更新](theme-updates.md)。
+
 ## 部署前
 
 1. 使用 Node.js 24.16.0 / pnpm 12.5.1 干净安装：`pnpm install`。
