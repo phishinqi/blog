@@ -14,7 +14,7 @@ GITHUB_REPO = "phishinqi/blog"
 # Replace with your own OAuth App's client id (GitHub → Settings → Developer settings → OAuth Apps).
 # `pnpm setup` resets this for a copy; leaving a real-looking value here would be worse than a
 # placeholder, because a copy would silently sign its authors in through somebody else's app.
-GITHUB_CLIENT_ID = "replace-with-oauth-client-id"
+GITHUB_CLIENT_ID = "Ov23li0yfHaoKBMwDn50"
 
 # R2 mode only: the public base URL of the bucket (custom domain or r2.dev).
 # PUBLIC_MEDIA_URL = "https://img.soyonagasaki.com"
