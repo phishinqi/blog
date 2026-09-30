@@ -1,19 +1,14 @@
 {
   "authors": [
     {
-      "id": "v7",
+      "id": "sakanana",
       "name": "V7",
       "bio": {
         "zh-CN": "主题示例作者，分享技术与日常。",
         "en": "Demonstration author. Notes on technology and everyday life."
       },
       "avatar": "",
-      "links": [
-        {
-          "label": "GitHub",
-          "href": "https://github.com/phishinqi/astro-theme-v7"
-        }
-      ]
+      "links": []
     },
     {
       "id": "guest",

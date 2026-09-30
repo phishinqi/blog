@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@v7-cms/core/schema/config.json",
   "backend": {
     "name": "github",
-    "repo": "phishinqi/astro-theme-v7",
+    "repo": "phishinqi/blog",
     "branch": "main",
     "authBase": "https://v7.soyonagasaki.com",
     "authEndpoint": "api/auth"
