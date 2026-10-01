@@ -47,7 +47,20 @@
       }
     }
   ],
-  "socialLinks": [],
+  "socialLinks": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/phishinqi/astro-theme-v7"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/phishinqi/v7-cms"
+    },
+    {
+      "label": "Homepage",
+      "href": "https://soyonagasaki.com/"
+    }
+  ],
   "home": {
     "featuredLimit": 3,
     "recentLimit": 6
