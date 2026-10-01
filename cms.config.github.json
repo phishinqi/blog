@@ -51,15 +51,11 @@
         { "name": "updatedDate", "widget": "datetime", "label": "更新时间", "required": false },
         {
           "name": "category",
-          "widget": "select",
+          "widget": "relation",
           "label": "分类",
           "required": true,
-          "options": [
-            { "label": "技术", "value": "technology" },
-            { "label": "随笔", "value": "journal" },
-            { "label": "Astro", "value": "astro" }
-          ],
-          "hint": "从已有分类中选择。新增分类后等待部署成功并刷新后台。"
+          "hint": "选择已有分类，或在这里直接新建分类。",
+          "categoryFile": "data/categories.json"
         },
         {
           "name": "tags",
@@ -136,15 +132,11 @@
         { "name": "updatedDate", "widget": "datetime", "label": "更新时间", "required": false },
         {
           "name": "category",
-          "widget": "select",
+          "widget": "relation",
           "label": "分类",
           "required": true,
-          "options": [
-            { "label": "技术", "value": "technology" },
-            { "label": "随笔", "value": "journal" },
-            { "label": "Astro", "value": "astro" }
-          ],
-          "hint": "从已有分类中选择。新增分类后等待部署成功并刷新后台。"
+          "hint": "选择已有分类，或在这里直接新建分类。",
+          "categoryFile": "data/categories.json"
         },
         {
           "name": "tags",

@@ -23,20 +23,7 @@ const AUTH_ENDPOINT = process.env.CMS_AUTH_ENDPOINT ?? 'api/auth';
 const REPO = process.env.CMS_REPO ?? 'phishinqi/blog';
 
 const site = JSON.parse(await readFile('site.config.json', 'utf8'));
-const categories = JSON.parse(await readFile('data/categories.json', 'utf8')).categories;
 const source = configureMedia(JSON.parse(await readFile(SOURCE, 'utf8')), process.env, site.media);
-for (const collection of source.collections) {
-  for (const field of collection.fields ?? []) {
-    if (field.name === 'category') {
-      field.widget = 'select';
-      field.options = categories.map((category) => ({
-        label: category.title[site.locale ?? 'zh-CN'] ?? category.id,
-        value: category.id,
-      }));
-    }
-  }
-}
-
 // Where the deployed editor previews from.
 //
 // `preview.devServerURL` points at the author's own machine, which is right for `pnpm dev` and
