@@ -7,10 +7,16 @@
         "zh-CN": "一只夜行在音符里的猫。",
         "en": "A cat prowling through notes by night."
       },
-      "avatar": "",
+      "avatar": "https://avatars.githubusercontent.com/u/86942867?v=4",
       "links": [
-        { "label": "GitHub", "href": "https://github.com/phishinqi/" },
-        { "label": "Ryokoukiryu", "href": "https://x.com/Ryokoukiryu" }
+        {
+          "label": "GitHub",
+          "href": "https://github.com/phishinqi/"
+        },
+        {
+          "label": "Ryokoukiryu",
+          "href": "https://x.com/Ryokoukiryu"
+        }
       ]
     },
     {
@@ -30,10 +36,16 @@
         "zh-CN": "记录旅途、影像与日常的片段。",
         "en": "Collecting fragments of travel, images, and everyday life."
       },
-      "avatar": "",
+      "avatar": "https://avatars.githubusercontent.com/u/52318766?v=4",
       "links": [
-        { "label": "astraruri", "href": "https://x.com/astraruri" },
-        { "label": "GitHub", "href": "https://github.com/astraruri" }
+        {
+          "label": "astraruri",
+          "href": "https://x.com/astraruri"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/astraruri"
+        }
       ]
     }
   ]
