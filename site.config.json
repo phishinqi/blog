@@ -56,7 +56,7 @@
   "defaultOgImage": "",
   "defaultAuthor": "elarais",
   "features": {
-    "friends": false,
+    "friends": true,
     "moments": true,
     "timeline": true,
     "roadmap": false,
