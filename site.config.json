@@ -72,7 +72,7 @@
     "friends": true,
     "moments": true,
     "timeline": true,
-    "roadmap": false,
+    "roadmap": true,
     "albums": true,
     "stats": true
   },
