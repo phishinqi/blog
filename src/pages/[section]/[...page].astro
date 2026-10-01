@@ -49,13 +49,13 @@ const url = (page: number) => `/${section}/${page === 1 ? '' : `page/${page}/`}`
                 .filter((f) => f.group === group)
                 .map((friend) => (
                   <li>
-                    <a href={friend.url} class="friend-link">
+                    <a href={friend.link} class="friend-link">
                       {friend.avatar && (
                         <img src={friend.avatar} alt="" width="48" height="48" loading="lazy" />
                       )}
                       <strong>{friend.name}</strong>
                     </a>
-                    <p>{friend.description}</p>
+                    <p>{friend.desc}</p>
                   </li>
                 ))}
             </ul>

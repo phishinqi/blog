@@ -19,8 +19,8 @@ export const friendEntries = z
   .array(
     z.object({
       name: z.string().min(1),
-      url: z.url().refine((s) => /^https?:/.test(s)),
-      description: z.string(),
+      link: z.url().refine((s) => /^https?:/.test(s)),
+      desc: z.string().default(''),
       avatar: z.string().default(''),
       group: z.string().default('Friends'),
     }),

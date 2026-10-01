@@ -754,7 +754,41 @@
           "name": "friends",
           "label": "友链列表",
           "file": "data/friends.json",
-          "inferSchema": true
+          "inferSchema": false,
+          "fields": [
+            {
+              "name": "friends",
+              "label": "友链",
+              "labelSingular": "友链",
+              "widget": "list",
+              "fields": [
+                {
+                  "name": "name",
+                  "label": "name",
+                  "widget": "string",
+                  "required": true
+                },
+                {
+                  "name": "link",
+                  "label": "link",
+                  "widget": "string",
+                  "required": true
+                },
+                {
+                  "name": "avatar",
+                  "label": "avatar",
+                  "widget": "string",
+                  "required": false
+                },
+                {
+                  "name": "desc",
+                  "label": "desc",
+                  "widget": "text",
+                  "required": false
+                }
+              ]
+            }
+          ]
         }
       ]
     },
