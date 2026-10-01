@@ -1,3 +1,10 @@
 {
-  "friends": []
+  "friends": [
+    {
+      "name": "栗かな",
+      "link": "https://kurikana.cn/",
+      "avatar": "https://kurikana.cn/icon.png",
+      "desc": "日语专业 / 技术探索中"
+    }
+  ]
 }
