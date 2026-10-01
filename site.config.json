@@ -49,16 +49,16 @@
   ],
   "socialLinks": [
     {
-      "label": "GitHub",
-      "href": "https://github.com/phishinqi/astro-theme-v7"
-    },
-    {
-      "label": "GitHub",
-      "href": "https://github.com/phishinqi/v7-cms"
-    },
-    {
       "label": "Homepage",
       "href": "https://soyonagasaki.com/"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://x.com/Ryokoukiryu"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://x.com/astraruri"
     }
   ],
   "home": {
