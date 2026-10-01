@@ -41,7 +41,11 @@
           "widget": "string",
           "label": "永久链接 slug",
           "required": true,
-          "pattern": ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "使用小写英文、数字和连字符；发布后保持不变。"]
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
         },
         { "name": "pubDate", "widget": "datetime", "label": "发布时间", "required": true },
         { "name": "updatedDate", "widget": "datetime", "label": "更新时间", "required": false },
@@ -113,7 +117,17 @@
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
         { "name": "description", "widget": "text", "label": "摘要", "required": true },
-        { "name": "slug", "widget": "string", "label": "永久链接 slug", "required": true },
+        {
+          "name": "slug",
+          "widget": "string",
+          "label": "永久链接 slug",
+          "required": true,
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
+        },
         { "name": "pubDate", "widget": "datetime", "label": "发布时间", "required": true },
         { "name": "updatedDate", "widget": "datetime", "label": "更新时间", "required": false },
         {
@@ -180,7 +194,17 @@
       "contentField": "body",
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
-        { "name": "slug", "widget": "string", "label": "slug", "required": true },
+        {
+          "name": "slug",
+          "widget": "string",
+          "label": "slug",
+          "required": true,
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
+        },
         {
           "name": "date",
           "widget": "datetime",
@@ -362,7 +386,17 @@
       "contentField": "body",
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
-        { "name": "slug", "widget": "string", "label": "slug", "required": true },
+        {
+          "name": "slug",
+          "widget": "string",
+          "label": "slug",
+          "required": true,
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
+        },
         { "name": "date", "widget": "datetime", "label": "日期", "required": true },
         { "name": "draft", "widget": "boolean", "label": "草稿", "required": false },
         { "name": "body", "widget": "markdown", "label": "正文" }
@@ -379,7 +413,17 @@
       "contentField": "body",
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
-        { "name": "slug", "widget": "string", "label": "slug", "required": true },
+        {
+          "name": "slug",
+          "widget": "string",
+          "label": "slug",
+          "required": true,
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
+        },
         { "name": "date", "widget": "datetime", "label": "日期", "required": true },
         { "name": "draft", "widget": "boolean", "label": "草稿", "required": false },
         { "name": "body", "widget": "markdown", "label": "正文" }
@@ -396,7 +440,17 @@
       "contentField": "body",
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
-        { "name": "slug", "widget": "string", "label": "slug", "required": true },
+        {
+          "name": "slug",
+          "widget": "string",
+          "label": "slug",
+          "required": true,
+          "pattern": [
+            "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "仅使用小写英文、数字和连字符，例如 first-moments；不要填写 .md 后缀、空格或斜杠。"
+          ],
+          "hint": "这是网址标识，不是文件名；例如 first-moments，不要带 .md。"
+        },
         { "name": "date", "widget": "datetime", "label": "日期", "required": true },
         { "name": "draft", "widget": "boolean", "label": "草稿", "required": false },
         {
