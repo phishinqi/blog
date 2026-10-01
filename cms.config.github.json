@@ -4,7 +4,7 @@
     "name": "github",
     "repo": "phishinqi/blog",
     "branch": "main",
-    "authBase": "https://v7.soyonagasaki.com",
+    "authBase": "https://blog.soyonagasaki.com",
     "authEndpoint": "api/auth"
   },
   "media": {
@@ -18,7 +18,7 @@
   "preview": {
     "pathTemplate": "/posts/{{slug}}/",
     "editAttribute": "data-v7-field",
-    "devServerURL": "https://v7.soyonagasaki.com"
+    "devServerURL": "https://blog.soyonagasaki.com"
   },
   "collections": [
     {
