@@ -1,7 +1,7 @@
 {
   "authors": [
     {
-      "id": "Elarais",
+      "id": "elarais",
       "name": "Elarais",
       "bio": {
         "zh-CN": "一只夜行在音符里的猫。",
@@ -9,8 +9,8 @@
       },
       "avatar": "",
       "links": [
-        "https://github.com/phishinqi/",
-        "https://x.com/Ryokoukiryu"
+        { "label": "GitHub", "href": "https://github.com/phishinqi/" },
+        { "label": "Ryokoukiryu", "href": "https://x.com/Ryokoukiryu" }
       ]
     },
     {
@@ -26,11 +26,14 @@
     {
       "id": "ruri",
       "name": "astraRuri",
-      "bio": {},
+      "bio": {
+        "zh-CN": "记录旅途、影像与日常的片段。",
+        "en": "Collecting fragments of travel, images, and everyday life."
+      },
       "avatar": "",
       "links": [
-        "https://x.com/astraruri",
-        "https://github.com/astraruri"
+        { "label": "astraruri", "href": "https://x.com/astraruri" },
+        { "label": "GitHub", "href": "https://github.com/astraruri" }
       ]
     }
   ]

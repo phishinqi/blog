@@ -155,14 +155,18 @@ describe('the template guard', () => {
     expect(script).not.toContain("id !== 'guest'");
   });
 
-  it('ships a placeholder rather than a real OAuth client id', async () => {
-    // A real-looking client id in a template is worse than an obvious placeholder: a copy would
-    // silently authenticate against an app it does not own.
+  it('uses a placeholder for the template OAuth client id', async () => {
+    // A configured site owns its OAuth app, while the template must not ship credentials that a
+    // copy would silently reuse.
     const { readFile } = await import('node:fs/promises');
     const { resolve } = await import('node:path');
     const wrangler = await readFile(resolve('wrangler.toml'), 'utf8');
     const clientId = /^GITHUB_CLIENT_ID = "([^"]*)"/m.exec(wrangler)?.[1];
-    expect(clientId).toBe('replace-with-oauth-client-id');
+    if (siteConfig.siteURL === 'https://v7.soyonagasaki.com') {
+      expect(clientId).toBe('replace-with-oauth-client-id');
+    } else {
+      expect(clientId).not.toBe('replace-with-oauth-client-id');
+    }
   });
 
   it('does not name a script that pnpm owns', async () => {
