@@ -1,4 +1,5 @@
 ---
+import { configureMedia } from '../../../scripts/media-config.mjs';
 import localConfig from '../../../cms.config.json';
 import hostedConfig from '../../../cms.config.github.json';
 import { siteConfig } from '../../site.config';
@@ -8,9 +9,11 @@ export function getStaticPaths() {
 }
 // `astro dev` edits the working tree through the File System Access API, which needs no server and
 // no credentials. A production build has no working tree to reach, so it ships the GitHub backend
-// instead: that is the only way to write to the repository from a deployed page. The two differ
-// only in `backend`, and scripts/cms-config-github.mjs generates the second from the first.
-const config = import.meta.env.DEV ? localConfig : hostedConfig;
+// instead: that is the only way to write to the repository from a deployed page. The configs differ
+// in backend, preview and optional media settings; scripts/cms-config-github.mjs generates the hosted config.
+const config = import.meta.env.DEV
+  ? configureMedia(localConfig, {}, siteConfig.media)
+  : hostedConfig;
 ---
 
 <!doctype html>

@@ -68,10 +68,17 @@
     "externalNewTab": true
   },
   "media": {
-    "provider": "github",
-    "exifPrefill": true,
+    "provider": "media-repo",
     "license": "all-rights-reserved",
-    "licenseText": "© Ruri & Elarais. 保留所有权利，未经许可请勿擅自转载文字或使用摄影作品。"
+    "licenseText": "© Ruri & Elarais. 保留所有权利，未经许可请勿擅自转载文字或使用摄影作品。",
+    "repoPath": "public/images/uploads",
+    "publicPath": "/images/uploads",
+    "endpoint": "/api/media",
+    "mediaRepo": "phishinqi/blog-img",
+    "mediaBranch": "main",
+    "mediaPath": "images",
+    "mediaPublicUrl": "https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images",
+    "exifPrefill": true
   },
   "cms": {
     "enabled": true

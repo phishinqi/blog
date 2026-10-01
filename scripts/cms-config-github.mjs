@@ -1,11 +1,12 @@
 // Generates cms.config.github.json from cms.config.json.
 //
-// The two files differ in exactly one key: `backend`. Keeping two hand-maintained copies of a
+// The hosted config applies backend, preview and media deployment settings. Maintaining two copies of a
 // 440-line config guarantees they drift, so the local file stays the single source and this script
 // derives the hosted one. `pnpm build` runs it, and so does `pnpm cms:config`.
 //
 // The GitHub backend is what the deployed editor uses: the theme is static, so the only way to
 // write to the repository from a phone or another machine is through GitHub's API.
+import { configureMedia } from './media-config.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { format, resolveConfig } from 'prettier';
 
@@ -21,7 +22,8 @@ const AUTH_BASE = process.env.CMS_AUTH_BASE ?? 'https://blog.soyonagasaki.com';
 const AUTH_ENDPOINT = process.env.CMS_AUTH_ENDPOINT ?? 'api/auth';
 const REPO = process.env.CMS_REPO ?? 'phishinqi/blog';
 
-const source = JSON.parse(await readFile(SOURCE, 'utf8'));
+const site = JSON.parse(await readFile('site.config.json', 'utf8'));
+const source = configureMedia(JSON.parse(await readFile(SOURCE, 'utf8')), process.env, site.media);
 
 // Where the deployed editor previews from.
 //

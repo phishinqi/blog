@@ -50,10 +50,10 @@ try {
     /<script[^>]*id="v7-config"[^>]*>([\s\S]*?)<\/script>/.exec(admin)[1].replace(/\u003c/g, '<'),
   );
   // A production build serves the GitHub backend, because a deployed page has no working tree to
-  // reach through the File System Access API. The media settings come from cms.config.json, which
-  // is not merged with site.config.json the way the removed Decap builder used to do.
-  assert(inlined.media.provider === 'repo', 'editor media provider changed unexpectedly');
-  assert(inlined.media.exif === true, 'editor exif setting changed unexpectedly');
+  // reach through the File System Access API. The media destination
+  // now follows the site media settings chosen in the admin form.
+  assert(inlined.media.provider === 'r2', 'editor media provider changed unexpectedly');
+  assert(inlined.media.endpoint === '/api/media', 'R2 endpoint missing');
   assert(
     inlined.backend?.name === 'github',
     'the editor must ship the github backend in a production build',

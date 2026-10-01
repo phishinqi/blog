@@ -8,11 +8,13 @@
     "authEndpoint": "api/auth"
   },
   "media": {
-    "provider": "repo",
-    "repoPath": "public/images/uploads",
-    "publicPath": "/images/uploads",
     "maxEdge": 2400,
-    "exif": true
+    "exif": true,
+    "provider": "github",
+    "repo": "phishinqi/blog-img",
+    "branch": "main",
+    "repoPath": "images",
+    "publicPath": "https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images"
   },
   "locale": "zh-CN",
   "preview": {
@@ -148,15 +150,24 @@
       ]
     },
     {
-      "kind": "fields",
+      "kind": "file",
       "name": "pages",
       "label": "独立页面",
-      "folder": "content/pages",
-      "extension": "mdx",
-      "format": "frontmatter",
-      "contentField": "body",
-      "nested": false,
-      "fields": [{ "name": "body", "widget": "source", "label": "正文源码" }]
+      "format": "yaml",
+      "files": [
+        {
+          "name": "about-zh",
+          "label": "关于 · 中文",
+          "file": "content/pages/about.zh.mdx",
+          "source": true
+        },
+        {
+          "name": "about-en",
+          "label": "关于 · English",
+          "file": "content/pages/about.en.mdx",
+          "source": true
+        }
+      ]
     },
     {
       "kind": "fields",
@@ -167,10 +178,6 @@
       "format": "frontmatter",
       "identifierField": "slug",
       "contentField": "body",
-      "media": {
-        "repoPath": "public/images/albums/{{slug}}",
-        "publicPath": "/images/albums/{{slug}}"
-      },
       "fields": [
         { "name": "title", "widget": "string", "label": "标题", "required": true },
         { "name": "slug", "widget": "string", "label": "slug", "required": true },
@@ -500,7 +507,53 @@
                 "cc-by-nc-sa-4.0",
                 "cc0-1.0",
                 "custom"
+              ],
+              "label": "默认图片许可"
+            },
+            "media": {
+              "label": "图片存储",
+              "hint": "选择存储方式并填写对应参数。保存后等待网站部署完成，再刷新后台后上传。未选中的模式参数可以保留。"
+            },
+            "media.provider": {
+              "label": "存储方式",
+              "widget": "select",
+              "required": true,
+              "options": [
+                { "label": "博客仓库固定目录", "value": "repo" },
+                { "label": "R2 Bucket", "value": "r2" },
+                { "label": "独立 Media Repo", "value": "media-repo" }
               ]
+            },
+            "media.repoPath": {
+              "label": "博客仓库图片目录",
+              "hint": "仅博客仓库模式，例如 public/images/uploads。"
+            },
+            "media.publicPath": {
+              "label": "博客图片访问路径",
+              "hint": "仅博客仓库模式，例如 /images/uploads。"
+            },
+            "media.endpoint": {
+              "label": "R2 上传接口",
+              "hint": "R2 模式默认 /api/media。需先在 Cloudflare 绑定 MEDIA bucket 并设置 PUBLIC_MEDIA_URL。"
+            },
+            "media.mediaRepo": {
+              "label": "独立媒体仓库",
+              "hint": "仅独立仓库模式，填写 GitHub 用户名/仓库名。登录令牌须有此仓库写权限。"
+            },
+            "media.mediaBranch": { "label": "媒体仓库分支", "hint": "默认 main，分支须已存在。" },
+            "media.mediaPath": {
+              "label": "媒体仓库图片目录",
+              "hint": "仅独立仓库模式，例如 images。"
+            },
+            "media.mediaPublicUrl": {
+              "label": "媒体图片公开地址",
+              "hint": "独立 Media Repo 必填。公开仓库 CDN 示例：https://cdn.jsdelivr.net/gh/用户名/仓库@main/images；也可填写图片域名。"
+            },
+            "media.licenseText": { "label": "自定义许可说明" },
+            "media.exifPrefill": {
+              "widget": "boolean",
+              "label": "自动填充 EXIF",
+              "hint": "上传原图后填充空白的摄影参数和拍摄日期，保留手填值。"
             }
           }
         }

@@ -1,6 +1,6 @@
-# Optional: only for deploying with `wrangler pages deploy`. Projects connected to Git can set the
-# same values in the Cloudflare dashboard instead (Settings → Variables and Secrets / Bindings).
-# Copy to wrangler.toml to use it; once present, Cloudflare treats this file as the source of truth.
+# Example configuration for both Git deployments and `wrangler pages deploy`.
+# Merge the required values into the existing wrangler.toml; do not overwrite your other settings.
+# When that file manages the project, edit bindings here rather than in the dashboard.
 name = "v7-blog"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-09-01"
@@ -11,7 +11,8 @@ GITHUB_CLIENT_ID = "replace-with-oauth-client-id"
 # R2 mode only: the public base URL of the bucket (custom domain or r2.dev).
 PUBLIC_MEDIA_URL = "https://img.example.com"
 
-# R2 mode only.
+# R2 mode only. Replace the bucket name and select R2 Bucket in the CMS site settings.
+# See docs/media-storage.md.
 [[r2_buckets]]
 binding = "MEDIA"
 bucket_name = "v7-media"

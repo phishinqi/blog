@@ -37,10 +37,10 @@ if (new Set(authors.authors.map((a) => a.id)).size !== authors.authors.length)
   throw new Error('Duplicate author ID.');
 if (new Set(categories.categories.map((a) => a.id)).size !== categories.categories.length)
   throw new Error('Duplicate category ID.');
-const photoTagEntries = photoTags.tags as Array<{ id: string; label: Localized }>;
 export const authorRegistry = z
   .record(id, authorSchema)
   .parse(Object.fromEntries(authors.authors.map(({ id, ...value }) => [id, value])));
+const photoTagEntries = z.array(z.object({ id, label: localizedSchema })).parse(photoTags.tags);
 if (new Set(photoTagEntries.map((t) => t.id)).size !== photoTagEntries.length)
   throw new Error('Duplicate photo tag ID.');
 export const photoTagRegistry = z
@@ -91,7 +91,14 @@ const parsed = z
     }),
     links: z.object({ externalNewTab: z.boolean() }),
     media: z.object({
-      provider: z.enum(['github', 'r2']),
+      provider: z.enum(['repo', 'github', 'r2', 'media-repo']),
+      repoPath: z.string().optional(),
+      publicPath: z.string().optional(),
+      endpoint: z.string().optional(),
+      mediaRepo: z.string().optional(),
+      mediaBranch: z.string().optional(),
+      mediaPath: z.string().optional(),
+      mediaPublicUrl: z.string().optional(),
       exifPrefill: z.boolean().default(true),
       license: z.enum(licensePresets).default('all-rights-reserved'),
       licenseText: z.string().default(''),
