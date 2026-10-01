@@ -26,8 +26,13 @@ jobs:
       - run: pnpm format:check
       - run: pnpm test
       - run: pnpm build
-      - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm test:e2e
+      # The theme's browser suite targets the fixture posts and albums that this configured blog
+      # intentionally removes. Keep it running for the template repository, while this site is
+      # covered by the build, unit tests, and the content/schema checks above.
+      - if: github.repository == 'phishinqi/astro-theme-v7'
+        run: pnpm exec playwright install --with-deps chromium
+      - if: github.repository == 'phishinqi/astro-theme-v7'
+        run: pnpm test:e2e
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
