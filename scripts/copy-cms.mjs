@@ -17,7 +17,7 @@ import { join, resolve } from 'node:path';
  * Bump it to pick up editor changes. The version has a matching release in the v7-cms repository,
  * which is where the built bundle lives.
  */
-const PINNED_VERSION = '0.0.0-alpha.9';
+const PINNED_VERSION = '0.0.0-alpha.10';
 const RELEASE = `https://github.com/phishinqi/v7-cms/releases/download/v${PINNED_VERSION}`;
 
 const destination = 'public/admin';
