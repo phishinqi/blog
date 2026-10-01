@@ -145,15 +145,24 @@
       ]
     },
     {
-      "kind": "fields",
+      "kind": "file",
       "name": "pages",
       "label": "独立页面",
-      "folder": "content/pages",
-      "extension": "mdx",
-      "format": "frontmatter",
-      "contentField": "body",
-      "nested": false,
-      "fields": [{ "name": "body", "widget": "source", "label": "正文源码" }]
+      "format": "yaml",
+      "files": [
+        {
+          "name": "about-zh",
+          "label": "关于 · 中文",
+          "file": "content/pages/about.zh.mdx",
+          "source": true
+        },
+        {
+          "name": "about-en",
+          "label": "关于 · English",
+          "file": "content/pages/about.en.mdx",
+          "source": true
+        }
+      ]
     },
     {
       "kind": "fields",
