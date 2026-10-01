@@ -68,11 +68,24 @@
         },
         {
           "name": "category",
-          "widget": "relation",
+          "widget": "select",
           "label": "分类",
           "required": true,
-          "collection": "categories",
-          "valueField": "id"
+          "options": [
+            {
+              "label": "技术",
+              "value": "technology"
+            },
+            {
+              "label": "随笔",
+              "value": "journal"
+            },
+            {
+              "label": "Astro",
+              "value": "astro"
+            }
+          ],
+          "hint": "从已有分类中选择。新增分类后等待部署成功并刷新后台。"
         },
         {
           "name": "tags",
@@ -217,11 +230,24 @@
         },
         {
           "name": "category",
-          "widget": "relation",
+          "widget": "select",
           "label": "分类",
           "required": true,
-          "collection": "categories",
-          "valueField": "id"
+          "options": [
+            {
+              "label": "技术",
+              "value": "technology"
+            },
+            {
+              "label": "随笔",
+              "value": "journal"
+            },
+            {
+              "label": "Astro",
+              "value": "astro"
+            }
+          ],
+          "hint": "从已有分类中选择。新增分类后等待部署成功并刷新后台。"
         },
         {
           "name": "tags",

@@ -46,7 +46,7 @@ export const postSchema = z
       .string()
       .refine(
         (value) => Object.hasOwn(siteConfig.categories, value),
-        'Category must be declared in site.config.ts.',
+        'Category must match an ID declared in data/categories.json.',
       ),
     tags: z
       .array(
