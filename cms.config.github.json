@@ -62,7 +62,8 @@
           "widget": "list",
           "label": "标签",
           "required": false,
-          "field": { "name": "tag", "widget": "string" }
+          "field": { "name": "tag", "widget": "string" },
+          "tagFile": "data/tags.json"
         },
         {
           "name": "authors",
@@ -143,7 +144,8 @@
           "widget": "list",
           "label": "标签",
           "required": false,
-          "field": { "name": "tag", "widget": "string" }
+          "field": { "name": "tag", "widget": "string" },
+          "tagFile": "data/tags.json"
         },
         {
           "name": "authors",
