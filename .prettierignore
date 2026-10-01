@@ -10,3 +10,8 @@ public/admin/
 .reports/
 .wrangler/
 .scratch/
+
+# CMS-managed content preserves author formatting; validate its schema during build.
+content/
+data/
+site.config.json
