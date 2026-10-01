@@ -1,14 +1,17 @@
 {
   "authors": [
     {
-      "id": "sakanana",
-      "name": "V7",
+      "id": "Elarais",
+      "name": "Elarais",
       "bio": {
-        "zh-CN": "主题示例作者，分享技术与日常。",
-        "en": "Demonstration author. Notes on technology and everyday life."
+        "zh-CN": "一只夜行在音符里的猫。",
+        "en": "A cat prowling through notes by night."
       },
       "avatar": "",
-      "links": []
+      "links": [
+        "https://github.com/phishinqi/",
+        "https://x.com/Ryokoukiryu"
+      ]
     },
     {
       "id": "guest",
@@ -19,6 +22,16 @@
       },
       "avatar": "",
       "links": []
+    },
+    {
+      "id": "ruri",
+      "name": "astraRuri",
+      "bio": {},
+      "avatar": "",
+      "links": [
+        "https://x.com/astraruri",
+        "https://github.com/astraruri"
+      ]
     }
   ]
 }
