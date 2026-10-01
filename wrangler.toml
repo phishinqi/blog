@@ -17,11 +17,11 @@ GITHUB_REPO = "phishinqi/blog"
 GITHUB_CLIENT_ID = "Ov23li0yfHaoKBMwDn50"
 
 # R2 mode only: the public base URL of the bucket (custom domain or r2.dev).
-# PUBLIC_MEDIA_URL = "https://img.soyonagasaki.com"
+PUBLIC_MEDIA_URL = "https://img.soyonagasaki.com"
 
 # R2 mode only. Uncomment together with site.config.json media.provider = "r2".
-# [[r2_buckets]]
-# binding = "MEDIA"
-# bucket_name = "v7-media"
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "blog-img"
 
 # Store GITHUB_CLIENT_SECRET with `wrangler pages secret put GITHUB_CLIENT_SECRET`; never commit it.
