@@ -853,6 +853,43 @@ h3:hover .heading-anchor,
 .prose figure {
   margin: 2rem 0;
 }
+.prose figure[data-v7-figure] {
+  max-width: 100%;
+  margin-block: 1.6rem;
+}
+.prose figure[data-v7-align='center'] {
+  margin-inline: auto;
+}
+.prose figure[data-v7-align='right'] {
+  margin-left: auto;
+}
+.prose figure[data-v7-align='wrap-left'] {
+  float: left;
+  margin: 0.3rem 1.5rem 1rem 0;
+}
+.prose figure[data-v7-align='wrap-right'] {
+  float: right;
+  margin: 0.3rem 0 1rem 1.5rem;
+}
+.prose figure[data-v7-figure] img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.prose figure[data-v7-figure] ~ h2 {
+  clear: both;
+}
+.prose::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+@media (max-width: 600px) {
+  .prose figure[data-v7-align^='wrap-'] {
+    float: none;
+    margin-inline: auto;
+  }
+}
 .prose .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
