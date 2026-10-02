@@ -1,4 +1,3 @@
-const MAX_BYTES = 16 * 1024 * 1024;
 const json = (value, status = 200, headers = {}) =>
   new Response(JSON.stringify(value), {
     status,
@@ -18,16 +17,10 @@ async function repositoryAccess(token, env) {
 async function limitedBody(request) {
   const reader = request.body?.getReader();
   if (!reader) throw new Error('Empty upload');
-  let size = 0;
   const chunks = [];
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    size += value.length;
-    if (size > MAX_BYTES) {
-      await reader.cancel();
-      throw new Error('Upload exceeds 16 MB');
-    }
     chunks.push(value);
   }
   return new Blob(chunks, { type: request.headers.get('Content-Type') || '' });
@@ -148,7 +141,7 @@ export async function handle(request, env) {
       )
         throw new Error('Invalid image dimensions');
       const file = form.get(size.field);
-      if (!(file instanceof Blob) || file.size > MAX_BYTES || file.type !== 'image/webp')
+      if (!(file instanceof Blob) || file.type !== 'image/webp')
         throw new Error('Expected WebP image');
       const bytes = new Uint8Array(await file.arrayBuffer());
       if (
