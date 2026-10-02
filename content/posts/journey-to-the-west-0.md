@@ -11,6 +11,9 @@ authors:
 lang: zh-CN
 cover:
   src: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp
+  width: 2400
+  height: 1800
+  alt: 伦敦 Paddington 地铁站
 ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp
 ---
 # 西行游记 · 序章
@@ -45,11 +48,10 @@ ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img202603171
 
 稍微平复了一下心情后，也差不多到了登机的时间，就这样，我心情复杂地登上了前往伊斯坦布尔的飞机。  
 
-&lt;center&gt;
-
-    &lt;img width="30%" src="[https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/wx-camera-1773655044054-8i4gdp.webp](https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/wx-camera-1773655044054-8i4gdp.webp)" /&gt;&lt;br /&gt;在国内看的最后一个日落
-
-&lt;/center&gt;
+<figure data-v7-figure="1" data-v7-align="center" data-v7-width="300" style="width: 300px; max-width: 100%">
+  <img src="https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/wx-camera-1773655044054-8i4gdp.webp" alt="在国内看的最后一个日落" width="300" />
+  <figcaption>在国内看的最后一个日落</figcaption>
+</figure>
 
 ## 3. 中转
 
@@ -63,17 +65,15 @@ ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img202603171
 
 经历了这些小插曲，终于坐上了前往伦敦的航班，距离伦敦还有最后的两千五百公里。
 
-&lt;center&gt;
+<figure data-v7-figure="1" data-v7-align="center" data-v7-width="600" style="width: 600px; max-width: 100%">
+  <img src="https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20260317-073807-3w29sa.webp" alt="伊斯坦布尔机场出发大厅" width="600" />
+  <figcaption>伊斯坦布尔机场出发大厅</figcaption>
+</figure>
 
-    &lt;img width="70%" src="[https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20260317-073807-3w29sa.webp](https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20260317-073807-3w29sa.webp)" /&gt;&lt;br /&gt;
-
-    伊斯坦布尔机场出发大厅&lt;br /&gt;
-
-    &lt;img width="70%" src="[https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317080212-3nc3gi.webp](https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317080212-3nc3gi.webp)" /&gt;&lt;br /&gt;
-
-    前往伦敦的航班
-
-&lt;/center&gt;
+<figure data-v7-figure="1" data-v7-align="center" data-v7-width="600" style="width: 600px; max-width: 100%">
+  <img src="https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317080212-3nc3gi.webp" alt="前往伦敦的航班" width="600" />
+  <figcaption>前往伦敦的航班</figcaption>
+</figure>
 
 ## 4. 到达
 
@@ -83,17 +83,15 @@ ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img202603171
 
 入境后，我搭乘Elizabeth Line前往伦敦市区，开启了我在英国的行程。
 
-&lt;center&gt;
+<figure data-v7-figure="1" data-v7-align="center" data-v7-width="600" style="width: 600px; max-width: 100%">
+  <img src="https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20261002-234052-pw14ei.webp" alt="前往市区的车票" width="600" />
+  <figcaption>前往市区的车票</figcaption>
+</figure>
 
-    &lt;img width="70%" src="[https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20261002-234052-pw14ei.webp](https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img-20261002-234052-pw14ei.webp)" /&gt;&lt;br /&gt;
-
-    前往市区的车票&lt;br /&gt;
-
-    &lt;img width="70%" src="[https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp](https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp)" /&gt;&lt;br /&gt;
-
-    Paddington地铁站
-
-&lt;/center&gt;
+<figure data-v7-figure="1" data-v7-align="center" data-v7-width="600" style="width: 600px; max-width: 100%">
+  <img src="https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp" alt="Paddington 地铁站" width="600" />
+  <figcaption>Paddington 地铁站</figcaption>
+</figure>
 
 ---
 
