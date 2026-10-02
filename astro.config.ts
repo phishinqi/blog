@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkMermaid, { diagramLanguages } from './src/lib/remark-mermaid';
+import rehypeHeadingInk from './src/lib/rehype-heading-ink';
 import { siteConfig } from './src/site.config';
 
 export default defineConfig({
@@ -32,7 +33,7 @@ export default defineConfig({
     },
     processor: unified({
       remarkPlugins: [remarkMath, remarkMermaid],
-      rehypePlugins: [[rehypeKatex, { strict: 'warn', throwOnError: false }]],
+      rehypePlugins: [[rehypeKatex, { strict: 'warn', throwOnError: false }], rehypeHeadingInk],
     }),
   },
 });

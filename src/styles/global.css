@@ -115,6 +115,23 @@ img {
   min-height: 60vh;
   padding-block: 4.5rem 6rem;
 }
+.star-field .site-main {
+  position: relative;
+  isolation: isolate;
+}
+.star-field-art {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  color: #8493a3;
+  opacity: var(--star-opacity);
+  pointer-events: none;
+}
+:root[data-theme='dark'] .star-field-art {
+  color: #96a7ba;
+  opacity: calc(var(--star-opacity) * 1.2);
+}
 .skip-link {
   position: fixed;
   top: 0.75rem;
@@ -654,10 +671,10 @@ img {
 }
 .article-heading h1 {
   font-family: var(--reading-font);
-  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-size: var(--heading-title-size);
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   margin: 0.9rem 0 1rem;
   overflow-wrap: anywhere;
   text-wrap: balance;
@@ -695,17 +712,89 @@ img {
 .prose p {
   margin-block: 1.35em;
 }
+.prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
   font-weight: 600;
-  line-height: 1.6;
+  line-height: 1.55;
   scroll-margin-top: 2rem;
+  overflow-wrap: anywhere;
+}
+.prose h1 {
+  font-size: var(--heading-h1-size);
+  margin-block: 2.3rem 1.1rem;
+  font-weight: 650;
+}
+.article-heading h1,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  --heading-active-fill: var(--heading-fill);
+  --heading-line-height: 1.55em;
+  background-image: linear-gradient(var(--heading-active-fill), var(--heading-active-fill));
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 0% max(0px, calc(100% - var(--heading-line-height)));
+  border-radius: var(--heading-radius);
+  transition: background-size var(--heading-duration) ease;
+}
+.article-heading h1 {
+  --heading-line-height: 1.5em;
+}
+:root[data-theme='dark'] .article-heading h1,
+:root[data-theme='dark'] .prose h1,
+:root[data-theme='dark'] .prose h2,
+:root[data-theme='dark'] .prose h3,
+:root[data-theme='dark'] .prose h4 {
+  --heading-active-fill: var(--heading-fill-dark);
+}
+.heading-ink {
+  padding: 0.04em 0.16em 0.09em 0;
+  border-radius: var(--heading-radius);
+  background-image: linear-gradient(var(--heading-active-fill), var(--heading-active-fill));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition:
+    background-size var(--heading-duration) ease,
+    color var(--heading-duration) ease;
+}
+.heading-ink::before {
+  display: inline-block;
+  width: var(--heading-marker-size);
+  height: 0.8em;
+  margin-right: 0.36em;
+  border-radius: var(--heading-radius);
+  background: var(--heading-active-fill);
+  vertical-align: -0.05em;
+  content: '';
+  transition: background-color var(--heading-duration) ease;
+}
+body[data-marker-h1='dot'] :is(.article-heading, .prose) h1 .heading-ink::before,
+body[data-marker-h2='dot'] .prose h2 .heading-ink::before,
+body[data-marker-h3='dot'] .prose h3 .heading-ink::before,
+body[data-marker-h4='dot'] .prose h4 .heading-ink::before {
+  height: var(--heading-marker-size);
+  border-radius: 50%;
+  vertical-align: 0.17em;
+}
+:is(.article-heading, .prose) :is(h1, h2, h3, h4):is(:hover, :focus-within) .heading-ink {
+  background-size: 100% 100%;
+  color: #fffaf3;
+}
+:is(.article-heading, .prose) :is(h1, h2, h3, h4):is(:hover, :focus-within) {
+  background-size: 100% max(0px, calc(100% - var(--heading-line-height)));
+}
+:is(.article-heading, .prose) :is(h1, h2, h3, h4):is(:hover, :focus-within) .heading-ink::before {
+  background: transparent;
 }
 .prose h2 {
   font-size: 1.65rem;
   margin-block: 2.8rem 1rem;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 .prose h3 {
   font-size: 1.3rem;
@@ -817,18 +906,20 @@ img {
   color: var(--accent);
   border-color: var(--accent);
 }
-.heading-anchor {
-  display: inline-block;
-  padding-inline: 0.45rem;
-  font-family: var(--interface-font);
-  font-size: 0.7em;
-  opacity: 0;
+.article-heading .heading-anchor,
+.prose .heading-anchor {
+  color: inherit;
   text-decoration: none !important;
 }
-h2:hover .heading-anchor,
-h3:hover .heading-anchor,
-.heading-anchor:focus-visible {
-  opacity: 1;
+.heading-anchor .heading-ink {
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.article-heading, .prose) :is(h1, h2, h3, h4),
+  .heading-ink,
+  .heading-ink::before {
+    transition-duration: 0ms;
+  }
 }
 .prose table {
   display: block;
@@ -1264,6 +1355,12 @@ kbd {
   }
   .prose {
     font-size: 1.0625rem;
+  }
+  .article-heading h1 {
+    font-size: calc(var(--heading-title-size) * 0.78);
+  }
+  .prose h1 {
+    font-size: calc(var(--heading-h1-size) * 0.84);
   }
   .prose h2 {
     font-size: 1.45rem;

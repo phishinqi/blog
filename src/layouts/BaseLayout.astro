@@ -78,6 +78,18 @@ const crumbs = title
       ],
     }
   : null;
+const { headings, stars } = siteConfig.appearance;
+const starField = stars.scope === 'all' || (stars.scope === 'article' && Boolean(article));
+const appearanceStyle = [
+  `--heading-title-size:${headings.articleTitleSize}rem`,
+  `--heading-h1-size:${headings.h1Size}rem`,
+  `--heading-marker-size:${headings.markerSize}px`,
+  `--heading-radius:${headings.radius}px`,
+  `--heading-fill:${headings.color}`,
+  `--heading-fill-dark:${headings.darkColor}`,
+  `--heading-duration:${headings.durationMs}ms`,
+  `--star-opacity:${stars.opacity}`,
+].join(';');
 ---
 
 <!doctype html>
@@ -158,7 +170,18 @@ const crumbs = title
       />
     )}
   </head>
-  <body>
+  <body
+    class:list={{
+      'article-page': Boolean(article),
+      'star-field': starField && !Astro.url.pathname.startsWith('/admin/'),
+    }}
+    data-marker-h1={headings.marker.h1}
+    data-marker-h2={headings.marker.h2}
+    data-marker-h3={headings.marker.h3}
+    data-marker-h4={headings.marker.h4}
+    data-star-density={stars.density}
+    style={appearanceStyle}
+  >
     <a href="#main-content" class="skip-link">
       {ui.skip}
     </a>
@@ -170,6 +193,7 @@ const crumbs = title
     <SearchDialog client:idle labels={ui} />
     <script>
       import '../scripts/site';
+      import '../scripts/star-field';
     </script>
   </body>
 </html>

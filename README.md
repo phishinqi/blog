@@ -110,6 +110,10 @@ featured: false
 
 编辑 `site.config.json` 或后台“站点设置”：标题、简介、默认界面语言、时区、导航、社交链接、每页数量和模块开关。修改后重新构建。
 
+`appearance.headings` 控制文章主标题和正文 h1–h4：`articleTitleSize`、`h1Size` 以 rem 计，`marker.h1` 至 `marker.h4` 可选 `line` 或 `dot`，`markerSize` 与 `radius` 以像素计，`color` / `darkColor` 分别控制明暗模式色块，`durationMs` 控制展开时间。标题可点击定位；悬停时色块填满换行标题的前面各行，最后一行贴合文字。
+
+`appearance.stars` 控制按页面随机生成的稀疏星点与近邻连线：`scope` 可选 `all`（所有访客页面，默认）、`article`（仅文章页）或 `off`，`density` 与 `opacity` 分别控制疏密和透明度；CMS 管理页始终不显示星图。
+
 `data/authors.json` 管理作者资料；`data/categories.json` 管理稳定分类 ID 和 parent；`data/tags.json` 管理标签建议，文章标签仍可自由填写；`data/friends.json` 管理友链。删除作者或分类前清理文章引用。
 
 顶部主要入口与“更多”菜单分开配置。演示默认开启全部模块；关闭 features 中的开关会移除模块页面、导航入口、首页预览及后台入口。全站保留普通文章、分类、标签、归档和作者页。

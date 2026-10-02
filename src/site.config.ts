@@ -90,6 +90,28 @@ const parsed = z
       stats: z.boolean(),
     }),
     links: z.object({ externalNewTab: z.boolean() }),
+    appearance: z.object({
+      headings: z.object({
+        articleTitleSize: z.number().min(2).max(4),
+        h1Size: z.number().min(1.5).max(3),
+        marker: z.object({
+          h1: z.enum(['line', 'dot']),
+          h2: z.enum(['line', 'dot']),
+          h3: z.enum(['line', 'dot']),
+          h4: z.enum(['line', 'dot']),
+        }),
+        markerSize: z.number().min(2).max(12),
+        radius: z.number().min(0).max(24),
+        color: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+        darkColor: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+        durationMs: z.number().int().min(0).max(1000),
+      }),
+      stars: z.object({
+        scope: z.enum(['all', 'article', 'off']),
+        density: z.number().min(0.5).max(2),
+        opacity: z.number().min(0).max(1),
+      }),
+    }),
     media: z.object({
       provider: z.enum(['repo', 'github', 'r2', 'media-repo']),
       repoPath: z.string().optional(),

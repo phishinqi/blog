@@ -44,8 +44,8 @@ const { data } = post;
       >
         {localized(siteConfig.categories[data.category]!.title)}
       </a>
-      <h1 data-pagefind-meta="title" data-no-translate {...mark('title')}>
-        {data.title}
+      <h1 id="post-title" data-pagefind-meta="title" data-no-translate {...mark('title')}>
+        <span class="heading-ink">{data.title}</span>
       </h1>
       <p
         class="article-description"

@@ -31,15 +31,26 @@ article?.querySelectorAll<HTMLPreElement>('pre').forEach((pre) => {
     }, 2200);
   });
 });
-article?.querySelectorAll<HTMLElement>('h2[id], h3[id]').forEach((heading) => {
-  const anchor = document.createElement('a');
-  anchor.className = 'heading-anchor';
-  anchor.href = `#${heading.id}`;
-  anchor.textContent = '#';
-  anchor.setAttribute('aria-label', heading.textContent || '#');
-  anchor.setAttribute('data-pagefind-ignore', 'all');
-  heading.append(anchor);
-});
+document
+  .querySelectorAll<HTMLElement>(
+    '.article-heading h1[id], #article-body h1[id], #article-body h2[id], #article-body h3[id], #article-body h4[id]',
+  )
+  .forEach((heading) => {
+    const ink = heading.querySelector<HTMLElement>(':scope > .heading-ink');
+    if (!ink) return;
+    const anchor = document.createElement('a');
+    anchor.className = 'heading-anchor';
+    anchor.href = `#${heading.id}`;
+    anchor.setAttribute('data-pagefind-ignore', 'all');
+    if (ink.querySelector('a')) {
+      anchor.classList.add('sr-only');
+      anchor.textContent = `${heading.textContent || 'Heading'} - link`;
+      heading.prepend(anchor);
+      return;
+    }
+    ink.replaceWith(anchor);
+    anchor.append(ink);
+  });
 
 interface Diagram {
   lang: string;
