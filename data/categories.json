@@ -33,6 +33,17 @@
         "en": "Static websites and content models."
       },
       "parent": "technology"
+    },
+    {
+      "id": "travel",
+      "title": {
+        "zh-CN": "旅游",
+        "en": "旅游"
+      },
+      "description": {
+        "zh-CN": "",
+        "en": ""
+      }
     }
   ]
 }
