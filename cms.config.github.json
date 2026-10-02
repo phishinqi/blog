@@ -298,6 +298,7 @@
           "widget": "list",
           "label": "相册标签",
           "required": false,
+          "field": { "name": "tag", "widget": "string" },
           "tagFile": "data/tags.json"
         },
         {
@@ -361,6 +362,7 @@
               "widget": "list",
               "label": "标签",
               "required": false,
+              "field": { "name": "tag", "widget": "string" },
               "tagFile": "data/tags.json"
             },
             {
