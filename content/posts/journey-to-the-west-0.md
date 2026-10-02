@@ -15,6 +15,8 @@ cover:
   height: 1800
   alt: 伦敦 Paddington 地铁站
 ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img20260317114918-0twmia.webp
+showCopyright: true
+license: all-rights-reserved
 ---
 # 西行游记 · 序章
 
