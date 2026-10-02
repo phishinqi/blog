@@ -1090,6 +1090,11 @@ body[data-marker-h4='dot'] .prose h4 .heading-ink::before {
 .article-copyright .copyright-terms {
   margin-top: 0.45rem;
 }
+.article-copyright .copyright-license {
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-size: 0.75rem;
+}
 .copyright-link-row {
   display: flex;
   flex-wrap: wrap;

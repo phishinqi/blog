@@ -13,6 +13,7 @@ import type { MarkdownHeading } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
 import { siteConfig, localized, authorRegistry } from '../site.config';
+import { resolveLicense } from '../lib/licenses';
 import { ui } from '../i18n/ui';
 import { formatDate, readingMinutes, postUrl, tagUrl, categoryUrl } from '../lib/posts';
 import Authors from '../components/Authors.astro';
@@ -32,6 +33,10 @@ const copyrightYear = new Intl.DateTimeFormat('en-US', {
 }).format(data.pubDate);
 const authorNames = data.authors.map((id) => authorRegistry[id]!.name);
 const permanentUrl = new URL(postUrl(post), siteConfig.siteURL).href;
+const articleLicense = resolveLicense(data.license, data.licenseText, {
+  preset: 'all-rights-reserved',
+  text: '',
+});
 ---
 
 <BaseLayout
@@ -107,6 +112,16 @@ const permanentUrl = new URL(postUrl(post), siteConfig.siteURL).href;
             <p class="copyright-terms">
               除另有注明外，本文文字及图片版权归作者所有，未经许可请勿转载。
             </p>
+            <p class="copyright-license">
+              许可协议：
+              {articleLicense.href ? (
+                <a rel="license" href={articleLicense.href}>
+                  {articleLicense.label['zh-CN']}
+                </a>
+              ) : (
+                articleLicense.label['zh-CN']
+              )}
+            </p>
           </div>
           <div data-locale-content="en" hidden={siteConfig.locale !== 'en'}>
             <p class="copyright-credit">
@@ -115,6 +130,16 @@ const permanentUrl = new URL(postUrl(post), siteConfig.siteURL).href;
             <p class="copyright-terms">
               Unless otherwise noted, the text and images in this article are copyrighted by the
               authors. Reproduction requires permission.
+            </p>
+            <p class="copyright-license">
+              License:
+              {articleLicense.href ? (
+                <a rel="license" href={articleLicense.href}>
+                  {articleLicense.label.en}
+                </a>
+              ) : (
+                articleLicense.label.en
+              )}
             </p>
           </div>
           <div class="copyright-link-row">

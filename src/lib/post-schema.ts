@@ -1,5 +1,6 @@
 import { z } from 'astro/zod';
 import { siteConfig, authorRegistry } from '../site.config';
+import { licensePresets } from './licenses';
 
 export const contentDate = z.union([z.string(), z.date()]).transform((value, ctx) => {
   const result = new Date(value);
@@ -65,6 +66,11 @@ export const postSchema = z
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
     showCopyright: z.boolean().default(true),
+    license: z.enum(licensePresets).default('all-rights-reserved'),
+    licenseText: z.preprocess(
+      (value) => (value === '' || value === null ? undefined : value),
+      z.string().trim().max(500).optional(),
+    ),
     lang: z.enum(['zh-CN', 'en']).default('zh-CN'),
     authors: z
       .array(z.string().refine((id) => Object.hasOwn(authorRegistry, id), 'Unknown author'))

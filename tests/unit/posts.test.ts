@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { postSchema } from '../../src/lib/post-schema';
+import { resolveLicense } from '../../src/lib/licenses';
 import {
   archiveGroups,
   homePosts,
@@ -33,6 +34,22 @@ describe('content schema', () => {
   });
   it('allows an individual article to hide its copyright notice', () => {
     expect(makePost('hidden', { showCopyright: false }).data.showCopyright).toBe(false);
+  });
+  it('defaults to all rights reserved and resolves article license links', () => {
+    const post = makePost('licensed');
+    expect(
+      resolveLicense(post.data.license, post.data.licenseText, {
+        preset: 'all-rights-reserved',
+        text: '',
+      }).label['zh-CN'],
+    ).toBe('保留所有权利');
+    const cc = resolveLicense('cc-by-4.0', undefined, { preset: 'all-rights-reserved', text: '' });
+    expect(cc.href).toBe('https://creativecommons.org/licenses/by/4.0/');
+    expect(
+      resolveLicense('custom', '仅限非商业转载', { preset: 'all-rights-reserved', text: '' }).label[
+        'zh-CN'
+      ],
+    ).toBe('仅限非商业转载');
   });
   it.each([
     'not-a-date',
