@@ -75,7 +75,8 @@
             "widget": "relation",
             "collection": "authors",
             "valueField": "id"
-          }
+          },
+          "authorFile": "data/authors.json"
         },
         { "name": "lang", "widget": "select", "label": "正文语言", "options": ["zh-CN", "en"] },
         { "name": "draft", "widget": "boolean", "label": "草稿（不发布）", "required": false },
@@ -188,7 +189,8 @@
             "widget": "relation",
             "collection": "authors",
             "valueField": "id"
-          }
+          },
+          "authorFile": "data/authors.json"
         },
         { "name": "lang", "widget": "select", "label": "正文语言", "options": ["zh-CN", "en"] },
         { "name": "draft", "widget": "boolean", "label": "草稿（不发布）", "required": false },
@@ -288,19 +290,15 @@
             "widget": "relation",
             "collection": "authors",
             "valueField": "id"
-          }
+          },
+          "authorFile": "data/authors.json"
         },
         {
           "name": "tags",
           "widget": "list",
           "label": "相册标签",
           "required": false,
-          "field": {
-            "name": "tag",
-            "widget": "relation",
-            "collection": "photoTags",
-            "valueField": "id"
-          }
+          "tagFile": "data/tags.json"
         },
         {
           "name": "cover",
@@ -363,12 +361,7 @@
               "widget": "list",
               "label": "标签",
               "required": false,
-              "field": {
-                "name": "tag",
-                "widget": "relation",
-                "collection": "photoTags",
-                "valueField": "id"
-              }
+              "tagFile": "data/tags.json"
             },
             {
               "name": "author",
