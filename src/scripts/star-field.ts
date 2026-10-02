@@ -60,11 +60,20 @@ if (main) {
         targetX +=
           (Math.sin(elapsed * star.frequency + star.phaseX) - Math.sin(star.phaseX)) *
           amplitude *
-          0.5;
+          0.8;
         targetY +=
           (Math.sin(elapsed * star.frequency * 0.78 + star.phaseY) - Math.sin(star.phaseY)) *
           amplitude *
-          0.5;
+          0.8;
+        // A second, slower oscillator keeps each star on its own irregular-looking path.
+        targetX +=
+          (Math.sin(elapsed * star.frequency * 0.43 + star.phaseY) - Math.sin(star.phaseY)) *
+          amplitude *
+          0.22;
+        targetY +=
+          (Math.cos(elapsed * star.frequency * 0.37 + star.phaseX) - Math.cos(star.phaseX)) *
+          amplitude *
+          0.18;
         if (rect) {
           targetX += ((pointer.clientX / innerWidth) * 2 - 1) * amplitude * 0.5 * star.depth;
           targetY += ((pointer.clientY / innerHeight) * 2 - 1) * amplitude * 0.5 * star.depth;
@@ -160,10 +169,10 @@ if (main) {
     art.replaceChildren();
     lines = [];
     stars = [];
-    const bandHeight = 370 / density;
+    const bandHeight = 280 / density;
     for (let band = 0; band < Math.ceil(fieldHeight / bandHeight); band++) {
       for (const side of [0, 1]) {
-        const count = 1 + Math.floor(random() * 3);
+        const count = 3 + Math.floor(random() * 4);
         for (let index = 0; index < count; index++) {
           const x =
             side === 0
@@ -182,7 +191,7 @@ if (main) {
             y,
             phaseX: random() * Math.PI * 2,
             phaseY: random() * Math.PI * 2,
-            frequency: (Math.PI * 2) / (18 + random() * 8),
+            frequency: (Math.PI * 2) / (12 + random() * 10),
             depth: 0.4 + random() * 0.6,
             linked: random() < 0.48,
             circle,

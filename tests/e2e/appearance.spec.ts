@@ -32,6 +32,7 @@ test('stars drift, react to a mouse, and keep short live connections', async ({ 
   await page.goto('/');
   const star = page.locator('.star-field-art circle').first();
   await expect(star).toBeAttached();
+  expect(await page.locator('.star-field-art circle').count()).toBeGreaterThan(20);
   const position = () =>
     star.evaluate((element) => ({
       x: Number(element.getAttribute('cx')),
