@@ -78,7 +78,7 @@ GitHub login and the R2 media API are Cloudflare Pages Functions under `function
 
 ## Albums
 
-Albums live in `content/albums/`. Each photo can record its kind (photograph or artwork), title, caption, date, a plain-text location, tags from `data/photo-tags.json` (kept apart from article tags), author, license (overriding the site default in `media.license`), camera settings or the device, software and medium used to make it.
+Albums live in `content/albums/`. Each photo can record its kind (photograph or artwork), title, caption, date, a plain-text location, tags from the shared `data/tags.json` registry, author, license (overriding the site default in `media.license`), camera settings or the device, software and medium used to make it. The CMS can create a new tag while editing an article or album.
 
 - `/albums/` lists albums; `/albums/{slug}/` shows one as a masonry grid with tag filters.
 - `/photos/` gathers every photo, newest first; the tag filter is kept in `?tag=` so it can be shared.

@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import raw from '../site.config.json';
 import categories from '../data/categories.json';
 import authors from '../data/authors.json';
-import photoTags from '../data/photo-tags.json';
+import tags from '../data/tags.json';
 import { z } from 'astro/zod';
 import { licensePresets } from './lib/licenses';
 
@@ -40,12 +40,18 @@ if (new Set(categories.categories.map((a) => a.id)).size !== categories.categori
 export const authorRegistry = z
   .record(id, authorSchema)
   .parse(Object.fromEntries(authors.authors.map(({ id, ...value }) => [id, value])));
-const photoTagEntries = z.array(z.object({ id, label: localizedSchema })).parse(photoTags.tags);
+const tagEntries = z
+  .array(z.union([z.string(), z.object({ name: z.string().min(1) })]))
+  .parse(tags.tags);
+const photoTagEntries = tagEntries.map((tag) => {
+  const name = typeof tag === 'string' ? tag : tag.name;
+  return { id: name, label: { 'zh-CN': name, en: name } };
+});
 if (new Set(photoTagEntries.map((t) => t.id)).size !== photoTagEntries.length)
-  throw new Error('Duplicate photo tag ID.');
-export const photoTagRegistry = z
-  .record(id, localizedSchema)
-  .parse(Object.fromEntries(photoTagEntries.map((t) => [t.id, t.label])));
+  throw new Error('Duplicate tag name.');
+export const photoTagRegistry = Object.fromEntries(
+  photoTagEntries.map((t) => [t.id, t.label]),
+) as Record<string, Localized>;
 export const categoryRegistry = z
   .record(id, categorySchema)
   .parse(Object.fromEntries(categories.categories.map(({ id, ...value }) => [id, value])));

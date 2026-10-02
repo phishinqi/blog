@@ -36,7 +36,7 @@ const blankless = <T extends z.ZodType>(schema: T) =>
     );
   }, schema);
 const knownTag = z.string().refine((tag) => Object.hasOwn(photoTagRegistry, tag), {
-  message: 'Unknown photo tag. Add it to data/photo-tags.json first.',
+  message: 'Unknown tag. Add it to data/tags.json first.',
 });
 const knownAuthor = z.string().refine((author) => Object.hasOwn(authorRegistry, author), {
   message: 'Unknown author. Add it to data/authors.json first.',
