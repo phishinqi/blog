@@ -112,29 +112,6 @@
           "required": false
         },
         {
-          "name": "license",
-          "widget": "select",
-          "label": "文章许可协议",
-          "hint": "默认保留所有权利；选择知识共享协议后，版权说明会显示协议链接。",
-          "options": [
-            { "label": "保留所有权利", "value": "all-rights-reserved" },
-            { "label": "CC BY 4.0（署名）", "value": "cc-by-4.0" },
-            { "label": "CC BY-NC 4.0（署名-非商业）", "value": "cc-by-nc-4.0" },
-            { "label": "CC BY-NC-SA 4.0（署名-非商业-相同方式共享）", "value": "cc-by-nc-sa-4.0" },
-            { "label": "CC0 1.0（公共领域）", "value": "cc0-1.0" },
-            { "label": "自定义许可", "value": "custom" }
-          ],
-          "default": "all-rights-reserved",
-          "required": false
-        },
-        {
-          "name": "licenseText",
-          "widget": "string",
-          "label": "自定义许可说明",
-          "hint": "选择“自定义许可”时填写；可填写授权范围或许可链接。",
-          "required": false
-        },
-        {
           "name": "cover",
           "widget": "object",
           "label": "封面",
