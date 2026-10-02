@@ -16,6 +16,8 @@ cover:
   width: 2400
   height: 1600
   alt: 爱素
+showCopyright: true
+license: all-rights-reserved
 ---
 
 ## 第一天
