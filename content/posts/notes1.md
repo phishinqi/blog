@@ -15,6 +15,7 @@ cover:
   src: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/dscf0052-h9gm2b.webp
   width: 2400
   height: 1600
+  alt: 爱素
 ---
 
 ## 第一天
