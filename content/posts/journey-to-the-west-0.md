@@ -18,15 +18,15 @@ ogImage: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/img202603171
 ---
 # 西行游记 · 序章
 
-&gt; We are all visitors to this time, this place.  
-
-&gt; We are just passing through.  
-
-&gt; Our purpose here is to observe, to learn, to grow, to love...  
-
-&gt; And then  
-
-&gt; &amp;emsp;&amp;emsp;we return home.
+> We are all visitors to this time, this place.
+>
+> We are just passing through.
+> 
+> Our purpose here is to observe, to learn, to grow, to love...
+> 
+> And then
+> 
+>   we return home.
 
 三月中旬，我搭上前往北京的飞机，开启了这段长达三个月的旅程。  
 
