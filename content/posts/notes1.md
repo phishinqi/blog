@@ -10,6 +10,11 @@ tags:
 authors:
   - elarais
 lang: zh-CN
+updatedDate: 2026-10-02T22:30:15+08:00
+cover:
+  src: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/dscf0052-h9gm2b.webp
+  width: 2400
+  height: 1600
 ---
 
 ## 第一天
