@@ -110,6 +110,8 @@ const parsed = z
         scope: z.enum(['all', 'article', 'off']),
         density: z.number().min(0.5).max(2),
         opacity: z.number().min(0).max(1),
+        speed: z.number().min(0).max(3).default(1),
+        amplitude: z.number().min(0).max(24).default(8),
       }),
     }),
     media: z.object({

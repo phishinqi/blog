@@ -81,6 +81,14 @@
         { "name": "draft", "widget": "boolean", "label": "草稿（不发布）", "required": false },
         { "name": "featured", "widget": "boolean", "label": "精选", "required": false },
         {
+          "name": "showCopyright",
+          "widget": "boolean",
+          "label": "显示版权声明",
+          "hint": "默认显示在正文末尾；关闭后只隐藏这篇文章的声明。",
+          "default": true,
+          "required": false
+        },
+        {
           "name": "cover",
           "widget": "object",
           "label": "封面",
@@ -162,6 +170,14 @@
         { "name": "lang", "widget": "select", "label": "正文语言", "options": ["zh-CN", "en"] },
         { "name": "draft", "widget": "boolean", "label": "草稿（不发布）", "required": false },
         { "name": "featured", "widget": "boolean", "label": "精选", "required": false },
+        {
+          "name": "showCopyright",
+          "widget": "boolean",
+          "label": "显示版权声明",
+          "hint": "默认显示在正文末尾；关闭后只隐藏这篇文章的声明。",
+          "default": true,
+          "required": false
+        },
         { "name": "body", "widget": "source", "label": "正文源码（MDX 保真）" }
       ]
     },
@@ -573,6 +589,111 @@
             "moreNav.*.label": { "widget": "i18n-string" },
             "postsPerPage": { "widget": "number" },
             "startedAt": { "widget": "datetime", "format": "YYYY-MM-DD" },
+            "appearance": { "label": "页面外观" },
+            "appearance.headings": {
+              "label": "文章标题样式",
+              "hint": "控制文章主标题和正文各级标题左侧的装饰与悬停色块。"
+            },
+            "appearance.headings.articleTitleSize": {
+              "widget": "number",
+              "label": "文章主标题字号（rem）",
+              "hint": "文章最上方标题的大小；默认 3.1，允许 2 到 4。"
+            },
+            "appearance.headings.h1Size": {
+              "widget": "number",
+              "label": "正文一级标题字号（rem）",
+              "hint": "Markdown 中 # 标题的大小；默认 2.4，允许 1.5 到 3。"
+            },
+            "appearance.headings.marker": { "label": "标题左侧标记" },
+            "appearance.headings.marker.h1": {
+              "label": "一级标题标记",
+              "hint": "同时用于文章主标题和正文一级标题。",
+              "widget": "select",
+              "options": [
+                { "label": "细竖线", "value": "line" },
+                { "label": "圆点", "value": "dot" }
+              ]
+            },
+            "appearance.headings.marker.h2": {
+              "label": "二级标题标记",
+              "widget": "select",
+              "options": [
+                { "label": "细竖线", "value": "line" },
+                { "label": "圆点", "value": "dot" }
+              ]
+            },
+            "appearance.headings.marker.h3": {
+              "label": "三级标题标记",
+              "widget": "select",
+              "options": [
+                { "label": "细竖线", "value": "line" },
+                { "label": "圆点", "value": "dot" }
+              ]
+            },
+            "appearance.headings.marker.h4": {
+              "label": "四级标题标记",
+              "widget": "select",
+              "options": [
+                { "label": "细竖线", "value": "line" },
+                { "label": "圆点", "value": "dot" }
+              ]
+            },
+            "appearance.headings.markerSize": {
+              "widget": "number",
+              "label": "标记大小（像素）",
+              "hint": "竖线的宽度或圆点的直径；允许 2 到 12。"
+            },
+            "appearance.headings.radius": {
+              "widget": "number",
+              "label": "悬停色块圆角（像素）",
+              "hint": "设为 0 即直角；允许 0 到 24。"
+            },
+            "appearance.headings.color": {
+              "label": "浅色模式色块颜色",
+              "hint": "填写六位十六进制颜色，例如 #964630。"
+            },
+            "appearance.headings.darkColor": {
+              "label": "深色模式色块颜色",
+              "hint": "填写六位十六进制颜色，例如 #91442e。"
+            },
+            "appearance.headings.durationMs": {
+              "widget": "number",
+              "label": "色块展开时间（毫秒）",
+              "hint": "0 为立即出现；默认 300，允许 0 到 1000。"
+            },
+            "appearance.stars": {
+              "label": "星点背景",
+              "hint": "星点按页面生成，靠近的星点会用细线连接。管理页不显示。"
+            },
+            "appearance.stars.scope": {
+              "label": "显示范围",
+              "widget": "select",
+              "options": [
+                { "label": "所有访客页面", "value": "all" },
+                { "label": "仅文章页", "value": "article" },
+                { "label": "关闭", "value": "off" }
+              ]
+            },
+            "appearance.stars.density": {
+              "widget": "number",
+              "label": "星点密度",
+              "hint": "1 为默认疏密；0.5 更疏，2 更密。"
+            },
+            "appearance.stars.opacity": {
+              "widget": "number",
+              "label": "星点透明度",
+              "hint": "0 完全透明，1 最明显；默认 0.48。"
+            },
+            "appearance.stars.speed": {
+              "widget": "number",
+              "label": "漂移速度（倍）",
+              "hint": "1 为默认慢速；0 停止自行漂移，最大 3 倍。"
+            },
+            "appearance.stars.amplitude": {
+              "widget": "number",
+              "label": "移动幅度（像素）",
+              "hint": "默认 8；0 完全静止，最大 24。系统开启减少动态效果时始终静止。"
+            },
             "media.license": {
               "widget": "select",
               "options": [

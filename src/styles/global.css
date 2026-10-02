@@ -1070,6 +1070,54 @@ body[data-marker-h4='dot'] .prose h4 .heading-ink::before {
   padding-top: 1.6rem;
   border-top: 1px solid var(--line);
 }
+.article-copyright {
+  margin-bottom: 2rem;
+  padding: 0.2rem 0 0.2rem 1.15rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-family: var(--interface-font);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.article-copyright p {
+  margin: 0;
+}
+.article-copyright .copyright-credit {
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+.article-copyright .copyright-terms {
+  margin-top: 0.45rem;
+}
+.copyright-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.65rem 1.25rem;
+  margin-top: 1rem;
+}
+.copyright-link {
+  flex: 1 1 16rem;
+  min-width: 0;
+}
+.copyright-link > span {
+  font-size: 0.7rem;
+}
+.copyright-link a {
+  display: block;
+}
+.article-copyright .permalink {
+  flex: 0 0 auto;
+  margin: 0;
+  min-height: 2rem;
+  font-size: 0.75rem;
+}
+.article-copyright a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .article-tags {
   display: flex;
   flex-wrap: wrap;

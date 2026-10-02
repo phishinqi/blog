@@ -12,7 +12,7 @@ import type { CollectionEntry } from 'astro:content';
 import type { MarkdownHeading } from 'astro';
 import BaseLayout from './BaseLayout.astro';
 import TableOfContents from '../components/TableOfContents.astro';
-import { siteConfig, localized } from '../site.config';
+import { siteConfig, localized, authorRegistry } from '../site.config';
 import { ui } from '../i18n/ui';
 import { formatDate, readingMinutes, postUrl, tagUrl, categoryUrl } from '../lib/posts';
 import Authors from '../components/Authors.astro';
@@ -26,6 +26,12 @@ interface Props {
 }
 const { post, headings, previous, next } = Astro.props;
 const { data } = post;
+const copyrightYear = new Intl.DateTimeFormat('en-US', {
+  timeZone: siteConfig.timeZone,
+  year: 'numeric',
+}).format(data.pubDate);
+const authorNames = data.authors.map((id) => authorRegistry[id]!.name);
+const permanentUrl = new URL(postUrl(post), siteConfig.siteURL).href;
 ---
 
 <BaseLayout
@@ -92,14 +98,47 @@ const { data } = post;
       </div>
     </div>
     <footer class="article-end" data-pagefind-ignore>
-      <button
-        type="button"
-        class="text-link permalink"
-        data-copy-link={new URL(postUrl(post), siteConfig.siteURL).href}
-      >
-        <IconLink size={17} />
-        <span>{ui.copyLink}</span>
-      </button>
+      {data.showCopyright !== false && (
+        <div class="article-copyright">
+          <div data-locale-content="zh-CN" hidden={siteConfig.locale !== 'zh-CN'}>
+            <p class="copyright-credit">
+              © {copyrightYear} <strong>{authorNames.join('、')}</strong> ·《{data.title}》
+            </p>
+            <p class="copyright-terms">
+              除另有注明外，本文文字及图片版权归作者所有，未经许可请勿转载。
+            </p>
+          </div>
+          <div data-locale-content="en" hidden={siteConfig.locale !== 'en'}>
+            <p class="copyright-credit">
+              © {copyrightYear} <strong>{authorNames.join(', ')}</strong> · “{data.title}”
+            </p>
+            <p class="copyright-terms">
+              Unless otherwise noted, the text and images in this article are copyrighted by the
+              authors. Reproduction requires permission.
+            </p>
+          </div>
+          <div class="copyright-link-row">
+            <div class="copyright-link">
+              <span data-locale-content="zh-CN" hidden={siteConfig.locale !== 'zh-CN'}>
+                永久链接
+              </span>
+              <span data-locale-content="en" hidden={siteConfig.locale !== 'en'}>
+                Permalink
+              </span>
+              <a href={permanentUrl}>{permanentUrl}</a>
+            </div>
+            <button
+              type="button"
+              class="text-link permalink"
+              data-copy-link={permanentUrl}
+              aria-live="polite"
+            >
+              <IconLink size={15} aria-hidden="true" />
+              <span>{ui.copyLink}</span>
+            </button>
+          </div>
+        </div>
+      )}
       <div class="article-tags">
         {data.tags.map((tag) => (
           <a href={tagUrl(tag)}>#{tag}</a>

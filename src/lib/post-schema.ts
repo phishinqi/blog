@@ -64,6 +64,7 @@ export const postSchema = z
       .default([]),
     draft: z.boolean().default(false),
     featured: z.boolean().default(false),
+    showCopyright: z.boolean().default(true),
     lang: z.enum(['zh-CN', 'en']).default('zh-CN'),
     authors: z
       .array(z.string().refine((id) => Object.hasOwn(authorRegistry, id), 'Unknown author'))

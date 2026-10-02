@@ -28,7 +28,11 @@ describe('content schema', () => {
     const post = makePost('test', { pubDate: '2026-01-01T09:30:00+08:00' });
     expect(post.data.pubDate.toISOString()).toBe('2026-01-01T01:30:00.000Z');
     expect(post.data.draft).toBe(false);
+    expect(post.data.showCopyright).toBe(true);
     expect(post.data.tags).toEqual([]);
+  });
+  it('allows an individual article to hide its copyright notice', () => {
+    expect(makePost('hidden', { showCopyright: false }).data.showCopyright).toBe(false);
   });
   it.each([
     'not-a-date',
