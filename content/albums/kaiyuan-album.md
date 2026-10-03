@@ -5,8 +5,6 @@ date: 2026-10-03
 description: 2026年春节假期在开远拍摄的照片
 authors:
   - ruri
-tags:
-  - 游记
 images:
   - src: https://cdn.jsdelivr.net/gh/phishinqi/blog-img@main/images/dscf0528-hzh3dg.webp
     alt: DF21与开远站
