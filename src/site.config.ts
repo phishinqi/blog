@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import raw from '../site.config.json';
 import categories from '../data/categories.json';
 import authors from '../data/authors.json';
-import tags from '../data/tags.json';
+import photoTags from '../data/photo-tags.json';
 import { z } from 'astro/zod';
 import { licensePresets } from './lib/licenses';
 
@@ -40,13 +40,9 @@ if (new Set(categories.categories.map((a) => a.id)).size !== categories.categori
 export const authorRegistry = z
   .record(id, authorSchema)
   .parse(Object.fromEntries(authors.authors.map(({ id, ...value }) => [id, value])));
-const tagEntries = z
-  .array(z.union([z.string(), z.object({ name: z.string().min(1) })]))
-  .parse(tags.tags);
-const photoTagEntries = tagEntries.map((tag) => {
-  const name = typeof tag === 'string' ? tag : tag.name;
-  return { id: name, label: { 'zh-CN': name, en: name } };
-});
+const photoTagEntries = z
+  .array(z.object({ id: z.string().min(1), label: localizedSchema }))
+  .parse(photoTags.tags);
 if (new Set(photoTagEntries.map((t) => t.id)).size !== photoTagEntries.length)
   throw new Error('Duplicate tag name.');
 export const photoTagRegistry = Object.fromEntries(

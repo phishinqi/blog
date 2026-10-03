@@ -1,3 +1,18 @@
 {
-  "tags": []
+  "tags": [
+    {
+      "id": "青岛",
+      "label": {
+        "zh-CN": "青岛",
+        "en": "Qingdao"
+      }
+    },
+    {
+      "id": "随手拍",
+      "label": {
+        "zh-CN": "随手拍",
+        "en": "Snapshots"
+      }
+    }
+  ]
 }

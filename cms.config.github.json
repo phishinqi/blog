@@ -62,8 +62,12 @@
           "widget": "list",
           "label": "标签",
           "required": false,
-          "field": { "name": "tag", "widget": "string" },
-          "tagFile": "data/tags.json"
+          "field": {
+            "name": "tag",
+            "widget": "relation",
+            "collection": "photo-tags",
+            "valueField": "id"
+          }
         },
         {
           "name": "authors",
@@ -362,8 +366,12 @@
               "widget": "list",
               "label": "标签",
               "required": false,
-              "field": { "name": "tag", "widget": "string" },
-              "tagFile": "data/tags.json"
+              "field": {
+                "name": "tag",
+                "widget": "relation",
+                "collection": "photo-tags",
+                "valueField": "id"
+              }
             },
             {
               "name": "author",
