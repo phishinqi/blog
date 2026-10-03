@@ -13,6 +13,13 @@
         "zh-CN": "随手拍",
         "en": "Snapshots"
       }
+    },
+    {
+      "id": "开远",
+      "label": {
+        "zh-CN": "开远",
+        "en": "Kaiyuan"
+      }
     }
   ]
 }
