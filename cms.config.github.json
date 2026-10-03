@@ -62,12 +62,8 @@
           "widget": "list",
           "label": "标签",
           "required": false,
-          "field": {
-            "name": "tag",
-            "widget": "relation",
-            "collection": "photo-tags",
-            "valueField": "id"
-          }
+          "field": { "name": "tag", "widget": "string" },
+          "tagFile": "data/tags.json"
         },
         {
           "name": "authors",
@@ -303,7 +299,7 @@
           "label": "相册标签",
           "required": false,
           "field": { "name": "tag", "widget": "string" },
-          "tagFile": "data/tags.json"
+          "tagFile": "data/photo-tags.json"
         },
         {
           "name": "cover",
@@ -366,12 +362,8 @@
               "widget": "list",
               "label": "标签",
               "required": false,
-              "field": {
-                "name": "tag",
-                "widget": "relation",
-                "collection": "photo-tags",
-                "valueField": "id"
-              }
+              "field": { "name": "tag", "widget": "string" },
+              "tagFile": "data/photo-tags.json"
             },
             {
               "name": "author",
