@@ -81,10 +81,9 @@
           "required": false,
           "field": {
             "name": "tag",
-            "widget": "relation",
-            "collection": "photo-tags",
-            "valueField": "id"
-          }
+            "widget": "string"
+          },
+          "tagFile": "data/tags.json"
         },
         {
           "name": "authors",
@@ -465,7 +464,7 @@
             "name": "tag",
             "widget": "string"
           },
-          "tagFile": "data/tags.json"
+          "tagFile": "data/photo-tags.json"
         },
         {
           "name": "cover",
@@ -561,10 +560,9 @@
               "required": false,
               "field": {
                 "name": "tag",
-                "widget": "relation",
-                "collection": "photo-tags",
-                "valueField": "id"
-              }
+                "widget": "string"
+              },
+              "tagFile": "data/photo-tags.json"
             },
             {
               "name": "author",
