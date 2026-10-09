@@ -818,11 +818,28 @@ body[data-marker-h4='dot'] .prose h4 .heading-ink::before {
 }
 .prose ul,
 .prose ol {
+  list-style-position: outside;
   padding-left: 1.5em;
   margin-block: 1.2em;
 }
+.prose ul {
+  list-style-type: disc;
+}
+.prose ol {
+  list-style-type: decimal;
+}
+.prose ul ul {
+  list-style-type: circle;
+}
+.prose ul ul ul {
+  list-style-type: square;
+}
+.prose ol ol {
+  list-style-type: lower-alpha;
+}
 .prose li {
   margin-block: 0.5em;
+  padding-left: 0.15em;
 }
 .prose li::marker {
   color: var(--muted);
@@ -926,20 +943,31 @@ body[data-marker-h4='dot'] .prose h4 .heading-ink::before {
   width: max-content;
   max-width: 100%;
   overflow-x: auto;
-  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  border-spacing: 0;
   font-family: var(--interface-font);
   font-size: 0.85rem;
   margin-block: 1.7rem;
 }
 .prose th,
 .prose td {
+  border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   text-align: left;
   padding: 0.8rem 1.2rem 0.8rem 0.2rem;
   vertical-align: top;
 }
+.prose tr:last-child td {
+  border-bottom: 0;
+}
+.prose th:last-child,
+.prose td:last-child {
+  border-right: 0;
+}
 .prose th {
   font-weight: 600;
+  background: var(--surface);
 }
 .prose figure {
   margin: 2rem 0;
