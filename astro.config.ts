@@ -4,6 +4,7 @@ import { unified } from '@astrojs/markdown-remark';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkMermaid, { diagramLanguages } from './src/lib/remark-mermaid';
@@ -32,7 +33,7 @@ export default defineConfig({
       defaultColor: false,
     },
     processor: unified({
-      remarkPlugins: [remarkMath, remarkMermaid],
+      remarkPlugins: [remarkGfm, remarkMath, remarkMermaid],
       rehypePlugins: [[rehypeKatex, { strict: 'warn', throwOnError: false }], rehypeHeadingInk],
     }),
   },
